@@ -1,0 +1,85 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F24 `(v ~T0 @X0 0 tf ]
+[v F25 `(v ~T0 @X0 0 tf ]
+[v F4 `(v ~T0 @X0 0 tf2`*S1`i ]
+"15 io/digitalOutput/DigitalOutput.h
+[; ;io/digitalOutput/DigitalOutput.h: 15:     typedef struct DigitalOutput {
+[s S1 `*F4 1 `i 1 ]
+[n S1 DigitalOutput set isHigh ]
+[v F27 `(v ~T0 @X0 0 tf ]
+[v F29 `(v ~T0 @X0 0 tf ]
+[v F34 `(v ~T0 @X0 0 tf2`*S1`i ]
+"3 io/digitalOutput/DigitalOutput.c
+[; ;io/digitalOutput/DigitalOutput.c: 3: DigitalOutput DigitalOutput_init(void (*init)(void) , void (*set)(void)) {
+[v _DigitalOutput_init `(S1 ~T0 @X0 1 ef2`*F24`*F25 ]
+{
+[e :U _DigitalOutput_init ]
+[v _init `*F27 ~T0 @X0 1 r1 ]
+[v _set `*F29 ~T0 @X0 1 r2 ]
+[f ]
+"4
+[; ;io/digitalOutput/DigitalOutput.c: 4:     DigitalOutput output;
+[v _output `S1 ~T0 @X0 1 a ]
+"5
+[; ;io/digitalOutput/DigitalOutput.c: 5:     output.set = set;
+[e = . _output 0 -> _set `*F34 ]
+"6
+[; ;io/digitalOutput/DigitalOutput.c: 6:     (*init)();
+[e ( *U _init ..  ]
+"7
+[; ;io/digitalOutput/DigitalOutput.c: 7:     return output;
+[e ) _output ]
+[e $UE 2  ]
+"9
+[; ;io/digitalOutput/DigitalOutput.c: 9: }
+[e :UE 2 ]
+}
+"11
+[; ;io/digitalOutput/DigitalOutput.c: 11: void DigitalOutput_open(DigitalOutput *output) {
+[v _DigitalOutput_open `(v ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _DigitalOutput_open ]
+[v _output `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"12
+[; ;io/digitalOutput/DigitalOutput.c: 12:     output->isHigh = 1;
+[e = . *U _output 1 -> 1 `i ]
+"13
+[; ;io/digitalOutput/DigitalOutput.c: 13:     (*output->set)(output,1);
+[e ( *U . *U _output 0 (2 , _output -> 1 `i ]
+"14
+[; ;io/digitalOutput/DigitalOutput.c: 14: }
+[e :UE 3 ]
+}
+"16
+[; ;io/digitalOutput/DigitalOutput.c: 16: void DigitalOutput_close(DigitalOutput *output) {
+[v _DigitalOutput_close `(v ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _DigitalOutput_close ]
+[v _output `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"17
+[; ;io/digitalOutput/DigitalOutput.c: 17:     output->isHigh = 0;
+[e = . *U _output 1 -> 0 `i ]
+"18
+[; ;io/digitalOutput/DigitalOutput.c: 18:     output->set(output,0);
+[e ( *U . *U _output 0 (2 , _output -> 0 `i ]
+"19
+[; ;io/digitalOutput/DigitalOutput.c: 19: }
+[e :UE 4 ]
+}
+"21
+[; ;io/digitalOutput/DigitalOutput.c: 21: void DigitalOutput_set(DigitalOutput *outputable, int value){
+[v _DigitalOutput_set `(v ~T0 @X0 1 ef2`*S1`i ]
+{
+[e :U _DigitalOutput_set ]
+[v _outputable `*S1 ~T0 @X0 1 r1 ]
+[v _value `i ~T0 @X0 1 r2 ]
+[f ]
+"22
+[; ;io/digitalOutput/DigitalOutput.c: 22:     outputable->set(outputable,value);
+[e ( *U . *U _outputable 0 (2 , _outputable _value ]
+"23
+[; ;io/digitalOutput/DigitalOutput.c: 23: }
+[e :UE 5 ]
+}

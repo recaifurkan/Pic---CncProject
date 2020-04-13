@@ -1,0 +1,60 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F4 `(i ~T0 @X0 0 tf1`*S1 ]
+"15 button/../io/digitalinput/DigitalInput.h
+[; ;button/../io/digitalinput/DigitalInput.h: 15:     typedef struct DigitalInput {
+[s S1 `*F4 1 ]
+[n S1 DigitalInput read ]
+[v F31 `(v ~T0 @X0 0 tf ]
+[v F19 `(v ~T0 @X0 0 tf ]
+"19 button/Button.h
+[; ;button/Button.h: 19: typedef struct Button {
+[s S2 `*S1 1 `*F19 1 ]
+[n S2 Button input onPressed ]
+[v F34 `(v ~T0 @X0 0 tf ]
+"22 button/../io/digitalinput/DigitalInput.h
+[; ;button/../io/digitalinput/DigitalInput.h: 22:     int DigitalInput_getValue(DigitalInput *input);
+[v _DigitalInput_getValue `(i ~T0 @X0 0 ef1`*S1 ]
+"9 button/Button.c
+[; ;button/Button.c: 9: Button Button_init(DigitalInput * input, void (*onPressed)(void) ){
+[v _Button_init `(S2 ~T0 @X0 1 ef2`*S1`*F31 ]
+{
+[e :U _Button_init ]
+[v _input `*S1 ~T0 @X0 1 r1 ]
+[v _onPressed `*F34 ~T0 @X0 1 r2 ]
+[f ]
+"10
+[; ;button/Button.c: 10:     Button buton;
+[v _buton `S2 ~T0 @X0 1 a ]
+"11
+[; ;button/Button.c: 11:     buton.input = input;
+[e = . _buton 0 _input ]
+"12
+[; ;button/Button.c: 12:     buton.onPressed = onPressed;
+[e = . _buton 1 _onPressed ]
+"13
+[; ;button/Button.c: 13:     return buton;
+[e ) _buton ]
+[e $UE 3  ]
+"14
+[; ;button/Button.c: 14: }
+[e :UE 3 ]
+}
+"17
+[; ;button/Button.c: 17: int Button_isPressed(Button *button){
+[v _Button_isPressed `(i ~T0 @X0 1 ef1`*S2 ]
+{
+[e :U _Button_isPressed ]
+[v _button `*S2 ~T0 @X0 1 r1 ]
+[f ]
+"18
+[; ;button/Button.c: 18:     int value = DigitalInput_getValue(button->input) ;
+[v _value `i ~T0 @X0 1 a ]
+[e = _value ( _DigitalInput_getValue (1 . *U _button 0 ]
+"19
+[; ;button/Button.c: 19:     return value;
+[e ) _value ]
+[e $UE 4  ]
+"20
+[; ;button/Button.c: 20: }
+[e :UE 4 ]
+}

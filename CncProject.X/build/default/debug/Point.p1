@@ -1,0 +1,130 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"18 ./Point.h
+[; ;./Point.h: 18:     typedef struct Point{
+[s S1 `f 1 `f 1 `f 1 ]
+[n S1 Point x y z ]
+"373 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h: 373: float sqrtf(float);
+[v _sqrtf `(f ~T0 @X0 0 ef1`f ]
+[v F344 `(f ~T0 @X0 1 tf2`f`f ]
+"319
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h: 319: __attribute__((nonreentrant)) float powf(float, float);
+[v _powf `JF344 ~T0 @X0 0 e ]
+"113 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"5 Point.c
+[; ;Point.c: 5: Point Point_init3D(float x, float y, float z) {
+[v _Point_init3D `(S1 ~T0 @X0 1 ef3`f`f`f ]
+{
+[e :U _Point_init3D ]
+[v _x `f ~T0 @X0 1 r1 ]
+[v _y `f ~T0 @X0 1 r2 ]
+[v _z `f ~T0 @X0 1 r3 ]
+[f ]
+"6
+[; ;Point.c: 6:     Point point;
+[v _point `S1 ~T0 @X0 1 a ]
+"7
+[; ;Point.c: 7:     point.x = x;
+[e = . _point 0 _x ]
+"8
+[; ;Point.c: 8:     point.y = y;
+[e = . _point 1 _y ]
+"9
+[; ;Point.c: 9:     point.z = z;
+[e = . _point 2 _z ]
+"10
+[; ;Point.c: 10:     return point;
+[e ) _point ]
+[e $UE 4  ]
+"11
+[; ;Point.c: 11: }
+[e :UE 4 ]
+}
+"13
+[; ;Point.c: 13: Point Point_init2D( float x, float y){
+[v _Point_init2D `(S1 ~T0 @X0 1 ef2`f`f ]
+{
+[e :U _Point_init2D ]
+[v _x `f ~T0 @X0 1 r1 ]
+[v _y `f ~T0 @X0 1 r2 ]
+[f ]
+"14
+[; ;Point.c: 14:     Point point;
+[v _point `S1 ~T0 @X0 1 a ]
+"15
+[; ;Point.c: 15:     point.x = x;
+[e = . _point 0 _x ]
+"16
+[; ;Point.c: 16:     point.y = y;
+[e = . _point 1 _y ]
+"17
+[; ;Point.c: 17:     point.z = 0;
+[e = . _point 2 -> -> 0 `i `f ]
+"18
+[; ;Point.c: 18:     return point;
+[e ) _point ]
+[e $UE 5  ]
+"20
+[; ;Point.c: 20: }
+[e :UE 5 ]
+}
+"22
+[; ;Point.c: 22: int Point_equals(Point * firstPoint, Point * secondPoint) {
+[v _Point_equals `(i ~T0 @X0 1 ef2`*S1`*S1 ]
+{
+[e :U _Point_equals ]
+[v _firstPoint `*S1 ~T0 @X0 1 r1 ]
+[v _secondPoint `*S1 ~T0 @X0 1 r2 ]
+[f ]
+"23
+[; ;Point.c: 23:     return firstPoint->x == secondPoint -> x && firstPoint->y == secondPoint -> y && firstPoint->z == secondPoint ->z;
+[e ) -> && && == . *U _firstPoint 0 . *U _secondPoint 0 == . *U _firstPoint 1 . *U _secondPoint 1 == . *U _firstPoint 2 . *U _secondPoint 2 `i ]
+[e $UE 6  ]
+"24
+[; ;Point.c: 24: }
+[e :UE 6 ]
+}
+"25
+[; ;Point.c: 25: float Point_distance(Point * firstPoint , Point * secondPoint){
+[v _Point_distance `(f ~T0 @X0 1 ef2`*S1`*S1 ]
+{
+[e :U _Point_distance ]
+[v _firstPoint `*S1 ~T0 @X0 1 r1 ]
+[v _secondPoint `*S1 ~T0 @X0 1 r2 ]
+[f ]
+"26
+[; ;Point.c: 26:     float dis = sqrtf(powf(secondPoint->x - firstPoint->x,2) + powf(secondPoint->y - firstPoint->y,2) + powf(secondPoint->z - firstPoint->z,2) * 1.0);
+[v _dis `f ~T0 @X0 1 a ]
+[e = _dis ( _sqrtf (1 -> + -> + ( _powf (2 , - . *U _secondPoint 0 . *U _firstPoint 0 -> -> 2 `i `f ( _powf (2 , - . *U _secondPoint 1 . *U _firstPoint 1 -> -> 2 `i `f `d * -> ( _powf (2 , - . *U _secondPoint 2 . *U _firstPoint 2 -> -> 2 `i `f `d .1.0 `f ]
+"27
+[; ;Point.c: 27:     return dis;
+[e ) _dis ]
+[e $UE 7  ]
+"28
+[; ;Point.c: 28: }
+[e :UE 7 ]
+}
+"30
+[; ;Point.c: 30: char* Point_toString(Point * point){
+[v _Point_toString `(*uc ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _Point_toString ]
+[v _point `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"31
+[; ;Point.c: 31:     char ret[40];
+[v _ret `uc ~T0 @X0 -> 40 `i a ]
+"32
+[; ;Point.c: 32:     sprintf(ret,"Point:{x:%.3f,y:%.3f,z:%.3f}",
+[e ( _sprintf (1 , , , (. , &U _ret :s 1C -> . *U _point 0 `d -> . *U _point 1 `d -> . *U _point 2 `d ]
+"35
+[; ;Point.c: 35:     return ret;
+[e ) &U _ret ]
+[e $UE 8  ]
+"36
+[; ;Point.c: 36: }
+[e :UE 8 ]
+}
+[p f _sprintf 8462336 ]
+[a 1C 80 111 105 110 116 58 123 120 58 37 46 51 102 44 121 58 37 46 51 102 44 122 58 37 46 51 102 125 0 ]

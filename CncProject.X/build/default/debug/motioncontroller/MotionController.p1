@@ -1,0 +1,952 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F2588 `(i ~T0 @X0 0 tf1`*S284 ]
+"15 motioncontroller/../engine/../application/../io/digitalinput/DigitalInput.h
+[s S284 `*F2588 1 ]
+[n S284 DigitalInput read ]
+[v F4 `(v ~T0 @X0 0 tf2`*S1`i ]
+"15 motioncontroller/../engine/../application/../io/digitalOutput/DigitalOutput.h
+[s S1 `*F4 1 `i 1 ]
+[n S1 DigitalOutput set isHigh ]
+[v F2616 `(i ~T0 @X0 0 tf ]
+[v F2618 `(uc ~T0 @X0 0 tf ]
+[v F2620 `(i ~T0 @X0 0 tf2`*uc`i ]
+[v F2624 `(v ~T0 @X0 0 tf1`uc ]
+[v F2627 `(v ~T0 @X0 0 tf1`*Cuc ]
+[v F2630 `(v ~T0 @X0 0 tf1`*Cuc ]
+[v F2633 `(v ~T0 @X0 0 tf2`i`uc ]
+[v F2637 `(v ~T0 @X0 0 tf2`l`uc ]
+[v F2641 `(v ~T0 @X0 0 tf2`l`uc ]
+[v F2645 `(uc ~T0 @X0 0 tf ]
+"14 motioncontroller/../engine/../application/../usart/Usart.h
+[; ;motioncontroller/../engine/../application/../usart/Usart.h: 14: typedef struct {
+[s S286 `*F2616 1 `*F2618 1 `*F2620 1 `*F2624 1 `*F2627 1 `*F2630 1 `*F2633 1 `*F2637 1 `*F2641 1 `*F2645 1 ]
+[n S286 . isDataReady readChar readString writeByte writeString writeLine writeInt writeLong writeFloat readByte ]
+"21 motioncontroller/../engine/Engine.h
+[; ;motioncontroller/../engine/Engine.h: 21:     typedef struct Engine {
+[s S2 `f 1 `f 1 `i 1 `*S1 1 `*S1 1 `f 1 ]
+[n S2 Engine currentCoord destinationCoord isMotion motionOutput dirOutput stepPerMetrice ]
+"19 motioncontroller/../engine/../application/../motioncontroller/MotionController.h
+[; ;motioncontroller/../engine/../application/../motioncontroller/MotionController.h: 19:     typedef struct MotionController {
+[s S289 `S2 1 `S2 1 `S2 1 ]
+[n S289 MotionController x y z ]
+"35 motioncontroller/../engine/EngineConfigurator.h
+[; ;motioncontroller/../engine/EngineConfigurator.h: 35:     void EngineConfigurator_configEngines();
+[v _EngineConfigurator_configEngines `(v ~T0 @X0 0 e? ]
+"32 motioncontroller/../engine/Engine.h
+[; ;motioncontroller/../engine/Engine.h: 32:     Engine Engine_init(DigitalOutput *motionOutput, DigitalOutput *dirOutput);
+[v _Engine_init `(S2 ~T0 @X0 0 ef2`*S1`*S1 ]
+"36
+[; ;motioncontroller/../engine/Engine.h: 36:     void Engine_setStepPerMetrice(Engine *engine, float stepPerMm) ;
+[v _Engine_setStepPerMetrice `(v ~T0 @X0 0 ef2`*S2`f ]
+"18 motioncontroller/../Point.h
+[; ;motioncontroller/../Point.h: 18:     typedef struct Point{
+[s S288 `f 1 `f 1 `f 1 ]
+[n S288 Point x y z ]
+"31 motioncontroller/../engine/../application/../motioncontroller/MotionController.h
+[; ;motioncontroller/../engine/../application/../motioncontroller/MotionController.h: 31:     Point MotionController_getCurrentCoord(MotionController * motionController);
+[v _MotionController_getCurrentCoord `(S288 ~T0 @X0 0 ef1`*S289 ]
+"33
+[; ;motioncontroller/../engine/../application/../motioncontroller/MotionController.h: 33:     Point MotionController_getDestinationCoord(MotionController * motionController);
+[v _MotionController_getDestinationCoord `(S288 ~T0 @X0 0 ef1`*S289 ]
+"51 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdlib.h
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdlib.h: 51: int abs (int);
+[v _abs `(i ~T0 @X0 0 ef1`i ]
+"33 motioncontroller/../engine/Engine.h
+[; ;motioncontroller/../engine/Engine.h: 33:     float Engine_getStepPerMetrice(Engine *engine);
+[v _Engine_getStepPerMetrice `(f ~T0 @X0 0 ef1`*S2 ]
+"41
+[; ;motioncontroller/../engine/Engine.h: 41:      void Engine_step(Engine * engine , int dir);
+[v _Engine_step `(v ~T0 @X0 0 ef2`*S2`i ]
+"23 motioncontroller/../Point.h
+[; ;motioncontroller/../Point.h: 23:     Point Point_init3D( float x, float y, float z);
+[v _Point_init3D `(S288 ~T0 @X0 0 ef3`f`f`f ]
+"38 motioncontroller/../engine/Engine.h
+[; ;motioncontroller/../engine/Engine.h: 38:     float Engine_getCurrentCoord(Engine * engine);
+[v _Engine_getCurrentCoord `(f ~T0 @X0 0 ef1`*S2 ]
+"39
+[; ;motioncontroller/../engine/Engine.h: 39:     float Engine_getDestinationCoord(Engine * engine);
+[v _Engine_getDestinationCoord `(f ~T0 @X0 0 ef1`*S2 ]
+"54 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
+[; <" PORTA equ 0F80h ;# ">
+"273
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 273: __asm("PORTB equ 0F81h");
+[; <" PORTB equ 0F81h ;# ">
+"452
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 452: __asm("PORTC equ 0F82h");
+[; <" PORTC equ 0F82h ;# ">
+"634
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 634: __asm("PORTD equ 0F83h");
+[; <" PORTD equ 0F83h ;# ">
+"776
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 776: __asm("PORTE equ 0F84h");
+[; <" PORTE equ 0F84h ;# ">
+"979
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 979: __asm("LATA equ 0F89h");
+[; <" LATA equ 0F89h ;# ">
+"1091
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1091: __asm("LATB equ 0F8Ah");
+[; <" LATB equ 0F8Ah ;# ">
+"1203
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1203: __asm("LATC equ 0F8Bh");
+[; <" LATC equ 0F8Bh ;# ">
+"1315
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1315: __asm("LATD equ 0F8Ch");
+[; <" LATD equ 0F8Ch ;# ">
+"1427
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1427: __asm("LATE equ 0F8Dh");
+[; <" LATE equ 0F8Dh ;# ">
+"1479
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1479: __asm("TRISA equ 0F92h");
+[; <" TRISA equ 0F92h ;# ">
+"1484
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1484: __asm("DDRA equ 0F92h");
+[; <" DDRA equ 0F92h ;# ">
+"1701
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1701: __asm("TRISB equ 0F93h");
+[; <" TRISB equ 0F93h ;# ">
+"1706
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1706: __asm("DDRB equ 0F93h");
+[; <" DDRB equ 0F93h ;# ">
+"1923
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1923: __asm("TRISC equ 0F94h");
+[; <" TRISC equ 0F94h ;# ">
+"1928
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1928: __asm("DDRC equ 0F94h");
+[; <" DDRC equ 0F94h ;# ">
+"2145
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2145: __asm("TRISD equ 0F95h");
+[; <" TRISD equ 0F95h ;# ">
+"2150
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2150: __asm("DDRD equ 0F95h");
+[; <" DDRD equ 0F95h ;# ">
+"2367
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2367: __asm("TRISE equ 0F96h");
+[; <" TRISE equ 0F96h ;# ">
+"2372
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2372: __asm("DDRE equ 0F96h");
+[; <" DDRE equ 0F96h ;# ">
+"2531
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2531: __asm("OSCTUNE equ 0F9Bh");
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2596
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2596: __asm("PIE1 equ 0F9Dh");
+[; <" PIE1 equ 0F9Dh ;# ">
+"2673
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2673: __asm("PIR1 equ 0F9Eh");
+[; <" PIR1 equ 0F9Eh ;# ">
+"2750
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2750: __asm("IPR1 equ 0F9Fh");
+[; <" IPR1 equ 0F9Fh ;# ">
+"2827
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2827: __asm("PIE2 equ 0FA0h");
+[; <" PIE2 equ 0FA0h ;# ">
+"2893
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2893: __asm("PIR2 equ 0FA1h");
+[; <" PIR2 equ 0FA1h ;# ">
+"2959
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2959: __asm("IPR2 equ 0FA2h");
+[; <" IPR2 equ 0FA2h ;# ">
+"3025
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3025: __asm("EECON1 equ 0FA6h");
+[; <" EECON1 equ 0FA6h ;# ">
+"3091
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3091: __asm("EECON2 equ 0FA7h");
+[; <" EECON2 equ 0FA7h ;# ">
+"3098
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3098: __asm("EEDATA equ 0FA8h");
+[; <" EEDATA equ 0FA8h ;# ">
+"3105
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3105: __asm("EEADR equ 0FA9h");
+[; <" EEADR equ 0FA9h ;# ">
+"3112
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3112: __asm("RCSTA equ 0FABh");
+[; <" RCSTA equ 0FABh ;# ">
+"3117
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3117: __asm("RCSTA1 equ 0FABh");
+[; <" RCSTA1 equ 0FABh ;# ">
+"3322
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3322: __asm("TXSTA equ 0FACh");
+[; <" TXSTA equ 0FACh ;# ">
+"3327
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3327: __asm("TXSTA1 equ 0FACh");
+[; <" TXSTA1 equ 0FACh ;# ">
+"3578
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3578: __asm("TXREG equ 0FADh");
+[; <" TXREG equ 0FADh ;# ">
+"3583
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3583: __asm("TXREG1 equ 0FADh");
+[; <" TXREG1 equ 0FADh ;# ">
+"3590
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3590: __asm("RCREG equ 0FAEh");
+[; <" RCREG equ 0FAEh ;# ">
+"3595
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3595: __asm("RCREG1 equ 0FAEh");
+[; <" RCREG1 equ 0FAEh ;# ">
+"3602
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3602: __asm("SPBRG equ 0FAFh");
+[; <" SPBRG equ 0FAFh ;# ">
+"3607
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3607: __asm("SPBRG1 equ 0FAFh");
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3614
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3614: __asm("SPBRGH equ 0FB0h");
+[; <" SPBRGH equ 0FB0h ;# ">
+"3621
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3621: __asm("T3CON equ 0FB1h");
+[; <" T3CON equ 0FB1h ;# ">
+"3733
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3733: __asm("TMR3 equ 0FB2h");
+[; <" TMR3 equ 0FB2h ;# ">
+"3740
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3740: __asm("TMR3L equ 0FB2h");
+[; <" TMR3L equ 0FB2h ;# ">
+"3747
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3747: __asm("TMR3H equ 0FB3h");
+[; <" TMR3H equ 0FB3h ;# ">
+"3754
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3754: __asm("CMCON equ 0FB4h");
+[; <" CMCON equ 0FB4h ;# ">
+"3844
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3844: __asm("CVRCON equ 0FB5h");
+[; <" CVRCON equ 0FB5h ;# ">
+"3923
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3923: __asm("ECCP1AS equ 0FB6h");
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3928
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3928: __asm("ECCPAS equ 0FB6h");
+[; <" ECCPAS equ 0FB6h ;# ">
+"4085
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4085: __asm("PWM1CON equ 0FB7h");
+[; <" PWM1CON equ 0FB7h ;# ">
+"4090
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4090: __asm("ECCP1DEL equ 0FB7h");
+[; <" ECCP1DEL equ 0FB7h ;# ">
+"4223
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4223: __asm("BAUDCON equ 0FB8h");
+[; <" BAUDCON equ 0FB8h ;# ">
+"4228
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4228: __asm("BAUDCTL equ 0FB8h");
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4403
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4403: __asm("CCP2CON equ 0FBAh");
+[; <" CCP2CON equ 0FBAh ;# ">
+"4482
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4482: __asm("CCPR2 equ 0FBBh");
+[; <" CCPR2 equ 0FBBh ;# ">
+"4489
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4489: __asm("CCPR2L equ 0FBBh");
+[; <" CCPR2L equ 0FBBh ;# ">
+"4496
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4496: __asm("CCPR2H equ 0FBCh");
+[; <" CCPR2H equ 0FBCh ;# ">
+"4503
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4503: __asm("CCP1CON equ 0FBDh");
+[; <" CCP1CON equ 0FBDh ;# ">
+"4600
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4600: __asm("CCPR1 equ 0FBEh");
+[; <" CCPR1 equ 0FBEh ;# ">
+"4607
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4607: __asm("CCPR1L equ 0FBEh");
+[; <" CCPR1L equ 0FBEh ;# ">
+"4614
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4614: __asm("CCPR1H equ 0FBFh");
+[; <" CCPR1H equ 0FBFh ;# ">
+"4621
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4621: __asm("ADCON2 equ 0FC0h");
+[; <" ADCON2 equ 0FC0h ;# ">
+"4692
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4692: __asm("ADCON1 equ 0FC1h");
+[; <" ADCON1 equ 0FC1h ;# ">
+"4777
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4777: __asm("ADCON0 equ 0FC2h");
+[; <" ADCON0 equ 0FC2h ;# ">
+"4896
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4896: __asm("ADRES equ 0FC3h");
+[; <" ADRES equ 0FC3h ;# ">
+"4903
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4903: __asm("ADRESL equ 0FC3h");
+[; <" ADRESL equ 0FC3h ;# ">
+"4910
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4910: __asm("ADRESH equ 0FC4h");
+[; <" ADRESH equ 0FC4h ;# ">
+"4917
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4917: __asm("SSPCON2 equ 0FC5h");
+[; <" SSPCON2 equ 0FC5h ;# ">
+"5012
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5012: __asm("SSPCON1 equ 0FC6h");
+[; <" SSPCON1 equ 0FC6h ;# ">
+"5082
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5082: __asm("SSPSTAT equ 0FC7h");
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5303
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5303: __asm("SSPADD equ 0FC8h");
+[; <" SSPADD equ 0FC8h ;# ">
+"5310
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5310: __asm("SSPBUF equ 0FC9h");
+[; <" SSPBUF equ 0FC9h ;# ">
+"5317
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5317: __asm("T2CON equ 0FCAh");
+[; <" T2CON equ 0FCAh ;# ">
+"5415
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5415: __asm("PR2 equ 0FCBh");
+[; <" PR2 equ 0FCBh ;# ">
+"5420
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5420: __asm("MEMCON equ 0FCBh");
+[; <" MEMCON equ 0FCBh ;# ">
+"5525
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5525: __asm("TMR2 equ 0FCCh");
+[; <" TMR2 equ 0FCCh ;# ">
+"5532
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5532: __asm("T1CON equ 0FCDh");
+[; <" T1CON equ 0FCDh ;# ">
+"5635
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5635: __asm("TMR1 equ 0FCEh");
+[; <" TMR1 equ 0FCEh ;# ">
+"5642
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5642: __asm("TMR1L equ 0FCEh");
+[; <" TMR1L equ 0FCEh ;# ">
+"5649
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5649: __asm("TMR1H equ 0FCFh");
+[; <" TMR1H equ 0FCFh ;# ">
+"5656
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5656: __asm("RCON equ 0FD0h");
+[; <" RCON equ 0FD0h ;# ">
+"5789
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5789: __asm("WDTCON equ 0FD1h");
+[; <" WDTCON equ 0FD1h ;# ">
+"5817
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5817: __asm("HLVDCON equ 0FD2h");
+[; <" HLVDCON equ 0FD2h ;# ">
+"5822
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5822: __asm("LVDCON equ 0FD2h");
+[; <" LVDCON equ 0FD2h ;# ">
+"6087
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6087: __asm("OSCCON equ 0FD3h");
+[; <" OSCCON equ 0FD3h ;# ">
+"6170
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6170: __asm("T0CON equ 0FD5h");
+[; <" T0CON equ 0FD5h ;# ">
+"6253
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6253: __asm("TMR0 equ 0FD6h");
+[; <" TMR0 equ 0FD6h ;# ">
+"6260
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6260: __asm("TMR0L equ 0FD6h");
+[; <" TMR0L equ 0FD6h ;# ">
+"6267
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6267: __asm("TMR0H equ 0FD7h");
+[; <" TMR0H equ 0FD7h ;# ">
+"6274
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6274: __asm("STATUS equ 0FD8h");
+[; <" STATUS equ 0FD8h ;# ">
+"6345
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6345: __asm("FSR2 equ 0FD9h");
+[; <" FSR2 equ 0FD9h ;# ">
+"6352
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6352: __asm("FSR2L equ 0FD9h");
+[; <" FSR2L equ 0FD9h ;# ">
+"6359
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6359: __asm("FSR2H equ 0FDAh");
+[; <" FSR2H equ 0FDAh ;# ">
+"6366
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6366: __asm("PLUSW2 equ 0FDBh");
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6373
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6373: __asm("PREINC2 equ 0FDCh");
+[; <" PREINC2 equ 0FDCh ;# ">
+"6380
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6380: __asm("POSTDEC2 equ 0FDDh");
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6387
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6387: __asm("POSTINC2 equ 0FDEh");
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6394
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6394: __asm("INDF2 equ 0FDFh");
+[; <" INDF2 equ 0FDFh ;# ">
+"6401
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6401: __asm("BSR equ 0FE0h");
+[; <" BSR equ 0FE0h ;# ">
+"6408
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6408: __asm("FSR1 equ 0FE1h");
+[; <" FSR1 equ 0FE1h ;# ">
+"6415
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6415: __asm("FSR1L equ 0FE1h");
+[; <" FSR1L equ 0FE1h ;# ">
+"6422
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6422: __asm("FSR1H equ 0FE2h");
+[; <" FSR1H equ 0FE2h ;# ">
+"6429
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6429: __asm("PLUSW1 equ 0FE3h");
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6436
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6436: __asm("PREINC1 equ 0FE4h");
+[; <" PREINC1 equ 0FE4h ;# ">
+"6443
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6443: __asm("POSTDEC1 equ 0FE5h");
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6450
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6450: __asm("POSTINC1 equ 0FE6h");
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6457
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6457: __asm("INDF1 equ 0FE7h");
+[; <" INDF1 equ 0FE7h ;# ">
+"6464
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6464: __asm("WREG equ 0FE8h");
+[; <" WREG equ 0FE8h ;# ">
+"6476
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6476: __asm("FSR0 equ 0FE9h");
+[; <" FSR0 equ 0FE9h ;# ">
+"6483
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6483: __asm("FSR0L equ 0FE9h");
+[; <" FSR0L equ 0FE9h ;# ">
+"6490
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6490: __asm("FSR0H equ 0FEAh");
+[; <" FSR0H equ 0FEAh ;# ">
+"6497
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6497: __asm("PLUSW0 equ 0FEBh");
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6504
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6504: __asm("PREINC0 equ 0FECh");
+[; <" PREINC0 equ 0FECh ;# ">
+"6511
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6511: __asm("POSTDEC0 equ 0FEDh");
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6518
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6518: __asm("POSTINC0 equ 0FEEh");
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6525
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6525: __asm("INDF0 equ 0FEFh");
+[; <" INDF0 equ 0FEFh ;# ">
+"6532
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6532: __asm("INTCON3 equ 0FF0h");
+[; <" INTCON3 equ 0FF0h ;# ">
+"6624
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6624: __asm("INTCON2 equ 0FF1h");
+[; <" INTCON2 equ 0FF1h ;# ">
+"6694
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6694: __asm("INTCON equ 0FF2h");
+[; <" INTCON equ 0FF2h ;# ">
+"6811
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6811: __asm("PROD equ 0FF3h");
+[; <" PROD equ 0FF3h ;# ">
+"6818
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6818: __asm("PRODL equ 0FF3h");
+[; <" PRODL equ 0FF3h ;# ">
+"6825
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6825: __asm("PRODH equ 0FF4h");
+[; <" PRODH equ 0FF4h ;# ">
+"6832
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6832: __asm("TABLAT equ 0FF5h");
+[; <" TABLAT equ 0FF5h ;# ">
+"6841
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6841: __asm("TBLPTR equ 0FF6h");
+[; <" TBLPTR equ 0FF6h ;# ">
+"6848
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6848: __asm("TBLPTRL equ 0FF6h");
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6855
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6855: __asm("TBLPTRH equ 0FF7h");
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6862
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6862: __asm("TBLPTRU equ 0FF8h");
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6871
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6871: __asm("PCLAT equ 0FF9h");
+[; <" PCLAT equ 0FF9h ;# ">
+"6878
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6878: __asm("PC equ 0FF9h");
+[; <" PC equ 0FF9h ;# ">
+"6885
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6885: __asm("PCL equ 0FF9h");
+[; <" PCL equ 0FF9h ;# ">
+"6892
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6892: __asm("PCLATH equ 0FFAh");
+[; <" PCLATH equ 0FFAh ;# ">
+"6899
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6899: __asm("PCLATU equ 0FFBh");
+[; <" PCLATU equ 0FFBh ;# ">
+"6906
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6906: __asm("STKPTR equ 0FFCh");
+[; <" STKPTR equ 0FFCh ;# ">
+"6980
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6980: __asm("TOS equ 0FFDh");
+[; <" TOS equ 0FFDh ;# ">
+"6987
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6987: __asm("TOSL equ 0FFDh");
+[; <" TOSL equ 0FFDh ;# ">
+"6994
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6994: __asm("TOSH equ 0FFEh");
+[; <" TOSH equ 0FFEh ;# ">
+"7001
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
+[; <" TOSU equ 0FFFh ;# ">
+"23 motioncontroller/../utils/../Configuration.h
+[p x OSC = INTIO67 ]
+"24
+[p x FCMEN = OFF ]
+"25
+[p x IESO = OFF ]
+"28
+[p x PWRT = OFF ]
+"29
+[p x BOREN = SBORDIS ]
+"30
+[p x BORV = 3 ]
+"33
+[p x WDT = OFF ]
+"34
+[p x WDTPS = 16384 ]
+"37
+[p x CCP2MX = PORTC ]
+"38
+[p x PBADEN = OFF ]
+"39
+[p x LPT1OSC = OFF ]
+"40
+[p x MCLRE = OFF ]
+"43
+[p x STVREN = ON ]
+"44
+[p x LVP = ON ]
+"45
+[p x XINST = OFF ]
+"48
+[p x CP0 = OFF ]
+"49
+[p x CP1 = OFF ]
+"50
+[p x CP2 = OFF ]
+"51
+[p x CP3 = OFF ]
+"54
+[p x CPB = OFF ]
+"55
+[p x CPD = OFF ]
+"58
+[p x WRT0 = OFF ]
+"59
+[p x WRT1 = OFF ]
+"60
+[p x WRT2 = OFF ]
+"61
+[p x WRT3 = OFF ]
+"64
+[p x WRTC = OFF ]
+"65
+[p x WRTB = OFF ]
+"66
+[p x WRTD = OFF ]
+"69
+[p x EBTR0 = OFF ]
+"70
+[p x EBTR1 = OFF ]
+"71
+[p x EBTR2 = OFF ]
+"72
+[p x EBTR3 = OFF ]
+"75
+[p x EBTRB = OFF ]
+"25 motioncontroller/../application/Application.h
+[v _button1Input `S284 ~T0 @X0 1 e ]
+"27
+[v _xEngineMotionOutput `S1 ~T0 @X0 1 e ]
+"28
+[v _yEngineMotionOutput `S1 ~T0 @X0 1 e ]
+"29
+[v _zEngineMotionOutput `S1 ~T0 @X0 1 e ]
+"32
+[v _xEngineDirOutput `S1 ~T0 @X0 1 e ]
+"33
+[v _yEngineDirOutput `S1 ~T0 @X0 1 e ]
+"34
+[v _zEngineDirOutput `S1 ~T0 @X0 1 e ]
+"36
+[v _usart `S286 ~T0 @X0 1 e ]
+"5 motioncontroller/MotionController.c
+[; ;motioncontroller/MotionController.c: 5: MotionController MotionController_init() {
+[v _MotionController_init `(S289 ~T0 @X0 1 ef ]
+{
+[e :U _MotionController_init ]
+[f ]
+"6
+[; ;motioncontroller/MotionController.c: 6:     MotionController motionController;
+[v _motionController `S289 ~T0 @X0 1 a ]
+"7
+[; ;motioncontroller/MotionController.c: 7:     EngineConfigurator_configEngines();
+[e ( _EngineConfigurator_configEngines ..  ]
+"8
+[; ;motioncontroller/MotionController.c: 8:     motionController.x = Engine_init(&xEngineMotionOutput,&xEngineDirOutput);
+[e = . _motionController 0 ( _Engine_init (2 , &U _xEngineMotionOutput &U _xEngineDirOutput ]
+"9
+[; ;motioncontroller/MotionController.c: 9:     motionController.y = Engine_init(&yEngineMotionOutput,&yEngineDirOutput);
+[e = . _motionController 1 ( _Engine_init (2 , &U _yEngineMotionOutput &U _yEngineDirOutput ]
+"10
+[; ;motioncontroller/MotionController.c: 10:     motionController.z = Engine_init(&zEngineMotionOutput,&zEngineDirOutput);
+[e = . _motionController 2 ( _Engine_init (2 , &U _zEngineMotionOutput &U _zEngineDirOutput ]
+"11
+[; ;motioncontroller/MotionController.c: 11:     Engine_setStepPerMetrice(&(motionController.x), 50);
+[e ( _Engine_setStepPerMetrice (2 , &U . _motionController 0 -> -> 50 `i `f ]
+"12
+[; ;motioncontroller/MotionController.c: 12:     Engine_setStepPerMetrice(&(motionController.y), 50);
+[e ( _Engine_setStepPerMetrice (2 , &U . _motionController 1 -> -> 50 `i `f ]
+"13
+[; ;motioncontroller/MotionController.c: 13:     Engine_setStepPerMetrice(&(motionController.z), 50);
+[e ( _Engine_setStepPerMetrice (2 , &U . _motionController 2 -> -> 50 `i `f ]
+"14
+[; ;motioncontroller/MotionController.c: 14:     return motionController;
+[e ) _motionController ]
+[e $UE 290  ]
+"16
+[; ;motioncontroller/MotionController.c: 16: }
+[e :UE 290 ]
+}
+"18
+[; ;motioncontroller/MotionController.c: 18: void MotionController_control(MotionController *motionController) {
+[v _MotionController_control `(v ~T0 @X0 1 ef1`*S289 ]
+{
+[e :U _MotionController_control ]
+[v _motionController `*S289 ~T0 @X0 1 r1 ]
+[f ]
+"19
+[; ;motioncontroller/MotionController.c: 19:     Point currentCoord = MotionController_getCurrentCoord(motionController);
+[v _currentCoord `S288 ~T0 @X0 1 a ]
+[e = _currentCoord ( _MotionController_getCurrentCoord (1 _motionController ]
+"20
+[; ;motioncontroller/MotionController.c: 20:     Point destinationCoord = MotionController_getDestinationCoord(motionController);
+[v _destinationCoord `S288 ~T0 @X0 1 a ]
+[e = _destinationCoord ( _MotionController_getDestinationCoord (1 _motionController ]
+"24
+[; ;motioncontroller/MotionController.c: 24:     float dx = destinationCoord.x - currentCoord.x;
+[v _dx `f ~T0 @X0 1 a ]
+[e = _dx - . _destinationCoord 0 . _currentCoord 0 ]
+"25
+[; ;motioncontroller/MotionController.c: 25:     float dy = destinationCoord.y - currentCoord.y;
+[v _dy `f ~T0 @X0 1 a ]
+[e = _dy - . _destinationCoord 1 . _currentCoord 1 ]
+"26
+[; ;motioncontroller/MotionController.c: 26:     float dz = destinationCoord.z - currentCoord.z;
+[v _dz `f ~T0 @X0 1 a ]
+[e = _dz - . _destinationCoord 2 . _currentCoord 2 ]
+"28
+[; ;motioncontroller/MotionController.c: 28:     int xs, ys, zs;
+[v _xs `i ~T0 @X0 1 a ]
+[v _ys `i ~T0 @X0 1 a ]
+[v _zs `i ~T0 @X0 1 a ]
+"30
+[; ;motioncontroller/MotionController.c: 30:     if (dx > 0)
+[e $ ! > _dx -> -> 0 `i `f 292  ]
+"31
+[; ;motioncontroller/MotionController.c: 31:         xs = 1;
+[e = _xs -> 1 `i ]
+[e $U 293  ]
+"32
+[; ;motioncontroller/MotionController.c: 32:     else
+[e :U 292 ]
+"33
+[; ;motioncontroller/MotionController.c: 33:         xs = -1;
+[e = _xs -U -> 1 `i ]
+[e :U 293 ]
+"35
+[; ;motioncontroller/MotionController.c: 35:     if (dy > 0)
+[e $ ! > _dy -> -> 0 `i `f 294  ]
+"36
+[; ;motioncontroller/MotionController.c: 36:         ys = 1;
+[e = _ys -> 1 `i ]
+[e $U 295  ]
+"37
+[; ;motioncontroller/MotionController.c: 37:     else
+[e :U 294 ]
+"38
+[; ;motioncontroller/MotionController.c: 38:         ys = -1;
+[e = _ys -U -> 1 `i ]
+[e :U 295 ]
+"40
+[; ;motioncontroller/MotionController.c: 40:     if (dz > 0)
+[e $ ! > _dz -> -> 0 `i `f 296  ]
+"41
+[; ;motioncontroller/MotionController.c: 41:         zs = 1;
+[e = _zs -> 1 `i ]
+[e $U 297  ]
+"42
+[; ;motioncontroller/MotionController.c: 42:     else
+[e :U 296 ]
+"43
+[; ;motioncontroller/MotionController.c: 43:         zs = -1;
+[e = _zs -U -> 1 `i ]
+[e :U 297 ]
+"45
+[; ;motioncontroller/MotionController.c: 45:     dx = abs(destinationCoord.x - currentCoord.x);
+[e = _dx -> ( _abs (1 -> - . _destinationCoord 0 . _currentCoord 0 `i `f ]
+"46
+[; ;motioncontroller/MotionController.c: 46:     dy = abs(destinationCoord.y - currentCoord.y);
+[e = _dy -> ( _abs (1 -> - . _destinationCoord 1 . _currentCoord 1 `i `f ]
+"47
+[; ;motioncontroller/MotionController.c: 47:     dz = abs(destinationCoord.z - currentCoord.z);
+[e = _dz -> ( _abs (1 -> - . _destinationCoord 2 . _currentCoord 2 `i `f ]
+"49
+[; ;motioncontroller/MotionController.c: 49:     float intDx = dx * Engine_getStepPerMetrice(&motionController->x);
+[v _intDx `f ~T0 @X0 1 a ]
+[e = _intDx * _dx ( _Engine_getStepPerMetrice (1 &U . *U _motionController 0 ]
+"50
+[; ;motioncontroller/MotionController.c: 50:     float intDy = dy * Engine_getStepPerMetrice(&motionController->y);
+[v _intDy `f ~T0 @X0 1 a ]
+[e = _intDy * _dy ( _Engine_getStepPerMetrice (1 &U . *U _motionController 1 ]
+"51
+[; ;motioncontroller/MotionController.c: 51:     float intDz = dz * Engine_getStepPerMetrice(&motionController->z);
+[v _intDz `f ~T0 @X0 1 a ]
+[e = _intDz * _dz ( _Engine_getStepPerMetrice (1 &U . *U _motionController 2 ]
+"55
+[; ;motioncontroller/MotionController.c: 55:     if (intDx >= intDy && intDx >= intDz) {
+[e $ ! && >= _intDx _intDy >= _intDx _intDz 298  ]
+{
+"56
+[; ;motioncontroller/MotionController.c: 56:         float rateY = intDx / intDy;
+[v _rateY `f ~T0 @X0 1 a ]
+[e = _rateY / _intDx _intDy ]
+"57
+[; ;motioncontroller/MotionController.c: 57:         float rateZ = intDx / intDz;
+[v _rateZ `f ~T0 @X0 1 a ]
+[e = _rateZ / _intDx _intDz ]
+"58
+[; ;motioncontroller/MotionController.c: 58:         float p1;
+[v _p1 `f ~T0 @X0 1 a ]
+"59
+[; ;motioncontroller/MotionController.c: 59:         float p2;
+[v _p2 `f ~T0 @X0 1 a ]
+"60
+[; ;motioncontroller/MotionController.c: 60:         for(;intDx>-1;intDx--){
+{
+[e $ > _intDx -> -U -> 1 `i `f 299  ]
+[e $U 300  ]
+[e :U 299 ]
+{
+"61
+[; ;motioncontroller/MotionController.c: 61:             Engine_step(&motionController->x, xs);
+[e ( _Engine_step (2 , &U . *U _motionController 0 _xs ]
+"62
+[; ;motioncontroller/MotionController.c: 62:             if (p1 >= rateY) {
+[e $ ! >= _p1 _rateY 302  ]
+{
+"63
+[; ;motioncontroller/MotionController.c: 63:                 Engine_step(&motionController->y, ys);
+[e ( _Engine_step (2 , &U . *U _motionController 1 _ys ]
+"64
+[; ;motioncontroller/MotionController.c: 64:                 p1 -= rateY;
+[e =- _p1 _rateY ]
+"65
+[; ;motioncontroller/MotionController.c: 65:             }
+}
+[e :U 302 ]
+"66
+[; ;motioncontroller/MotionController.c: 66:             if (p2 >= rateZ) {
+[e $ ! >= _p2 _rateZ 303  ]
+{
+"67
+[; ;motioncontroller/MotionController.c: 67:                 Engine_step(&motionController->z, zs);
+[e ( _Engine_step (2 , &U . *U _motionController 2 _zs ]
+"68
+[; ;motioncontroller/MotionController.c: 68:                 p2 -= rateZ;
+[e =- _p2 _rateZ ]
+"69
+[; ;motioncontroller/MotionController.c: 69:             }
+}
+[e :U 303 ]
+"70
+[; ;motioncontroller/MotionController.c: 70:             p1 ++;
+[e ++ _p1 -> -> 1 `i `f ]
+"71
+[; ;motioncontroller/MotionController.c: 71:             p2 ++;
+[e ++ _p2 -> -> 1 `i `f ]
+"72
+[; ;motioncontroller/MotionController.c: 72:         }
+}
+[e -- _intDx -> -> 1 `i `f ]
+[e $ > _intDx -> -U -> 1 `i `f 299  ]
+[e :U 300 ]
+}
+"79
+[; ;motioncontroller/MotionController.c: 79:     }
+}
+[e $U 304  ]
+"83
+[; ;motioncontroller/MotionController.c: 83:     else if (intDy >= intDx && intDy >= intDz) {
+[e :U 298 ]
+[e $ ! && >= _intDy _intDx >= _intDy _intDz 305  ]
+{
+"84
+[; ;motioncontroller/MotionController.c: 84:         float rateX =intDy / intDx;
+[v _rateX `f ~T0 @X0 1 a ]
+[e = _rateX / _intDy _intDx ]
+"85
+[; ;motioncontroller/MotionController.c: 85:         float rateZ =intDy / intDz;
+[v _rateZ `f ~T0 @X0 1 a ]
+[e = _rateZ / _intDy _intDz ]
+"86
+[; ;motioncontroller/MotionController.c: 86:         float p1;
+[v _p1 `f ~T0 @X0 1 a ]
+"87
+[; ;motioncontroller/MotionController.c: 87:         float p2;
+[v _p2 `f ~T0 @X0 1 a ]
+"89
+[; ;motioncontroller/MotionController.c: 89:          for(;intDy>-1;intDy--){
+{
+[e $ > _intDy -> -U -> 1 `i `f 306  ]
+[e $U 307  ]
+[e :U 306 ]
+{
+"90
+[; ;motioncontroller/MotionController.c: 90:              Engine_step(&motionController->y, ys);
+[e ( _Engine_step (2 , &U . *U _motionController 1 _ys ]
+"91
+[; ;motioncontroller/MotionController.c: 91:         if (p1 >= rateX) {
+[e $ ! >= _p1 _rateX 309  ]
+{
+"92
+[; ;motioncontroller/MotionController.c: 92:             Engine_step(&motionController->x, xs);
+[e ( _Engine_step (2 , &U . *U _motionController 0 _xs ]
+"93
+[; ;motioncontroller/MotionController.c: 93:             p1 -= rateX;
+[e =- _p1 _rateX ]
+"94
+[; ;motioncontroller/MotionController.c: 94:         }
+}
+[e :U 309 ]
+"95
+[; ;motioncontroller/MotionController.c: 95:         if (p2 >= rateZ) {
+[e $ ! >= _p2 _rateZ 310  ]
+{
+"96
+[; ;motioncontroller/MotionController.c: 96:             Engine_step(&motionController->z, zs);
+[e ( _Engine_step (2 , &U . *U _motionController 2 _zs ]
+"97
+[; ;motioncontroller/MotionController.c: 97:             p2 -= rateZ;
+[e =- _p2 _rateZ ]
+"98
+[; ;motioncontroller/MotionController.c: 98:         }
+}
+[e :U 310 ]
+"99
+[; ;motioncontroller/MotionController.c: 99:         p1 += 1;
+[e =+ _p1 -> -> 1 `i `f ]
+"100
+[; ;motioncontroller/MotionController.c: 100:         p2 += 1;
+[e =+ _p2 -> -> 1 `i `f ]
+"103
+[; ;motioncontroller/MotionController.c: 103:          }
+}
+[e -- _intDy -> -> 1 `i `f ]
+[e $ > _intDy -> -U -> 1 `i `f 306  ]
+[e :U 307 ]
+}
+"109
+[; ;motioncontroller/MotionController.c: 109:     }
+}
+[e $U 311  ]
+"110
+[; ;motioncontroller/MotionController.c: 110:     else {
+[e :U 305 ]
+{
+"111
+[; ;motioncontroller/MotionController.c: 111:         float rateY =intDz / intDy;
+[v _rateY `f ~T0 @X0 1 a ]
+[e = _rateY / _intDz _intDy ]
+"112
+[; ;motioncontroller/MotionController.c: 112:         float rateX =intDz / intDx;
+[v _rateX `f ~T0 @X0 1 a ]
+[e = _rateX / _intDz _intDx ]
+"113
+[; ;motioncontroller/MotionController.c: 113:         float p1;
+[v _p1 `f ~T0 @X0 1 a ]
+"114
+[; ;motioncontroller/MotionController.c: 114:         float p2;
+[v _p2 `f ~T0 @X0 1 a ]
+"116
+[; ;motioncontroller/MotionController.c: 116:         for(;intDz>-1;intDz--){
+{
+[e $ > _intDz -> -U -> 1 `i `f 312  ]
+[e $U 313  ]
+[e :U 312 ]
+{
+"117
+[; ;motioncontroller/MotionController.c: 117:              Engine_step(&motionController->z, zs);
+[e ( _Engine_step (2 , &U . *U _motionController 2 _zs ]
+"118
+[; ;motioncontroller/MotionController.c: 118:         if (p1 >= rateY) {
+[e $ ! >= _p1 _rateY 315  ]
+{
+"119
+[; ;motioncontroller/MotionController.c: 119:             Engine_step(&motionController->y, ys);
+[e ( _Engine_step (2 , &U . *U _motionController 1 _ys ]
+"120
+[; ;motioncontroller/MotionController.c: 120:             p1 -= rateY;
+[e =- _p1 _rateY ]
+"121
+[; ;motioncontroller/MotionController.c: 121:         }
+}
+[e :U 315 ]
+"122
+[; ;motioncontroller/MotionController.c: 122:         if (p2 >= rateX) {
+[e $ ! >= _p2 _rateX 316  ]
+{
+"123
+[; ;motioncontroller/MotionController.c: 123:             Engine_step(&motionController->x, xs);
+[e ( _Engine_step (2 , &U . *U _motionController 0 _xs ]
+"124
+[; ;motioncontroller/MotionController.c: 124:             p2 -= rateX;
+[e =- _p2 _rateX ]
+"125
+[; ;motioncontroller/MotionController.c: 125:         }
+}
+[e :U 316 ]
+"126
+[; ;motioncontroller/MotionController.c: 126:         p1 += 1;
+[e =+ _p1 -> -> 1 `i `f ]
+"127
+[; ;motioncontroller/MotionController.c: 127:         p2 += 1;
+[e =+ _p2 -> -> 1 `i `f ]
+"129
+[; ;motioncontroller/MotionController.c: 129:         }
+}
+[e -- _intDz -> -> 1 `i `f ]
+[e $ > _intDz -> -U -> 1 `i `f 312  ]
+[e :U 313 ]
+}
+"136
+[; ;motioncontroller/MotionController.c: 136:     }
+}
+[e :U 311 ]
+[e :U 304 ]
+"140
+[; ;motioncontroller/MotionController.c: 140: }
+[e :UE 291 ]
+}
+"213
+[; ;motioncontroller/MotionController.c: 213: Point MotionController_getCurrentCoord(MotionController * motionController) {
+[v _MotionController_getCurrentCoord `(S288 ~T0 @X0 1 ef1`*S289 ]
+{
+[e :U _MotionController_getCurrentCoord ]
+[v _motionController `*S289 ~T0 @X0 1 r1 ]
+[f ]
+"214
+[; ;motioncontroller/MotionController.c: 214:     return Point_init3D(
+[e ) ( _Point_init3D (3 , , ( _Engine_getCurrentCoord (1 &U . *U _motionController 0 ( _Engine_getCurrentCoord (1 &U . *U _motionController 1 ( _Engine_getCurrentCoord (1 &U . *U _motionController 2 ]
+[e $UE 317  ]
+"219
+[; ;motioncontroller/MotionController.c: 219: }
+[e :UE 317 ]
+}
+"221
+[; ;motioncontroller/MotionController.c: 221: Point MotionController_getDestinationCoord(MotionController * motionController) {
+[v _MotionController_getDestinationCoord `(S288 ~T0 @X0 1 ef1`*S289 ]
+{
+[e :U _MotionController_getDestinationCoord ]
+[v _motionController `*S289 ~T0 @X0 1 r1 ]
+[f ]
+"222
+[; ;motioncontroller/MotionController.c: 222:     return Point_init3D(
+[e ) ( _Point_init3D (3 , , ( _Engine_getDestinationCoord (1 &U . *U _motionController 0 ( _Engine_getDestinationCoord (1 &U . *U _motionController 1 ( _Engine_getDestinationCoord (1 &U . *U _motionController 2 ]
+[e $UE 318  ]
+"227
+[; ;motioncontroller/MotionController.c: 227: }
+[e :UE 318 ]
+}

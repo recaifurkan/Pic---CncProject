@@ -1,0 +1,71 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F4 `(v ~T0 @X0 0 tf2`*S1`i ]
+"15 led/../io/digitalOutput/DigitalOutput.h
+[; ;led/../io/digitalOutput/DigitalOutput.h: 15:     typedef struct DigitalOutput {
+[s S1 `*F4 1 `i 1 ]
+[n S1 DigitalOutput set isHigh ]
+"19 led/Led.h
+[; ;led/Led.h: 19: typedef struct Led{
+[s S2 `*S1 1 `i 1 ]
+[n S2 Led output isOpen ]
+"22 led/../io/digitalOutput/DigitalOutput.h
+[; ;led/../io/digitalOutput/DigitalOutput.h: 22:     void DigitalOutput_open(DigitalOutput *outputable);
+[v _DigitalOutput_open `(v ~T0 @X0 0 ef1`*S1 ]
+"26
+[; ;led/../io/digitalOutput/DigitalOutput.h: 26:     void DigitalOutput_close(DigitalOutput *outputable);
+[v _DigitalOutput_close `(v ~T0 @X0 0 ef1`*S1 ]
+"4 led/Led.c
+[; ;led/Led.c: 4: Led Led_init(DigitalOutput * output) {
+[v _Led_init `(S2 ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _Led_init ]
+[v _output `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"5
+[; ;led/Led.c: 5:     Led led;
+[v _led `S2 ~T0 @X0 1 a ]
+"6
+[; ;led/Led.c: 6:     led.output = output;
+[e = . _led 0 _output ]
+"7
+[; ;led/Led.c: 7:     return led;
+[e ) _led ]
+[e $UE 3  ]
+"9
+[; ;led/Led.c: 9: }
+[e :UE 3 ]
+}
+"11
+[; ;led/Led.c: 11: void Led_open(Led *led) {
+[v _Led_open `(v ~T0 @X0 1 ef1`*S2 ]
+{
+[e :U _Led_open ]
+[v _led `*S2 ~T0 @X0 1 r1 ]
+[f ]
+"12
+[; ;led/Led.c: 12:     led->isOpen = 1;
+[e = . *U _led 1 -> 1 `i ]
+"13
+[; ;led/Led.c: 13:     DigitalOutput_open(led->output);
+[e ( _DigitalOutput_open (1 . *U _led 0 ]
+"14
+[; ;led/Led.c: 14: }
+[e :UE 4 ]
+}
+"16
+[; ;led/Led.c: 16: void Led_close(Led *led) {
+[v _Led_close `(v ~T0 @X0 1 ef1`*S2 ]
+{
+[e :U _Led_close ]
+[v _led `*S2 ~T0 @X0 1 r1 ]
+[f ]
+"17
+[; ;led/Led.c: 17:     led->isOpen = 0;
+[e = . *U _led 1 -> 0 `i ]
+"18
+[; ;led/Led.c: 18:     DigitalOutput_close(led->output);
+[e ( _DigitalOutput_close (1 . *U _led 0 ]
+"19
+[; ;led/Led.c: 19: }
+[e :UE 5 ]
+}

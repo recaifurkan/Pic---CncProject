@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1586726543 source:f:\workspaces\embedded\cncpic\calgorithtests\calgorithtests\point.c
+	"Point.h"
+
+1586726560 f:\workspaces\embedded\cncpic\calgorithtests\calgorithtests\point.h
+	<math.h>
+
+1586726543 source:f:\workspaces\embedded\cncpic\cncproject.x\point.c
+	"Point.h"
+
+1586726560 f:\workspaces\embedded\cncpic\cncproject.x\point.h
+	<math.h>
+
+1586727400 source:f:\workspaces\embedded\cncpic\calgorithtests\calgorithtests\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Point.h"
+
