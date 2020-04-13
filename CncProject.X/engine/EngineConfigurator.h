@@ -14,25 +14,29 @@ extern "C" {
 #include <xc.h>
 #include "Engine.h"
 #include "../io/digitalOutput/DigitalOutput.h"
-#include "../application/Application.h"
+
+
+
 
     void xEngineMotionInit();
     void yEngineMotionInit();
     void zEngineMotionInit();
-    void xEngineMotionSet(Engine * engine, int value);
-    void yEngineMotionSet(Engine * engine, int value);
-    void zEngineMotionSet(Engine * engine, int value);
+    void xEngineMotionSet(DigitalOutput * engine, int value);
+    void yEngineMotionSet(DigitalOutput * engine, int value);
+    void zEngineMotionSet(DigitalOutput * engine, int value);
 
     void xEngineDirInit();
     void yEngineDirInit();
     void zEngineDirInit();
-    void xEngineDirSet(Engine * engine, int value);
-    void yEngineDirSet(Engine * engine, int value);
-    void zEngineDirSet(Engine * engine, int value);
+    void xEngineDirSet(DigitalOutput * engine, int value);
+    void yEngineDirSet(DigitalOutput * engine, int value);
+    void zEngineDirSet(DigitalOutput * engine, int value);
+
+ 
 
 
-    
-    void EngineConfigurator_configEngines();
+
+
 
 
 

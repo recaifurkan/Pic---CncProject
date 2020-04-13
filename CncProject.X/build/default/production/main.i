@@ -4602,7 +4602,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 typedef struct Led{
-    DigitalOutput *output;
+    DigitalOutput* output;
     int isOpen;
 }Led;
 
@@ -4621,7 +4621,7 @@ void Led_blink(Led *led , int time);
 # 1 "./application/../button/../io/digitalinput/DigitalInput.h" 1
 # 15 "./application/../button/../io/digitalinput/DigitalInput.h"
     typedef struct DigitalInput {
-        int (*read)(struct DigitalInput * input);
+        int (*read)(struct DigitalInput *input);
     } DigitalInput;
 
     DigitalInput DigitalInput_init(void (*init)(void), int (*read)(void));
@@ -4635,7 +4635,7 @@ typedef struct Button {
     void (*onPressed)(void);
 } Button;
 
-Button Button_init(DigitalInput * input, void (*onPressed)(void) );
+Button Button_init(DigitalInput *input, void (*onPressed)(void) );
 
 
 int Button_getValue(Button *button);
@@ -4698,33 +4698,27 @@ void USARTInit(Usart *usart,long baudRate) ;
 # 14 "./application/../motioncontroller/MotionController.h" 2
 
 # 1 "./application/../motioncontroller/../engine/EngineConfigurator.h" 1
-# 17 "./application/../motioncontroller/../engine/EngineConfigurator.h"
-# 1 "./application/../motioncontroller/../engine/../application/Application.h" 1
-# 17 "./application/../motioncontroller/../engine/EngineConfigurator.h" 2
-
-
+# 21 "./application/../motioncontroller/../engine/EngineConfigurator.h"
     void xEngineMotionInit();
     void yEngineMotionInit();
     void zEngineMotionInit();
-    void xEngineMotionSet(Engine * engine, int value);
-    void yEngineMotionSet(Engine * engine, int value);
-    void zEngineMotionSet(Engine * engine, int value);
+    void xEngineMotionSet(DigitalOutput * engine, int value);
+    void yEngineMotionSet(DigitalOutput * engine, int value);
+    void zEngineMotionSet(DigitalOutput * engine, int value);
 
     void xEngineDirInit();
     void yEngineDirInit();
     void zEngineDirInit();
-    void xEngineDirSet(Engine * engine, int value);
-    void yEngineDirSet(Engine * engine, int value);
-    void zEngineDirSet(Engine * engine, int value);
-
-
-
-    void EngineConfigurator_configEngines();
+    void xEngineDirSet(DigitalOutput * engine, int value);
+    void yEngineDirSet(DigitalOutput * engine, int value);
+    void zEngineDirSet(DigitalOutput * engine, int value);
 # 15 "./application/../motioncontroller/MotionController.h" 2
 
 # 1 "./application/../motioncontroller/../utils/Utils.h" 1
-# 16 "./application/../motioncontroller/../utils/Utils.h"
+# 17 "./application/../motioncontroller/../utils/Utils.h"
     void Library_delayMs(float time);
+
+    void printDebug(char * text);
 # 16 "./application/../motioncontroller/MotionController.h" 2
 
 # 1 "./application/../motioncontroller/../Point.h" 1
@@ -5222,13 +5216,36 @@ double yn(int, double);
     Point MotionController_getCurrentCoord(MotionController * motionController);
 
     Point MotionController_getDestinationCoord(MotionController * motionController);
-# 21 "./application/../motioncontroller/../engine/../application/Application.h" 2
+# 21 "./application/Application.h" 2
 
+# 1 "./application/../led/LedConfigurator.h" 1
+# 20 "./application/../led/LedConfigurator.h"
+    void redLedInit();
+    void yellowLedInit();
+    void blueLedInit();
+    void redLedSet(DigitalOutput * button, int value);
+    void yellowLedSet(DigitalOutput * button, int value);
+    void blueLedSet(DigitalOutput * button, int value);
+    DigitalOutput redLedOutput;
+    DigitalOutput yellowLedOutput;
+    DigitalOutput blueLedOutput;
 
+    void LedConfigurator_config();
+# 22 "./application/Application.h" 2
 
-
+# 1 "./application/../button/ButtonConfigurator.h" 1
+# 18 "./application/../button/ButtonConfigurator.h"
     DigitalInput button1Input;
 
+
+    void button1Init();
+    int button1Read(DigitalInput *in);
+
+    void ButtonConfigurator_config();
+# 23 "./application/Application.h" 2
+
+# 1 "./application/../ApplicationVariables.h" 1
+# 24 "./application/../ApplicationVariables.h"
     DigitalOutput xEngineMotionOutput;
     DigitalOutput yEngineMotionOutput;
     DigitalOutput zEngineMotionOutput;
@@ -5239,6 +5256,15 @@ double yn(int, double);
     DigitalOutput zEngineDirOutput;
 
     Usart usart;
+    MotionController motionController;
+
+
+    Led yellowLed;
+    Led blueLed;
+    Led redLed;
+
+    Button button;
+# 24 "./application/Application.h" 2
 
 
 

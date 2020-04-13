@@ -12,8 +12,11 @@
 extern "C" {
 #endif
 #include "../Configuration.h"
+//
 
     void Library_delayMs(float time);
+    
+    void printDebug(char * text);
 
 
 

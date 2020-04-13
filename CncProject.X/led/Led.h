@@ -17,7 +17,7 @@ extern "C" {
 
     
 typedef struct Led{
-    DigitalOutput *output;
+    DigitalOutput* output;
     int isOpen;
 }Led;
     

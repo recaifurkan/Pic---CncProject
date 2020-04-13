@@ -3,39 +3,27 @@
 [d edition pro ]
 [d chip 18F4520 ]
 [d frameptr 4065 ]
-"20 F:\WorkSpaces\embedded\CncPic\CncProject.X/led/LedConfigurator.h
-[v _redLedInit redLedInit `(v  1 e 1 0 ]
-"25
-[v _yellowLedInit yellowLedInit `(v  1 e 1 0 ]
-"29
-[v _blueLedInit blueLedInit `(v  1 e 1 0 ]
-"33
-[v _redLedSet redLedSet `(v  1 e 1 0 ]
-"39
-[v _yellowLedSet yellowLedSet `(v  1 e 1 0 ]
-"44
-[v _blueLedSet blueLedSet `(v  1 e 1 0 ]
-"52
-[v _LedConfigurator_config LedConfigurator_config `(v  1 e 1 0 ]
-"42 F:\WorkSpaces\embedded\CncPic\CncProject.X/application/Application.h
-[s S203 . 2 `i 1 id 2 0 ]
-"44 F:\WorkSpaces\embedded\CncPic\CncProject.X\application/Application.c
-[v _Application_init Application_init `(S203  1 e 2 0 ]
-"102
+"29 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\application/Application.h
+[s S111 . 2 `i 1 id 2 0 ]
+"21 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\application/Application.c
+[v _Application_init Application_init `(S111  1 e 2 0 ]
+"79
 [v _Application_loop Application_loop `(v  1 e 1 0 ]
-"137
+"114
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"19 F:\WorkSpaces\embedded\CncPic\CncProject.X/button/Button.h
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S25 DigitalInput 2 `*.37(i 1 read 2 0 ]
-"9 F:\WorkSpaces\embedded\CncPic\CncProject.X\button/Button.c
-[s S200 Button 4 `*.39S25 1 input 2 0 `*.37(v 1 onPressed 2 2 ]
-[v _Button_init Button_init `(S200  1 e 4 0 ]
-"3 F:\WorkSpaces\embedded\CncPic\CncProject.X\button/ButtonConfigurator.c
+"19 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/button/Button.h
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S34 DigitalInput 2 `*.37(i 1 read 2 0 ]
+"9 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\button/Button.c
+[s S108 Button 4 `*.39S34 1 input 2 0 `*.37(v 1 onPressed 2 2 ]
+[v _Button_init Button_init `(S108  1 e 4 0 ]
+"17
+[v _Button_isPressed Button_isPressed `(i  1 e 2 0 ]
+"4 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\button/ButtonConfigurator.c
 [v _button1Init button1Init `(v  1 e 1 0 ]
-"7
+"8
 [v _button1Read button1Read `(i  1 e 2 0 ]
-"11
+"13
 [v _ButtonConfigurator_config ButtonConfigurator_config `(v  1 e 1 0 ]
 "1 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -89,12 +77,12 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"21 F:\WorkSpaces\embedded\CncPic\CncProject.X\engine/Engine.h
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-"3 F:\WorkSpaces\embedded\CncPic\CncProject.X\engine/Engine.c
-[s S402 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S32 1 motionOutput 2 10 `*.39S32 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
-[v _Engine_init Engine_init `(S402  1 e 18 0 ]
+"21 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/engine/Engine.h
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"3 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/Engine.c
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[v _Engine_init Engine_init `(S93  1 e 18 0 ]
 "11
 [v _Engine_setStepPerMetrice Engine_setStepPerMetrice `(v  1 e 1 0 ]
 "15
@@ -105,7 +93,7 @@
 [v _Engine_getDestinationCoord Engine_getDestinationCoord `(f  1 e 4 0 ]
 "26
 [v _Engine_step Engine_step `(v  1 e 1 0 ]
-"3 F:\WorkSpaces\embedded\CncPic\CncProject.X\engine/EngineConfigurator.c
+"3 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/EngineConfigurator.c
 [v _xEngineMotionInit xEngineMotionInit `(v  1 e 1 0 ]
 "8
 [v _yEngineMotionInit yEngineMotionInit `(v  1 e 1 0 ]
@@ -113,6 +101,7 @@
 [v _zEngineMotionInit zEngineMotionInit `(v  1 e 1 0 ]
 "18
 [v _xEngineMotionSet xEngineMotionSet `(v  1 e 1 0 ]
+[v i2_xEngineMotionSet xEngineMotionSet `(v  1 e 1 0 ]
 "30
 [v _xEngineDirInit xEngineDirInit `(v  1 e 1 0 ]
 "34
@@ -121,55 +110,84 @@
 [v _zEngineDirInit zEngineDirInit `(v  1 e 1 0 ]
 "42
 [v _xEngineDirSet xEngineDirSet `(v  1 e 1 0 ]
-"54
-[v _EngineConfigurator_configEngines EngineConfigurator_configEngines `(v  1 e 1 0 ]
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S25 DigitalInput 2 `*.37(i 1 read 2 0 ]
-"3 F:\WorkSpaces\embedded\CncPic\CncProject.X\io/digitalinput/DigitalInput.c
-[v _DigitalInput_init DigitalInput_init `(S25  1 e 2 0 ]
-"12
+[v i2_xEngineDirSet xEngineDirSet `(v  1 e 1 0 ]
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S34 DigitalInput 2 `*.37(i 1 read 2 0 ]
+"4 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\io/digitalinput/DigitalInput.c
+[v _DigitalInput_init DigitalInput_init `(S34  1 e 2 0 ]
+"13
 [v _DigitalInput_getValue DigitalInput_getValue `(i  1 e 2 0 ]
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-"3 F:\WorkSpaces\embedded\CncPic\CncProject.X\io/digitalOutput/DigitalOutput.c
-[v _DigitalOutput_init DigitalOutput_init `(S32  1 e 4 0 ]
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"3 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\io/digitalOutput/DigitalOutput.c
+[v _DigitalOutput_init DigitalOutput_init `(S25  1 e 4 0 ]
 "11
 [v _DigitalOutput_open DigitalOutput_open `(v  1 e 1 0 ]
 [v i2_DigitalOutput_open DigitalOutput_open `(v  1 e 1 0 ]
-"16
+"17
 [v _DigitalOutput_close DigitalOutput_close `(v  1 e 1 0 ]
-"19 F:\WorkSpaces\embedded\CncPic\CncProject.X/led/Led.h
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-"4 F:\WorkSpaces\embedded\CncPic\CncProject.X\led/Led.c
-[s S96 Led 4 `*.39S32 1 output 2 0 `i 1 isOpen 2 2 ]
-[v _Led_init Led_init `(S96  1 e 4 0 ]
+"23
+[v _DigitalOutput_set DigitalOutput_set `(v  1 e 1 0 ]
+[v i2_DigitalOutput_set DigitalOutput_set `(v  1 e 1 0 ]
+"19 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/led/Led.h
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"4 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/Led.c
+[s S104 Led 4 `*.39S25 1 output 2 0 `i 1 isOpen 2 2 ]
+[v _Led_init Led_init `(S104  1 e 4 0 ]
 "11
 [v _Led_open Led_open `(v  1 e 1 0 ]
 [v i2_Led_open Led_open `(v  1 e 1 0 ]
 "16
 [v _Led_close Led_close `(v  1 e 1 0 ]
-"17 F:\WorkSpaces\embedded\CncPic\CncProject.X\main.c
+"4 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/LedConfigurator.c
+[v _redLedInit redLedInit `(v  1 e 1 0 ]
+"9
+[v _yellowLedInit yellowLedInit `(v  1 e 1 0 ]
+"13
+[v _blueLedInit blueLedInit `(v  1 e 1 0 ]
+"17
+[v _redLedSet redLedSet `(v  1 e 1 0 ]
+[v i2_redLedSet redLedSet `(v  1 e 1 0 ]
+"23
+[v _yellowLedSet yellowLedSet `(v  1 e 1 0 ]
+[v i2_yellowLedSet yellowLedSet `(v  1 e 1 0 ]
+"28
+[v _blueLedSet blueLedSet `(v  1 e 1 0 ]
+[v i2_blueLedSet blueLedSet `(v  1 e 1 0 ]
+"32
+[v _LedConfigurator_config LedConfigurator_config `(v  1 e 1 0 ]
+"17 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"18 F:\WorkSpaces\embedded\CncPic\CncProject.X/Point.h
-[s S796 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
-"213 F:\WorkSpaces\embedded\CncPic\CncProject.X\motioncontroller/MotionController.c
-[v _MotionController_getCurrentCoord MotionController_getCurrentCoord `(S796  1 e 12 0 ]
-"18 F:\WorkSpaces\embedded\CncPic\CncProject.X/Point.h
-[s S796 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
-"221 F:\WorkSpaces\embedded\CncPic\CncProject.X\motioncontroller/MotionController.c
-[v _MotionController_getDestinationCoord MotionController_getDestinationCoord `(S796  1 e 12 0 ]
-"18 F:\WorkSpaces\embedded\CncPic\CncProject.X/Point.h
-[s S796 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
-"5 F:\WorkSpaces\embedded\CncPic\CncProject.X\Point.c
-[v _Point_init3D Point_init3D `(S796  1 e 12 0 ]
-"39 F:\WorkSpaces\embedded\CncPic\CncProject.X\softuart/softusart.c
-[v _softUSARTWriteString softUSARTWriteString `(v  1 e 1 0 ]
-"53
+"6 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\motioncontroller/MotionController.c
+[v _EngineConfigurator_configEngines EngineConfigurator_configEngines `(v  1 e 1 0 ]
+"19 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/motioncontroller/MotionController.h
+"21 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/engine/Engine.h
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\motioncontroller/MotionController.c
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[s S100 MotionController 54 `S93 1 x 18 0 `S93 1 y 18 18 `S93 1 z 18 36 ]
+[v _MotionController_init MotionController_init `(S100  1 e 54 0 ]
+"28
+[v _MotionController_control MotionController_control `(v  1 e 1 0 ]
+"18 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/Point.h
+[s S735 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
+"223 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\motioncontroller/MotionController.c
+[v _MotionController_getCurrentCoord MotionController_getCurrentCoord `(S735  1 e 12 0 ]
+"18 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/Point.h
+[s S735 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
+"231 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\motioncontroller/MotionController.c
+[v _MotionController_getDestinationCoord MotionController_getDestinationCoord `(S735  1 e 12 0 ]
+"18 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/Point.h
+[s S735 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
+"5 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\Point.c
+[v _Point_init3D Point_init3D `(S735  1 e 12 0 ]
+"53 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\softuart/softusart.c
 [v _softusart_yaz softusart_yaz `(v  1 e 1 0 ]
 "68
 [v _softusart_oku softusart_oku `(uc  1 e 1 0 ]
-"12 F:\WorkSpaces\embedded\CncPic\CncProject.X\usart/Usart.c
+"12 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\usart/Usart.c
 [v _setupFunctions setupFunctions `(v  1 e 1 0 ]
 "32
 [v _enableInterrupts enableInterrupts `(v  1 e 1 0 ]
@@ -177,7 +195,7 @@
 [v _calculateSpbrg calculateSpbrg `(l  1 e 4 0 ]
 "42
 [v _USARTInit USARTInit `(v  1 e 1 0 ]
-"25 F:\WorkSpaces\embedded\CncPic\CncProject.X\usart/UsartFunctions.h
+"25 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\usart/UsartFunctions.h
 [v _USARTDataReady USARTDataReady `(i  1 e 2 0 ]
 "29
 [v _USARTReadByte USARTReadByte `(uc  1 e 1 0 ]
@@ -199,44 +217,42 @@
 [v _USARTWriteLong USARTWriteLong `(v  1 e 1 0 ]
 "126
 [v _USARTWriteFloat USARTWriteFloat `(v  1 e 1 0 ]
-"4 F:\WorkSpaces\embedded\CncPic\CncProject.X\utils/Utils.c
+"4 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\utils/Utils.c
 [v _recursiveDelay recursiveDelay `(v  1 e 1 0 ]
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-"48 F:\WorkSpaces\embedded\CncPic\CncProject.X/led/LedConfigurator.h
-[v _redLedOutput redLedOutput `S32  1 e 4 0 ]
-"49
-[v _yellowLedOutput yellowLedOutput `S32  1 e 4 0 ]
-"50
-[v _blueLedOutput blueLedOutput `S32  1 e 4 0 ]
-"36 F:\WorkSpaces\embedded\CncPic\CncProject.X\application/Application.c
-[s S96 Led 4 `*.39S32 1 output 2 0 `i 1 isOpen 2 2 ]
-[v _yellowLed yellowLed `S96  1 e 4 0 ]
-"37
-[v _blueLed blueLed `S96  1 e 4 0 ]
-"38
-[v _redLed redLed `S96  1 e 4 0 ]
-[s S25 DigitalInput 2 `*.37(i 1 read 2 0 ]
-"40
-[s S200 Button 4 `*.39S25 1 input 2 0 `*.37(v 1 onPressed 2 2 ]
-[v _button button `S200  1 e 4 0 ]
-"25 F:\WorkSpaces\embedded\CncPic\CncProject.X/application/Application.h
-[v _button1Input button1Input `S25  1 e 2 0 ]
-"27
-[v _xEngineMotionOutput xEngineMotionOutput `S32  1 e 4 0 ]
-"28
-[v _yEngineMotionOutput yEngineMotionOutput `S32  1 e 4 0 ]
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"24 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/ApplicationVariables.h
+[v _xEngineMotionOutput xEngineMotionOutput `S25  1 e 4 0 ]
+"25
+[v _yEngineMotionOutput yEngineMotionOutput `S25  1 e 4 0 ]
+"26
+[v _zEngineMotionOutput zEngineMotionOutput `S25  1 e 4 0 ]
 "29
-[v _zEngineMotionOutput zEngineMotionOutput `S32  1 e 4 0 ]
-"32
-[v _xEngineDirOutput xEngineDirOutput `S32  1 e 4 0 ]
-"33
-[v _yEngineDirOutput yEngineDirOutput `S32  1 e 4 0 ]
-"34
-[v _zEngineDirOutput zEngineDirOutput `S32  1 e 4 0 ]
+[v _xEngineDirOutput xEngineDirOutput `S25  1 e 4 0 ]
+"30
+[v _yEngineDirOutput yEngineDirOutput `S25  1 e 4 0 ]
+"31
+[v _zEngineDirOutput zEngineDirOutput `S25  1 e 4 0 ]
 [s S50 . 20 `*.37(i 1 isDataReady 2 0 `*.37(uc 1 readChar 2 2 `*.37(i 1 readString 2 4 `*.37(v 1 writeByte 2 6 `*.37(v 1 writeString 2 8 `*.37(v 1 writeLine 2 10 `*.37(v 1 writeInt 2 12 `*.37(v 1 writeLong 2 14 `*.37(v 1 writeFloat 2 16 `*.37(uc 1 readByte 2 18 ]
-"36
+"33
 [v _usart usart `S50  1 e 20 0 ]
-[s S996 . 1 `uc 1 RD0 1 0 :1:0 
+"34
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[s S100 MotionController 54 `S93 1 x 18 0 `S93 1 y 18 18 `S93 1 z 18 36 ]
+[v _motionController motionController `S100  1 e 54 0 ]
+"37
+[s S104 Led 4 `*.39S25 1 output 2 0 `i 1 isOpen 2 2 ]
+[v _yellowLed yellowLed `S104  1 e 4 0 ]
+"38
+[v _blueLed blueLed `S104  1 e 4 0 ]
+"39
+[v _redLed redLed `S104  1 e 4 0 ]
+[s S34 DigitalInput 2 `*.37(i 1 read 2 0 ]
+"41
+[s S108 Button 4 `*.39S34 1 input 2 0 `*.37(v 1 onPressed 2 2 ]
+[v _button button `S108  1 e 4 0 ]
+"18 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\button/ButtonConfigurator.h
+[v _button1Input button1Input `S34  1 e 2 0 ]
+[s S959 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -246,7 +262,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "669 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[s S1005 . 1 `uc 1 PSP0 1 0 :1:0 
+[s S968 . 1 `uc 1 PSP0 1 0 :1:0 
 `uc 1 PSP1 1 0 :1:1 
 `uc 1 PSP2 1 0 :1:2 
 `uc 1 PSP3 1 0 :1:3 
@@ -255,21 +271,21 @@
 `uc 1 PSP6 1 0 :1:6 
 `uc 1 PSP7 1 0 :1:7 
 ]
-[s S1014 . 1 `uc 1 . 1 0 :5:0 
+[s S977 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 P1B 1 0 :1:5 
 `uc 1 P1C 1 0 :1:6 
 `uc 1 P1D 1 0 :1:7 
 ]
-[s S1019 . 1 `uc 1 . 1 0 :7:0 
+[s S982 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S1022 . 1 `S996 1 . 1 0 `S1005 1 . 1 0 `S1014 1 . 1 0 `S1019 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES1022  1 e 1 @3971 ]
+[u S985 . 1 `S959 1 . 1 0 `S968 1 . 1 0 `S977 1 . 1 0 `S982 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES985  1 e 1 @3971 ]
 "977
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "1089
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-[s S588 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S452 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -279,7 +295,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1116
-[s S597 . 1 `uc 1 LB0 1 0 :1:0 
+[s S461 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -288,11 +304,11 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S606 . 1 `S588 1 . 1 0 `S597 1 . 1 0 ]
-[v _LATBbits LATBbits `VES606  1 e 1 @3978 ]
+[u S470 . 1 `S452 1 . 1 0 `S461 1 . 1 0 ]
+[v _LATBbits LATBbits `VES470  1 e 1 @3978 ]
 "1201
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S139 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S409 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -302,7 +318,7 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1228
-[s S148 . 1 `uc 1 LC0 1 0 :1:0 
+[s S418 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -311,11 +327,11 @@
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S157 . 1 `S139 1 . 1 0 `S148 1 . 1 0 ]
-[v _LATCbits LATCbits `VES157  1 e 1 @3979 ]
+[u S427 . 1 `S409 1 . 1 0 `S418 1 . 1 0 ]
+[v _LATCbits LATCbits `VES427  1 e 1 @3979 ]
 "1313
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S99 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S915 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -325,7 +341,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "1340
-[s S108 . 1 `uc 1 LD0 1 0 :1:0 
+[s S924 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -334,11 +350,11 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S117 . 1 `S99 1 . 1 0 `S108 1 . 1 0 ]
-[v _LATDbits LATDbits `VES117  1 e 1 @3980 ]
+[u S933 . 1 `S915 1 . 1 0 `S924 1 . 1 0 ]
+[v _LATDbits LATDbits `VES933  1 e 1 @3980 ]
 "1425
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
-[s S1094 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S1061 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -348,12 +364,12 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2693
-[s S1103 . 1 `uc 1 . 1 0 :4:0 
+[s S1070 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S1107 . 1 `S1094 1 . 1 0 `S1103 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1107  1 e 1 @3998 ]
+[u S1074 . 1 `S1061 1 . 1 0 `S1070 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1074  1 e 1 @3998 ]
 "3576
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3588
@@ -412,22 +428,28 @@
 [v _TXEN TXEN `VEb  1 e 0 @32101 ]
 "8731
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
-"17 F:\WorkSpaces\embedded\CncPic\CncProject.X\main.c
+"26 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/LedConfigurator.h
+[v _redLedOutput redLedOutput `S25  1 e 4 0 ]
+"27
+[v _yellowLedOutput yellowLedOutput `S25  1 e 4 0 ]
+"28
+[v _blueLedOutput blueLedOutput `S25  1 e 4 0 ]
+"17 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-[s S203 . 2 `i 1 id 2 0 ]
+[s S111 . 2 `i 1 id 2 0 ]
 "19
-[v main@app app `S203  1 a 2 36 ]
+[v main@app app `S111  1 a 2 92 ]
 "29
 } 0
-"102 F:\WorkSpaces\embedded\CncPic\CncProject.X\application/Application.c
+"79 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\application/Application.c
 [v _Application_loop Application_loop `(v  1 e 1 0 ]
 {
-[s S203 . 2 `i 1 id 2 0 ]
-[v Application_loop@app app `*.39S203  1 p 2 4 ]
-"135
+[s S111 . 2 `i 1 id 2 0 ]
+[v Application_loop@app app `*.39S111  1 p 2 12 ]
+"112
 } 0
-"93 F:\WorkSpaces\embedded\CncPic\CncProject.X\usart/UsartFunctions.h
+"93 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\usart/UsartFunctions.h
 [v _USARTWriteLine USARTWriteLine `(v  1 e 1 0 ]
 {
 [v USARTWriteLine@ln ln `*.35Cuc  1 p 2 2 ]
@@ -439,53 +461,60 @@
 [v USARTWriteString@str str `*.35Cuc  1 p 2 0 ]
 "82
 } 0
-"11 F:\WorkSpaces\embedded\CncPic\CncProject.X\led/Led.c
+"11 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/Led.c
 [v _Led_open Led_open `(v  1 e 1 0 ]
 {
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-[s S96 Led 4 `*.39S32 1 output 2 0 `i 1 isOpen 2 2 ]
-[v Led_open@led led `*.39S96  1 p 2 2 ]
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S104 Led 4 `*.39S25 1 output 2 0 `i 1 isOpen 2 2 ]
+[v Led_open@led led `*.39S104  1 p 2 10 ]
 "14
 } 0
-"11 F:\WorkSpaces\embedded\CncPic\CncProject.X\io/digitalOutput/DigitalOutput.c
-[v _DigitalOutput_open DigitalOutput_open `(v  1 e 1 0 ]
-{
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-[v DigitalOutput_open@output output `*.39S32  1 p 2 0 ]
-"14
-} 0
-"16 F:\WorkSpaces\embedded\CncPic\CncProject.X\led/Led.c
+"16
 [v _Led_close Led_close `(v  1 e 1 0 ]
 {
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-[s S96 Led 4 `*.39S32 1 output 2 0 `i 1 isOpen 2 2 ]
-[v Led_close@led led `*.39S96  1 p 2 2 ]
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S104 Led 4 `*.39S25 1 output 2 0 `i 1 isOpen 2 2 ]
+[v Led_close@led led `*.39S104  1 p 2 10 ]
 "19
 } 0
-"16 F:\WorkSpaces\embedded\CncPic\CncProject.X\io/digitalOutput/DigitalOutput.c
-[v _DigitalOutput_close DigitalOutput_close `(v  1 e 1 0 ]
+"17 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\button/Button.c
+[v _Button_isPressed Button_isPressed `(i  1 e 2 0 ]
 {
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-[v DigitalOutput_close@output output `*.39S32  1 p 2 0 ]
-"19
+"18
+[v Button_isPressed@value value `i  1 a 2 9 ]
+[s S34 DigitalInput 2 `*.37(i 1 read 2 0 ]
+"17
+[s S108 Button 4 `*.39S34 1 input 2 0 `*.37(v 1 onPressed 2 2 ]
+[v Button_isPressed@button button `*.39S108  1 p 2 7 ]
+"20
 } 0
-"12 F:\WorkSpaces\embedded\CncPic\CncProject.X\io/digitalinput/DigitalInput.c
+"13 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\io/digitalinput/DigitalInput.c
 [v _DigitalInput_getValue DigitalInput_getValue `(i  1 e 2 0 ]
 {
-[s S25 DigitalInput 2 `*.37(i 1 read 2 0 ]
-[v DigitalInput_getValue@input input `*.39S25  1 p 2 0 ]
-"15
+"14
+[v DigitalInput_getValue@val val `i  1 a 2 5 ]
+[s S34 DigitalInput 2 `*.37(i 1 read 2 0 ]
+"13
+[v DigitalInput_getValue@input input `*.39S34  1 p 2 3 ]
+"20
 } 0
-"42 F:\WorkSpaces\embedded\CncPic\CncProject.X/application/Application.h
-[s S203 . 2 `i 1 id 2 0 ]
-"44 F:\WorkSpaces\embedded\CncPic\CncProject.X\application/Application.c
-[v _Application_init Application_init `(S203  1 e 2 0 ]
+"8 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\button/ButtonConfigurator.c
+[v _button1Read button1Read `(i  1 e 2 0 ]
 {
-"45
-[v Application_init@app app `S203  1 a 2 34 ]
-"100
+[s S34 DigitalInput 2 `*.37(i 1 read 2 0 ]
+[v button1Read@in in `*.39S34  1 p 2 0 ]
+"10
 } 0
-"42 F:\WorkSpaces\embedded\CncPic\CncProject.X\usart/Usart.c
+"29 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\application/Application.h
+[s S111 . 2 `i 1 id 2 0 ]
+"21 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\application/Application.c
+[v _Application_init Application_init `(S111  1 e 2 0 ]
+{
+"22
+[v Application_init@app app `S111  1 a 2 90 ]
+"77
+} 0
+"42 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\usart/Usart.c
 [v _USARTInit USARTInit `(v  1 e 1 0 ]
 {
 [s S50 . 20 `*.37(i 1 isDataReady 2 0 `*.37(uc 1 readChar 2 2 `*.37(i 1 readString 2 4 `*.37(v 1 writeByte 2 6 `*.37(v 1 writeString 2 8 `*.37(v 1 writeLine 2 10 `*.37(v 1 writeInt 2 12 `*.37(v 1 writeLong 2 14 `*.37(v 1 writeFloat 2 16 `*.37(uc 1 readByte 2 18 ]
@@ -527,37 +556,376 @@
 [v ___aldiv@divisor divisor `l  1 p 4 4 ]
 "41
 } 0
-"19 F:\WorkSpaces\embedded\CncPic\CncProject.X/led/Led.h
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-"4 F:\WorkSpaces\embedded\CncPic\CncProject.X\led/Led.c
-[s S96 Led 4 `*.39S32 1 output 2 0 `i 1 isOpen 2 2 ]
-[v _Led_init Led_init `(S96  1 e 4 0 ]
+"19 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/motioncontroller/MotionController.h
+"21 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/engine/Engine.h
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\motioncontroller/MotionController.c
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[s S100 MotionController 54 `S93 1 x 18 0 `S93 1 y 18 18 `S93 1 z 18 36 ]
+[v _MotionController_init MotionController_init `(S100  1 e 54 0 ]
 {
-"5
-[v Led_init@led led `S96  1 a 4 4 ]
+"16
+[v MotionController_init@motionController motionController `S100  1 a 54 0 ]
+"26
+} 0
+"11 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/Engine.c
+[v _Engine_setStepPerMetrice Engine_setStepPerMetrice `(v  1 e 1 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[v Engine_setStepPerMetrice@engine engine `*.39S93  1 p 2 0 ]
+[v Engine_setStepPerMetrice@stepPerMm stepPerMm `f  1 p 4 2 ]
+"13
+} 0
+"21 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/engine/Engine.h
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"3 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/Engine.c
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[v _Engine_init Engine_init `(S93  1 e 18 0 ]
+{
 "4
-[v Led_init@output output `*.39S32  1 p 2 0 ]
+[v Engine_init@engine engine `S93  1 a 18 18 ]
+"3
+[v Engine_init@motionOutput motionOutput `*.39S25  1 p 2 0 ]
+[v Engine_init@dirOutput dirOutput `*.39S25  1 p 2 2 ]
 "9
 } 0
-"52 F:\WorkSpaces\embedded\CncPic\CncProject.X/led/LedConfigurator.h
+"6 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\motioncontroller/MotionController.c
+[v _EngineConfigurator_configEngines EngineConfigurator_configEngines `(v  1 e 1 0 ]
+{
+"13
+} 0
+"28
+[v _MotionController_control MotionController_control `(v  1 e 1 0 ]
+{
+"124
+[v MotionController_control@p2_864 p2 `f  1 a 4 56 ]
+"123
+[v MotionController_control@p1_863 p1 `f  1 a 4 52 ]
+"122
+[v MotionController_control@rateX_862 rateX `f  1 a 4 20 ]
+"121
+[v MotionController_control@rateY_861 rateY `f  1 a 4 16 ]
+"97
+[v MotionController_control@p2_860 p2 `f  1 a 4 48 ]
+"96
+[v MotionController_control@p1_859 p1 `f  1 a 4 44 ]
+"95
+[v MotionController_control@rateZ_858 rateZ `f  1 a 4 12 ]
+"94
+[v MotionController_control@rateX rateX `f  1 a 4 8 ]
+"69
+[v MotionController_control@p2 p2 `f  1 a 4 40 ]
+"68
+[v MotionController_control@p1 p1 `f  1 a 4 36 ]
+"67
+[v MotionController_control@rateZ rateZ `f  1 a 4 4 ]
+"66
+[v MotionController_control@rateY rateY `f  1 a 4 0 ]
+[s S735 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
+"30
+[v MotionController_control@destinationCoord destinationCoord `S735  1 a 12 78 ]
+"29
+[v MotionController_control@currentCoord currentCoord `S735  1 a 12 66 ]
+"60
+[v MotionController_control@intDy intDy `f  1 a 4 98 ]
+"59
+[v MotionController_control@intDx intDx `f  1 a 4 94 ]
+"61
+[v MotionController_control@intDz intDz `f  1 a 4 90 ]
+"36
+[v MotionController_control@dz dz `f  1 a 4 32 ]
+"35
+[v MotionController_control@dy dy `f  1 a 4 28 ]
+"34
+[v MotionController_control@dx dx `f  1 a 4 24 ]
+"38
+[v MotionController_control@zs zs `i  1 a 2 64 ]
+[v MotionController_control@ys ys `i  1 a 2 62 ]
+[v MotionController_control@xs xs `i  1 a 2 60 ]
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"28
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[s S100 MotionController 54 `S93 1 x 18 0 `S93 1 y 18 18 `S93 1 z 18 36 ]
+[v MotionController_control@motionController motionController `*.39S100  1 p 2 52 ]
+"150
+} 0
+"1 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 34 ]
+"4
+} 0
+"10 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 48 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 47 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 38 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 46 ]
+"44
+} 0
+"43 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 33 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 32 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 24 ]
+"70
+} 0
+"245 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 16 ]
+[v ___flsub@a a `d  1 p 4 20 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 15 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 14 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 13 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 12 ]
+"10
+[v ___fladd@b b `d  1 p 4 0 ]
+[v ___fladd@a a `d  1 p 4 4 ]
+"237
+} 0
+"8 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S2005 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S2010 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2013 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2005 1 fAsBytes 4 0 `S2010 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2013  1 a 4 23 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 18 ]
+[s S2081 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S2084 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2081 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2084  1 a 2 27 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 22 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 17 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 16 ]
+"8
+[v ___flmul@b b `d  1 p 4 4 ]
+[v ___flmul@a a `d  1 p 4 8 ]
+"205
+} 0
+"4 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
+"19
+} 0
+"11 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 19 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 12 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 17 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 24 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 23 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 16 ]
+"11
+[v ___fldiv@b b `d  1 p 4 0 ]
+[v ___fldiv@a a `d  1 p 4 4 ]
+"185
+} 0
+"18 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/Point.h
+[s S735 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
+"231 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\motioncontroller/MotionController.c
+[v _MotionController_getDestinationCoord MotionController_getDestinationCoord `(S735  1 e 12 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[s S100 MotionController 54 `S93 1 x 18 0 `S93 1 y 18 18 `S93 1 z 18 36 ]
+[v MotionController_getDestinationCoord@motionController motionController `*.39S100  1 p 2 28 ]
+"237
+} 0
+"22 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/Engine.c
+[v _Engine_getDestinationCoord Engine_getDestinationCoord `(f  1 e 4 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[v Engine_getDestinationCoord@engine engine `*.39S93  1 p 2 0 ]
+"24
+} 0
+"18 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/Point.h
+[s S735 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
+"223 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\motioncontroller/MotionController.c
+[v _MotionController_getCurrentCoord MotionController_getCurrentCoord `(S735  1 e 12 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[s S100 MotionController 54 `S93 1 x 18 0 `S93 1 y 18 18 `S93 1 z 18 36 ]
+[v MotionController_getCurrentCoord@motionController motionController `*.39S100  1 p 2 28 ]
+"229
+} 0
+"18 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/Point.h
+[s S735 Point 12 `f 1 x 4 0 `f 1 y 4 4 `f 1 z 4 8 ]
+"5 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\Point.c
+[v _Point_init3D Point_init3D `(S735  1 e 12 0 ]
+{
+"6
+[v Point_init3D@point point `S735  1 a 12 16 ]
+"5
+[v Point_init3D@x x `f  1 p 4 4 ]
+[v Point_init3D@y y `f  1 p 4 8 ]
+[v Point_init3D@z z `f  1 p 4 12 ]
+"11
+} 0
+"18 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/Engine.c
+[v _Engine_getCurrentCoord Engine_getCurrentCoord `(f  1 e 4 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[v Engine_getCurrentCoord@engine engine `*.39S93  1 p 2 0 ]
+"20
+} 0
+"26
+[v _Engine_step Engine_step `(v  1 e 1 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[v Engine_step@engine engine `*.39S93  1 p 2 10 ]
+[v Engine_step@dir dir `i  1 p 2 12 ]
+"39
+} 0
+"11 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\io/digitalOutput/DigitalOutput.c
+[v _DigitalOutput_open DigitalOutput_open `(v  1 e 1 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[v DigitalOutput_open@output output `*.39S25  1 p 2 8 ]
+"15
+} 0
+"17
+[v _DigitalOutput_close DigitalOutput_close `(v  1 e 1 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[v DigitalOutput_close@output output `*.39S25  1 p 2 8 ]
+"21
+} 0
+"23
+[v _DigitalOutput_set DigitalOutput_set `(v  1 e 1 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[v DigitalOutput_set@outputable outputable `*.39S25  1 p 2 4 ]
+[v DigitalOutput_set@value value `i  1 p 2 6 ]
+"25
+} 0
+"28 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/LedConfigurator.c
+[v _blueLedSet blueLedSet `(v  1 e 1 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[v blueLedSet@button button `*.39S25  1 p 2 0 ]
+[v blueLedSet@value value `i  1 p 2 2 ]
+"30
+} 0
+"17
+[v _redLedSet redLedSet `(v  1 e 1 0 ]
+{
+[v redLedSet@value value `i  1 p 2 2 ]
+"21
+} 0
+"42 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/EngineConfigurator.c
+[v _xEngineDirSet xEngineDirSet `(v  1 e 1 0 ]
+{
+[v xEngineDirSet@value value `i  1 p 2 2 ]
+"44
+} 0
+"18
+[v _xEngineMotionSet xEngineMotionSet `(v  1 e 1 0 ]
+{
+[v xEngineMotionSet@value value `i  1 p 2 2 ]
+"20
+} 0
+"23 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/LedConfigurator.c
+[v _yellowLedSet yellowLedSet `(v  1 e 1 0 ]
+{
+[v yellowLedSet@value value `i  1 p 2 2 ]
+"26
+} 0
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/Engine.c
+[v _Engine_getStepPerMetrice Engine_getStepPerMetrice `(f  1 e 4 0 ]
+{
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S93 Engine 18 `f 1 currentCoord 4 0 `f 1 destinationCoord 4 4 `i 1 isMotion 2 8 `*.39S25 1 motionOutput 2 10 `*.39S25 1 dirOutput 2 12 `f 1 stepPerMetrice 4 14 ]
+[v Engine_getStepPerMetrice@engine engine `*.39S93  1 p 2 0 ]
+"17
+} 0
+"19 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/led/Led.h
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"4 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/Led.c
+[s S104 Led 4 `*.39S25 1 output 2 0 `i 1 isOpen 2 2 ]
+[v _Led_init Led_init `(S104  1 e 4 0 ]
+{
+"5
+[v Led_init@led led `S104  1 a 4 4 ]
+"4
+[v Led_init@output output `*.39S25  1 p 2 0 ]
+"9
+} 0
+"32 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/LedConfigurator.c
 [v _LedConfigurator_config LedConfigurator_config `(v  1 e 1 0 ]
 {
-"56
+"36
 } 0
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-"3 F:\WorkSpaces\embedded\CncPic\CncProject.X\io/digitalOutput/DigitalOutput.c
-[v _DigitalOutput_init DigitalOutput_init `(S32  1 e 4 0 ]
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+"3 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\io/digitalOutput/DigitalOutput.c
+[v _DigitalOutput_init DigitalOutput_init `(S25  1 e 4 0 ]
 {
 "4
-[v DigitalOutput_init@output output `S32  1 a 4 4 ]
+[v DigitalOutput_init@output output `S25  1 a 4 4 ]
 "3
 [v DigitalOutput_init@init init `*.37(v  1 p 2 0 ]
 [v DigitalOutput_init@set set `*.37(v  1 p 2 2 ]
 "9
 } 0
-"38 F:\WorkSpaces\embedded\CncPic\CncProject.X\engine/EngineConfigurator.c
+"13 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/LedConfigurator.c
+[v _blueLedInit blueLedInit `(v  1 e 1 0 ]
+{
+"15
+} 0
+"9
+[v _yellowLedInit yellowLedInit `(v  1 e 1 0 ]
+{
+"11
+} 0
+"4
+[v _redLedInit redLedInit `(v  1 e 1 0 ]
+{
+"7
+} 0
+"38 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/EngineConfigurator.c
 [v _zEngineDirInit zEngineDirInit `(v  1 e 1 0 ]
 {
 "40
@@ -582,72 +950,57 @@
 {
 "6
 } 0
-"29 F:\WorkSpaces\embedded\CncPic\CncProject.X/led/LedConfigurator.h
-[v _blueLedInit blueLedInit `(v  1 e 1 0 ]
-{
-"31
-} 0
-"25
-[v _yellowLedInit yellowLedInit `(v  1 e 1 0 ]
-{
-"27
-} 0
-"20
-[v _redLedInit redLedInit `(v  1 e 1 0 ]
-{
-"23
-} 0
-"13 F:\WorkSpaces\embedded\CncPic\CncProject.X\engine/EngineConfigurator.c
+"13
 [v _zEngineMotionInit zEngineMotionInit `(v  1 e 1 0 ]
 {
 "16
 } 0
-"19 F:\WorkSpaces\embedded\CncPic\CncProject.X/button/Button.h
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S25 DigitalInput 2 `*.37(i 1 read 2 0 ]
-"9 F:\WorkSpaces\embedded\CncPic\CncProject.X\button/Button.c
-[s S200 Button 4 `*.39S25 1 input 2 0 `*.37(v 1 onPressed 2 2 ]
-[v _Button_init Button_init `(S200  1 e 4 0 ]
+"19 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/button/Button.h
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S34 DigitalInput 2 `*.37(i 1 read 2 0 ]
+"9 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\button/Button.c
+[s S108 Button 4 `*.39S34 1 input 2 0 `*.37(v 1 onPressed 2 2 ]
+[v _Button_init Button_init `(S108  1 e 4 0 ]
 {
 "10
-[v Button_init@buton buton `S200  1 a 4 4 ]
+[v Button_init@buton buton `S108  1 a 4 4 ]
 "9
-[v Button_init@input input `*.39S25  1 p 2 0 ]
+[v Button_init@input input `*.39S34  1 p 2 0 ]
 [v Button_init@onPressed onPressed `*.37(v  1 p 2 2 ]
 "14
 } 0
-"11 F:\WorkSpaces\embedded\CncPic\CncProject.X\button/ButtonConfigurator.c
+"13 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\button/ButtonConfigurator.c
 [v _ButtonConfigurator_config ButtonConfigurator_config `(v  1 e 1 0 ]
 {
-"13
+"15
 } 0
-"15 F:\WorkSpaces\embedded\CncPic\CncProject.X/io/digitalinput/DigitalInput.h
-[s S25 DigitalInput 2 `*.37(i 1 read 2 0 ]
-"3 F:\WorkSpaces\embedded\CncPic\CncProject.X\io/digitalinput/DigitalInput.c
-[v _DigitalInput_init DigitalInput_init `(S25  1 e 2 0 ]
-{
-"4
-[v DigitalInput_init@buton buton `S25  1 a 2 6 ]
-"3
-[v DigitalInput_init@init init `*.37(v  1 p 2 0 ]
-[v DigitalInput_init@read read `*.37(i  1 p 2 2 ]
-"9
-} 0
-"3 F:\WorkSpaces\embedded\CncPic\CncProject.X\button/ButtonConfigurator.c
-[v _button1Init button1Init `(v  1 e 1 0 ]
+"15 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X/io/digitalOutput/DigitalOutput.h
+[s S34 DigitalInput 2 `*.37(i 1 read 2 0 ]
+"4 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\io/digitalinput/DigitalInput.c
+[v _DigitalInput_init DigitalInput_init `(S34  1 e 2 0 ]
 {
 "5
+[v DigitalInput_init@input input `S34  1 a 2 4 ]
+"4
+[v DigitalInput_init@init init `*.37(v  1 p 2 0 ]
+[v DigitalInput_init@read read `*.37(i  1 p 2 2 ]
+"10
 } 0
-"137 F:\WorkSpaces\embedded\CncPic\CncProject.X\application/Application.c
+"4 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\button/ButtonConfigurator.c
+[v _button1Init button1Init `(v  1 e 1 0 ]
+{
+"6
+} 0
+"114 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\application/Application.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"142
-[v ISR@tmp tmp `[20]uc  1 a 20 27 ]
-"140
-[v ISR@F3567 F3567 `[20]uc  1 s 20 F3567 ]
-"154
+"119
+[v ISR@tmp tmp `[20]uc  1 a 20 29 ]
+"117
+[v ISR@F3535 F3535 `[20]uc  1 s 20 F3535 ]
+"131
 } 0
-"93 F:\WorkSpaces\embedded\CncPic\CncProject.X\usart/UsartFunctions.h
+"93 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\usart/UsartFunctions.h
 [v i2_USARTWriteLine USARTWriteLine `(v  1 e 1 0 ]
 {
 [v i2USARTWriteLine@ln ln `*.35Cuc  1 p 2 2 ]
@@ -659,40 +1012,62 @@
 [v i2USARTWriteString@str str `*.35Cuc  1 p 2 0 ]
 "82
 } 0
-"11 F:\WorkSpaces\embedded\CncPic\CncProject.X\led/Led.c
+"11 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/Led.c
 [v i2_Led_open Led_open `(v  1 e 1 0 ]
 {
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-[s S96 Led 4 `*.39S32 1 output 2 0 `i 1 isOpen 2 2 ]
-[v i2Led_open@led led `*.39S96  1 p 2 2 ]
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[s S104 Led 4 `*.39S25 1 output 2 0 `i 1 isOpen 2 2 ]
+[v i2Led_open@led led `*.39S104  1 p 2 10 ]
 "14
 } 0
-"11 F:\WorkSpaces\embedded\CncPic\CncProject.X\io/digitalOutput/DigitalOutput.c
+"11 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\io/digitalOutput/DigitalOutput.c
 [v i2_DigitalOutput_open DigitalOutput_open `(v  1 e 1 0 ]
 {
-[s S32 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
-[v i2DigitalOutput_open@output output `*.39S32  1 p 2 0 ]
-"14
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[v i2DigitalOutput_open@output output `*.39S25  1 p 2 8 ]
+"15
 } 0
-"39 F:\WorkSpaces\embedded\CncPic\CncProject.X\softuart/softusart.c
-[v _softUSARTWriteString softUSARTWriteString `(v  1 e 1 0 ]
+"23
+[v i2_DigitalOutput_set DigitalOutput_set `(v  1 e 1 0 ]
 {
-[v softUSARTWriteString@str str `*.39Cuc  1 p 2 2 ]
-"50
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[v i2DigitalOutput_set@outputable outputable `*.39S25  1 p 2 4 ]
+[v i2DigitalOutput_set@value value `i  1 p 2 6 ]
+"25
 } 0
-"53
-[v _softusart_yaz softusart_yaz `(v  1 e 1 0 ]
+"28 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/LedConfigurator.c
+[v i2_blueLedSet blueLedSet `(v  1 e 1 0 ]
 {
-[v softusart_yaz@veri veri `uc  1 a 1 wreg ]
-"55
-[v softusart_yaz@i i `uc  1 a 1 1 ]
-"53
-[v softusart_yaz@veri veri `uc  1 a 1 wreg ]
-"56
-[v softusart_yaz@veri veri `uc  1 a 1 0 ]
-"66
+[s S25 DigitalOutput 4 `*.37(v 1 set 2 0 `i 1 isHigh 2 2 ]
+[v i2blueLedSet@button button `*.39S25  1 p 2 0 ]
+[v i2blueLedSet@value value `i  1 p 2 2 ]
+"30
 } 0
-"40 F:\WorkSpaces\embedded\CncPic\CncProject.X\usart/UsartFunctions.h
+"17
+[v i2_redLedSet redLedSet `(v  1 e 1 0 ]
+{
+[v i2redLedSet@value value `i  1 p 2 2 ]
+"21
+} 0
+"42 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\engine/EngineConfigurator.c
+[v i2_xEngineDirSet xEngineDirSet `(v  1 e 1 0 ]
+{
+[v i2xEngineDirSet@value value `i  1 p 2 2 ]
+"44
+} 0
+"18
+[v i2_xEngineMotionSet xEngineMotionSet `(v  1 e 1 0 ]
+{
+[v i2xEngineMotionSet@value value `i  1 p 2 2 ]
+"20
+} 0
+"23 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\led/LedConfigurator.c
+[v i2_yellowLedSet yellowLedSet `(v  1 e 1 0 ]
+{
+[v i2yellowLedSet@value value `i  1 p 2 2 ]
+"26
+} 0
+"40 F:\WorkSpaces\embedded\CncPic\CncProject\CncProject.X\usart/UsartFunctions.h
 [v _USARTReadString USARTReadString `(i  1 e 2 0 ]
 {
 "41

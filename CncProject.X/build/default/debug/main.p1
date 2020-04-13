@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2562 `(i ~T0 @X0 0 tf1`*S283 ]
-"15 ./application/../io/digitalinput/DigitalInput.h
-[s S283 `*F2562 1 ]
-[n S283 DigitalInput read ]
 [v F2528 `(v ~T0 @X0 0 tf2`*S281`i ]
-"15 ./application/../io/digitalOutput/DigitalOutput.h
+"15 ./io/digitalOutput/DigitalOutput.h
 [s S281 `*F2528 1 `i 1 ]
 [n S281 DigitalOutput set isHigh ]
+[v F2562 `(i ~T0 @X0 0 tf1`*S283 ]
+"15 ./io/digitalinput/DigitalInput.h
+[s S283 `*F2562 1 ]
+[n S283 DigitalInput read ]
 [v F2590 `(i ~T0 @X0 0 tf ]
 [v F2592 `(uc ~T0 @X0 0 tf ]
 [v F2594 `(i ~T0 @X0 0 tf2`*uc`i ]
@@ -17,20 +17,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F2611 `(v ~T0 @X0 0 tf2`l`uc ]
 [v F2615 `(v ~T0 @X0 0 tf2`l`uc ]
 [v F2619 `(uc ~T0 @X0 0 tf ]
-"14 ./application/../usart/Usart.h
-[; ;./application/../usart/Usart.h: 14: typedef struct {
+"14 ./usart/Usart.h
 [s S285 `*F2590 1 `*F2592 1 `*F2594 1 `*F2598 1 `*F2601 1 `*F2604 1 `*F2607 1 `*F2611 1 `*F2615 1 `*F2619 1 ]
 [n S285 . isDataReady readChar readString writeByte writeString writeLine writeInt writeLong writeFloat readByte ]
+"21 ./application/../motioncontroller/../engine/Engine.h
+[; ;./application/../motioncontroller/../engine/Engine.h: 21:     typedef struct Engine {
+[s S286 `f 1 `f 1 `i 1 `*S281 1 `*S281 1 `f 1 ]
+[n S286 Engine currentCoord destinationCoord isMotion motionOutput dirOutput stepPerMetrice ]
+"19 ./motioncontroller/MotionController.h
+[s S288 `S286 1 `S286 1 `S286 1 ]
+[n S288 MotionController x y z ]
+"19 ./led/Led.h
+[s S282 `*S281 1 `i 1 ]
+[n S282 Led output isOpen ]
+[v F2577 `(v ~T0 @X0 0 tf ]
+"19 ./button/Button.h
+[s S284 `*S283 1 `*F2577 1 ]
+[n S284 Button input onPressed ]
 [p mainexit ]
-"42 ./application/../motioncontroller/../engine/../application/Application.h
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 42:     typedef struct {
+"29 ./application/Application.h
+[; ;./application/Application.h: 29:     typedef struct {
 [s S289 `i 1 ]
 [n S289 . id ]
-"49
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 49:     Application Application_init();
+"36
+[; ;./application/Application.h: 36:     Application Application_init();
 [v _Application_init `(S289 ~T0 @X0 0 e? ]
-"51
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 51:     void Application_loop(Application *app);
+"38
+[; ;./application/Application.h: 38:     void Application_loop(Application *app);
 [v _Application_loop `(v ~T0 @X0 0 ef1`*S289 ]
 "54 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
@@ -512,30 +525,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "75
 [p x EBTRB = OFF ]
-"25 ./application/../motioncontroller/../engine/../application/Application.h
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 25:     DigitalInput button1Input;
-[v _button1Input `S283 ~T0 @X0 1 e ]
+"26 ./application/../led/LedConfigurator.h
+[; ;./application/../led/LedConfigurator.h: 26:     DigitalOutput redLedOutput;
+[v _redLedOutput `S281 ~T0 @X0 1 e ]
 "27
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 27:     DigitalOutput xEngineMotionOutput;
-[v _xEngineMotionOutput `S281 ~T0 @X0 1 e ]
+[; ;./application/../led/LedConfigurator.h: 27:     DigitalOutput yellowLedOutput;
+[v _yellowLedOutput `S281 ~T0 @X0 1 e ]
 "28
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 28:     DigitalOutput yEngineMotionOutput;
+[; ;./application/../led/LedConfigurator.h: 28:     DigitalOutput blueLedOutput;
+[v _blueLedOutput `S281 ~T0 @X0 1 e ]
+"18 ./application/../button/ButtonConfigurator.h
+[; ;./application/../button/ButtonConfigurator.h: 18:     DigitalInput button1Input;
+[v _button1Input `S283 ~T0 @X0 1 e ]
+"24 ./application/../ApplicationVariables.h
+[; ;./application/../ApplicationVariables.h: 24:     DigitalOutput xEngineMotionOutput;
+[v _xEngineMotionOutput `S281 ~T0 @X0 1 e ]
+"25
+[; ;./application/../ApplicationVariables.h: 25:     DigitalOutput yEngineMotionOutput;
 [v _yEngineMotionOutput `S281 ~T0 @X0 1 e ]
-"29
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 29:     DigitalOutput zEngineMotionOutput;
+"26
+[; ;./application/../ApplicationVariables.h: 26:     DigitalOutput zEngineMotionOutput;
 [v _zEngineMotionOutput `S281 ~T0 @X0 1 e ]
-"32
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 32:     DigitalOutput xEngineDirOutput;
+"29
+[; ;./application/../ApplicationVariables.h: 29:     DigitalOutput xEngineDirOutput;
 [v _xEngineDirOutput `S281 ~T0 @X0 1 e ]
-"33
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 33:     DigitalOutput yEngineDirOutput;
+"30
+[; ;./application/../ApplicationVariables.h: 30:     DigitalOutput yEngineDirOutput;
 [v _yEngineDirOutput `S281 ~T0 @X0 1 e ]
-"34
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 34:     DigitalOutput zEngineDirOutput;
+"31
+[; ;./application/../ApplicationVariables.h: 31:     DigitalOutput zEngineDirOutput;
 [v _zEngineDirOutput `S281 ~T0 @X0 1 e ]
-"36
-[; ;./application/../motioncontroller/../engine/../application/Application.h: 36:     Usart usart;
+"33
+[; ;./application/../ApplicationVariables.h: 33:     Usart usart;
 [v _usart `S285 ~T0 @X0 1 e ]
+"34
+[; ;./application/../ApplicationVariables.h: 34:     MotionController motionController;
+[v _motionController `S288 ~T0 @X0 1 e ]
+"37
+[; ;./application/../ApplicationVariables.h: 37:     Led yellowLed;
+[v _yellowLed `S282 ~T0 @X0 1 e ]
+"38
+[; ;./application/../ApplicationVariables.h: 38:     Led blueLed;
+[v _blueLed `S282 ~T0 @X0 1 e ]
+"39
+[; ;./application/../ApplicationVariables.h: 39:     Led redLed;
+[v _redLed `S282 ~T0 @X0 1 e ]
+"41
+[; ;./application/../ApplicationVariables.h: 41:     Button button;
+[v _button `S284 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "17 main.c
 [; ;main.c: 17: int main(void) {

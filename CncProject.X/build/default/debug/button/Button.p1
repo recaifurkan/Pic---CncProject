@@ -15,7 +15,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;button/../io/digitalinput/DigitalInput.h: 22:     int DigitalInput_getValue(DigitalInput *input);
 [v _DigitalInput_getValue `(i ~T0 @X0 0 ef1`*S1 ]
 "9 button/Button.c
-[; ;button/Button.c: 9: Button Button_init(DigitalInput * input, void (*onPressed)(void) ){
+[; ;button/Button.c: 9: Button Button_init(DigitalInput *input, void (*onPressed)(void) ){
 [v _Button_init `(S2 ~T0 @X0 1 ef2`*S1`*F31 ]
 {
 [e :U _Button_init ]

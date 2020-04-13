@@ -9,51 +9,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F20 `(v ~T0 @X0 0 tf ]
 [v F22 `(i ~T0 @X0 0 tf ]
 [v F26 `(i ~T0 @X0 0 tf1`*S1 ]
-"3 io/digitalinput/DigitalInput.c
-[; ;io/digitalinput/DigitalInput.c: 3: DigitalInput DigitalInput_init(void (*init)(void) , int (*read)(void)){
+"4 io/digitalinput/DigitalInput.c
+[; ;io/digitalinput/DigitalInput.c: 4: DigitalInput DigitalInput_init(void (*init)(void) , int (*read)(void)){
 [v _DigitalInput_init `(S1 ~T0 @X0 1 ef2`*F17`*F18 ]
 {
 [e :U _DigitalInput_init ]
 [v _init `*F20 ~T0 @X0 1 r1 ]
 [v _read `*F22 ~T0 @X0 1 r2 ]
 [f ]
-"4
-[; ;io/digitalinput/DigitalInput.c: 4:     DigitalInput buton;
-[v _buton `S1 ~T0 @X0 1 a ]
 "5
-[; ;io/digitalinput/DigitalInput.c: 5:     buton.read = read;
-[e = . _buton 0 -> _read `*F26 ]
+[; ;io/digitalinput/DigitalInput.c: 5:     DigitalInput input;
+[v _input `S1 ~T0 @X0 1 a ]
 "6
 [; ;io/digitalinput/DigitalInput.c: 6:     (*init)();
 [e ( *U _init ..  ]
 "7
-[; ;io/digitalinput/DigitalInput.c: 7:     int val = (*read)();
-[v _val `i ~T0 @X0 1 a ]
-[e = _val ( *U _read ..  ]
-"8
-[; ;io/digitalinput/DigitalInput.c: 8:     return buton;
-[e ) _buton ]
-[e $UE 2  ]
+[; ;io/digitalinput/DigitalInput.c: 7:     input.read = read;
+[e = . _input 0 -> _read `*F26 ]
 "9
-[; ;io/digitalinput/DigitalInput.c: 9: }
+[; ;io/digitalinput/DigitalInput.c: 9:     return input;
+[e ) _input ]
+[e $UE 2  ]
+"10
+[; ;io/digitalinput/DigitalInput.c: 10: }
 [e :UE 2 ]
 }
-"12
-[; ;io/digitalinput/DigitalInput.c: 12: int DigitalInput_getValue(DigitalInput *input){
+"13
+[; ;io/digitalinput/DigitalInput.c: 13: int DigitalInput_getValue(DigitalInput *input){
 [v _DigitalInput_getValue `(i ~T0 @X0 1 ef1`*S1 ]
 {
 [e :U _DigitalInput_getValue ]
 [v _input `*S1 ~T0 @X0 1 r1 ]
 [f ]
-"13
-[; ;io/digitalinput/DigitalInput.c: 13:     int value = input->read(input);
-[v _value `i ~T0 @X0 1 a ]
-[e = _value ( *U . *U _input 0 (1 _input ]
 "14
-[; ;io/digitalinput/DigitalInput.c: 14:     return value;
-[e ) _value ]
-[e $UE 3  ]
+[; ;io/digitalinput/DigitalInput.c: 14:     int val = input->read(input);
+[v _val `i ~T0 @X0 1 a ]
+[e = _val ( *U . *U _input 0 (1 _input ]
 "15
-[; ;io/digitalinput/DigitalInput.c: 15: }
+[; ;io/digitalinput/DigitalInput.c: 15:     if(val){
+[e $ ! != _val -> 0 `i 4  ]
+{
+"16
+[; ;io/digitalinput/DigitalInput.c: 16:         return val;
+[e ) _val ]
+[e $UE 3  ]
+"17
+[; ;io/digitalinput/DigitalInput.c: 17:     }
+}
+[e :U 4 ]
+"19
+[; ;io/digitalinput/DigitalInput.c: 19:     return 0;
+[e ) -> 0 `i ]
+[e $UE 3  ]
+"20
+[; ;io/digitalinput/DigitalInput.c: 20: }
 [e :UE 3 ]
 }

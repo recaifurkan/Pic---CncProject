@@ -4625,7 +4625,10 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 14 "engine/../utils/Utils.h" 2
 
 
+
     void Library_delayMs(float time);
+
+    void printDebug(char * text);
 # 2 "engine/Engine.c" 2
 
  Engine Engine_init(DigitalOutput *motionOutput, DigitalOutput *dirOutput) {

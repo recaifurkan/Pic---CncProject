@@ -10,27 +10,31 @@
 # 1 "io/digitalinput/DigitalInput.h" 1
 # 15 "io/digitalinput/DigitalInput.h"
     typedef struct DigitalInput {
-        int (*read)(struct DigitalInput * input);
+        int (*read)(struct DigitalInput *input);
     } DigitalInput;
 
-    DigitalInput DigitalInput_init(void (*init)(void), int (*read)());
+    DigitalInput DigitalInput_init(void (*init)(void), int (*read)(void));
 
 
     int DigitalInput_getValue(DigitalInput *input);
 # 1 "io/digitalinput/DigitalInput.c" 2
 
 
-DigitalInput DigitalInput_init(void (*init)(void) , int (*read)()){
+
+DigitalInput DigitalInput_init(void (*init)(void) , int (*read)(void)){
     DigitalInput input;
-    input.read = read;
     (*init)();
-    int val = (*read)(&input);
-    val = input.read(&input);
+    input.read = read;
+
     return input;
 }
 
 
 int DigitalInput_getValue(DigitalInput *input){
-    int value = input->read(input);
-    return value;
+    int val = input->read(input);
+    if(val){
+        return val;
+    }
+
+    return 0;
 }

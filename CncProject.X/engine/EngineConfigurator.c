@@ -15,15 +15,15 @@ void zEngineMotionInit() {
 
 }
 
-void xEngineMotionSet(Engine * engine, int value) {
+void xEngineMotionSet(DigitalOutput * engine, int value) {
     LATCbits.LATC0 = value;
 }
 
-void yEngineMotionSet(Engine * engine, int value) {
+void yEngineMotionSet(DigitalOutput * engine, int value) {
     LATCbits.LATC1 = value;
 }
 
-void zEngineMotionSet(Engine * engine, int value) {
+void zEngineMotionSet(DigitalOutput * engine, int value) {
     LATCbits.LATC2 = value;
 }
 
@@ -39,23 +39,17 @@ void zEngineDirInit() {
     TRISB2 = 0;
 }
 
-void xEngineDirSet(Engine * engine, int value) {
+void xEngineDirSet(DigitalOutput * engine, int value) {
     LATBbits.LATB0 = value;
 }
 
-void yEngineDirSet(Engine * engine, int value) {
+void yEngineDirSet(DigitalOutput * engine, int value) {
     LATBbits.LATB1 = value;
 }
 
-void zEngineDirSet(Engine * engine, int value) {
+void zEngineDirSet(DigitalOutput * engine, int value) {
     LATBbits.LATB2 = value;
 }
 
-void EngineConfigurator_configEngines(){
-    xEngineMotionOutput = DigitalOutput_init(xEngineMotionInit, xEngineMotionSet);
-    yEngineMotionOutput = DigitalOutput_init(yEngineMotionInit, xEngineMotionSet);
-    zEngineMotionOutput = DigitalOutput_init(zEngineMotionInit, xEngineMotionSet);
-    xEngineDirOutput = DigitalOutput_init(xEngineDirInit, xEngineDirSet);
-    yEngineDirOutput = DigitalOutput_init(yEngineDirInit, xEngineDirSet);
-    zEngineDirOutput = DigitalOutput_init(zEngineDirInit, xEngineDirSet);
-}
+
+

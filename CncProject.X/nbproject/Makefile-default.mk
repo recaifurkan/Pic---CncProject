@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=application/Application.c button/Button.c engine/Engine.c engine/EngineConfigurator.c led/Led.c motioncontroller/MotionController.c softuart/softusart.c usart/Usart.c utils/Utils.c main.c Point.c io/digitalinput/DigitalInput.c io/digitalOutput/DigitalOutput.c button/ButtonConfigurator.c
+SOURCEFILES_QUOTED_IF_SPACED=application/Application.c button/Button.c engine/Engine.c engine/EngineConfigurator.c io/digitalinput/DigitalInput.c io/digitalOutput/DigitalOutput.c led/Led.c motioncontroller/MotionController.c softuart/softusart.c usart/Usart.c utils/Utils.c main.c Point.c led/LedConfigurator.c button/ButtonConfigurator.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/application/Application.p1 ${OBJECTDIR}/button/Button.p1 ${OBJECTDIR}/engine/Engine.p1 ${OBJECTDIR}/engine/EngineConfigurator.p1 ${OBJECTDIR}/led/Led.p1 ${OBJECTDIR}/motioncontroller/MotionController.p1 ${OBJECTDIR}/softuart/softusart.p1 ${OBJECTDIR}/usart/Usart.p1 ${OBJECTDIR}/utils/Utils.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Point.p1 ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 ${OBJECTDIR}/button/ButtonConfigurator.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/application/Application.p1.d ${OBJECTDIR}/button/Button.p1.d ${OBJECTDIR}/engine/Engine.p1.d ${OBJECTDIR}/engine/EngineConfigurator.p1.d ${OBJECTDIR}/led/Led.p1.d ${OBJECTDIR}/motioncontroller/MotionController.p1.d ${OBJECTDIR}/softuart/softusart.p1.d ${OBJECTDIR}/usart/Usart.p1.d ${OBJECTDIR}/utils/Utils.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Point.p1.d ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d ${OBJECTDIR}/button/ButtonConfigurator.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/application/Application.p1 ${OBJECTDIR}/button/Button.p1 ${OBJECTDIR}/engine/Engine.p1 ${OBJECTDIR}/engine/EngineConfigurator.p1 ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 ${OBJECTDIR}/led/Led.p1 ${OBJECTDIR}/motioncontroller/MotionController.p1 ${OBJECTDIR}/softuart/softusart.p1 ${OBJECTDIR}/usart/Usart.p1 ${OBJECTDIR}/utils/Utils.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Point.p1 ${OBJECTDIR}/led/LedConfigurator.p1 ${OBJECTDIR}/button/ButtonConfigurator.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/application/Application.p1.d ${OBJECTDIR}/button/Button.p1.d ${OBJECTDIR}/engine/Engine.p1.d ${OBJECTDIR}/engine/EngineConfigurator.p1.d ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d ${OBJECTDIR}/led/Led.p1.d ${OBJECTDIR}/motioncontroller/MotionController.p1.d ${OBJECTDIR}/softuart/softusart.p1.d ${OBJECTDIR}/usart/Usart.p1.d ${OBJECTDIR}/utils/Utils.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Point.p1.d ${OBJECTDIR}/led/LedConfigurator.p1.d ${OBJECTDIR}/button/ButtonConfigurator.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/application/Application.p1 ${OBJECTDIR}/button/Button.p1 ${OBJECTDIR}/engine/Engine.p1 ${OBJECTDIR}/engine/EngineConfigurator.p1 ${OBJECTDIR}/led/Led.p1 ${OBJECTDIR}/motioncontroller/MotionController.p1 ${OBJECTDIR}/softuart/softusart.p1 ${OBJECTDIR}/usart/Usart.p1 ${OBJECTDIR}/utils/Utils.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Point.p1 ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 ${OBJECTDIR}/button/ButtonConfigurator.p1
+OBJECTFILES=${OBJECTDIR}/application/Application.p1 ${OBJECTDIR}/button/Button.p1 ${OBJECTDIR}/engine/Engine.p1 ${OBJECTDIR}/engine/EngineConfigurator.p1 ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 ${OBJECTDIR}/led/Led.p1 ${OBJECTDIR}/motioncontroller/MotionController.p1 ${OBJECTDIR}/softuart/softusart.p1 ${OBJECTDIR}/usart/Usart.p1 ${OBJECTDIR}/utils/Utils.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Point.p1 ${OBJECTDIR}/led/LedConfigurator.p1 ${OBJECTDIR}/button/ButtonConfigurator.p1
 
 # Source Files
-SOURCEFILES=application/Application.c button/Button.c engine/Engine.c engine/EngineConfigurator.c led/Led.c motioncontroller/MotionController.c softuart/softusart.c usart/Usart.c utils/Utils.c main.c Point.c io/digitalinput/DigitalInput.c io/digitalOutput/DigitalOutput.c button/ButtonConfigurator.c
+SOURCEFILES=application/Application.c button/Button.c engine/Engine.c engine/EngineConfigurator.c io/digitalinput/DigitalInput.c io/digitalOutput/DigitalOutput.c led/Led.c motioncontroller/MotionController.c softuart/softusart.c usart/Usart.c utils/Utils.c main.c Point.c led/LedConfigurator.c button/ButtonConfigurator.c
 
 
 
@@ -126,6 +126,22 @@ ${OBJECTDIR}/engine/EngineConfigurator.p1: engine/EngineConfigurator.c  nbprojec
 	@-${MV} ${OBJECTDIR}/engine/EngineConfigurator.d ${OBJECTDIR}/engine/EngineConfigurator.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/engine/EngineConfigurator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/io/digitalinput/DigitalInput.p1: io/digitalinput/DigitalInput.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/io/digitalinput" 
+	@${RM} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d 
+	@${RM} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 io/digitalinput/DigitalInput.c 
+	@-${MV} ${OBJECTDIR}/io/digitalinput/DigitalInput.d ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1: io/digitalOutput/DigitalOutput.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/io/digitalOutput" 
+	@${RM} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d 
+	@${RM} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 io/digitalOutput/DigitalOutput.c 
+	@-${MV} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.d ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/led/Led.p1: led/Led.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/led" 
 	@${RM} ${OBJECTDIR}/led/Led.p1.d 
@@ -182,21 +198,13 @@ ${OBJECTDIR}/Point.p1: Point.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Point.d ${OBJECTDIR}/Point.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Point.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/io/digitalinput/DigitalInput.p1: io/digitalinput/DigitalInput.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/io/digitalinput" 
-	@${RM} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d 
-	@${RM} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 io/digitalinput/DigitalInput.c 
-	@-${MV} ${OBJECTDIR}/io/digitalinput/DigitalInput.d ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1: io/digitalOutput/DigitalOutput.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/io/digitalOutput" 
-	@${RM} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d 
-	@${RM} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 io/digitalOutput/DigitalOutput.c 
-	@-${MV} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.d ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/led/LedConfigurator.p1: led/LedConfigurator.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/led" 
+	@${RM} ${OBJECTDIR}/led/LedConfigurator.p1.d 
+	@${RM} ${OBJECTDIR}/led/LedConfigurator.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/led/LedConfigurator.p1 led/LedConfigurator.c 
+	@-${MV} ${OBJECTDIR}/led/LedConfigurator.d ${OBJECTDIR}/led/LedConfigurator.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/led/LedConfigurator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/button/ButtonConfigurator.p1: button/ButtonConfigurator.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/button" 
@@ -238,6 +246,22 @@ ${OBJECTDIR}/engine/EngineConfigurator.p1: engine/EngineConfigurator.c  nbprojec
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/engine/EngineConfigurator.p1 engine/EngineConfigurator.c 
 	@-${MV} ${OBJECTDIR}/engine/EngineConfigurator.d ${OBJECTDIR}/engine/EngineConfigurator.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/engine/EngineConfigurator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/io/digitalinput/DigitalInput.p1: io/digitalinput/DigitalInput.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/io/digitalinput" 
+	@${RM} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d 
+	@${RM} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 io/digitalinput/DigitalInput.c 
+	@-${MV} ${OBJECTDIR}/io/digitalinput/DigitalInput.d ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1: io/digitalOutput/DigitalOutput.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/io/digitalOutput" 
+	@${RM} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d 
+	@${RM} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 io/digitalOutput/DigitalOutput.c 
+	@-${MV} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.d ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/led/Led.p1: led/Led.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/led" 
@@ -295,21 +319,13 @@ ${OBJECTDIR}/Point.p1: Point.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Point.d ${OBJECTDIR}/Point.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Point.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/io/digitalinput/DigitalInput.p1: io/digitalinput/DigitalInput.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/io/digitalinput" 
-	@${RM} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d 
-	@${RM} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/io/digitalinput/DigitalInput.p1 io/digitalinput/DigitalInput.c 
-	@-${MV} ${OBJECTDIR}/io/digitalinput/DigitalInput.d ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/io/digitalinput/DigitalInput.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1: io/digitalOutput/DigitalOutput.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/io/digitalOutput" 
-	@${RM} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d 
-	@${RM} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1 io/digitalOutput/DigitalOutput.c 
-	@-${MV} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.d ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/io/digitalOutput/DigitalOutput.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/led/LedConfigurator.p1: led/LedConfigurator.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/led" 
+	@${RM} ${OBJECTDIR}/led/LedConfigurator.p1.d 
+	@${RM} ${OBJECTDIR}/led/LedConfigurator.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/led/LedConfigurator.p1 led/LedConfigurator.c 
+	@-${MV} ${OBJECTDIR}/led/LedConfigurator.d ${OBJECTDIR}/led/LedConfigurator.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/led/LedConfigurator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/button/ButtonConfigurator.p1: button/ButtonConfigurator.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/button" 

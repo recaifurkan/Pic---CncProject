@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/io/digitalOutput/DigitalOutput.h</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/button/ButtonConfigurator.c</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/engine/EngineConfigurator.h</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/usart/UsartFunctions.h</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/motioncontroller/MotionController.h</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/application/Application.h</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/engine/EngineConfigurator.c</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/io/digitalinput/DigitalInput.h</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/io/digitalinput/DigitalInput.c</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/motioncontroller/MotionController.c</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/application/Application.c</file>
+            <file>file:/F:/WorkSpaces/embedded/CncPic/CncProject/CncProject.X/button/ButtonConfigurator.h</file>
+        </group>
     </open-files>
 </project-private>

@@ -1,7 +1,7 @@
 
 #include "Usart.h"
 #include "UsartFunctions.h"
-#include "../application/Application.h"
+#include "../ApplicationVariables.h"
 /*
  usart?n gele veride interrupt olu?turacak ?ekilde
  * olu?turulmas? i�in registerler de?er atayan ve olu?turran fonksiyonlar?n bulundu?u k?s?m

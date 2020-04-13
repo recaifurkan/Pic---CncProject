@@ -4603,7 +4603,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 typedef struct Led{
-    DigitalOutput *output;
+    DigitalOutput* output;
     int isOpen;
 }Led;
 
@@ -4622,10 +4622,10 @@ void Led_blink(Led *led , int time);
 # 1 "application/../button/../io/digitalinput/DigitalInput.h" 1
 # 15 "application/../button/../io/digitalinput/DigitalInput.h"
     typedef struct DigitalInput {
-        int (*read)(struct DigitalInput * input);
+        int (*read)(struct DigitalInput *input);
     } DigitalInput;
 
-    DigitalInput DigitalInput_init(void (*init)(void), int (*read)());
+    DigitalInput DigitalInput_init(void (*init)(void), int (*read)(void));
 
 
     int DigitalInput_getValue(DigitalInput *input);
@@ -4636,7 +4636,7 @@ typedef struct Button {
     void (*onPressed)(void);
 } Button;
 
-Button Button_init(DigitalInput * input, void (*onPressed)(void) );
+Button Button_init(DigitalInput *input, void (*onPressed)(void) );
 
 
 int Button_getValue(Button *button);
@@ -4699,33 +4699,27 @@ void USARTInit(Usart *usart,long baudRate) ;
 # 14 "application/../motioncontroller/MotionController.h" 2
 
 # 1 "application/../motioncontroller/../engine/EngineConfigurator.h" 1
-# 17 "application/../motioncontroller/../engine/EngineConfigurator.h"
-# 1 "application/../motioncontroller/../engine/../application/Application.h" 1
-# 17 "application/../motioncontroller/../engine/EngineConfigurator.h" 2
-
-
+# 21 "application/../motioncontroller/../engine/EngineConfigurator.h"
     void xEngineMotionInit();
     void yEngineMotionInit();
     void zEngineMotionInit();
-    void xEngineMotionSet(Engine * engine, int value);
-    void yEngineMotionSet(Engine * engine, int value);
-    void zEngineMotionSet(Engine * engine, int value);
+    void xEngineMotionSet(DigitalOutput * engine, int value);
+    void yEngineMotionSet(DigitalOutput * engine, int value);
+    void zEngineMotionSet(DigitalOutput * engine, int value);
 
     void xEngineDirInit();
     void yEngineDirInit();
     void zEngineDirInit();
-    void xEngineDirSet(Engine * engine, int value);
-    void yEngineDirSet(Engine * engine, int value);
-    void zEngineDirSet(Engine * engine, int value);
-
-
-
-    void EngineConfigurator_configEngines();
+    void xEngineDirSet(DigitalOutput * engine, int value);
+    void yEngineDirSet(DigitalOutput * engine, int value);
+    void zEngineDirSet(DigitalOutput * engine, int value);
 # 15 "application/../motioncontroller/MotionController.h" 2
 
 # 1 "application/../motioncontroller/../utils/Utils.h" 1
-# 16 "application/../motioncontroller/../utils/Utils.h"
+# 17 "application/../motioncontroller/../utils/Utils.h"
     void Library_delayMs(float time);
+
+    void printDebug(char * text);
 # 16 "application/../motioncontroller/MotionController.h" 2
 
 # 1 "application/../motioncontroller/../Point.h" 1
@@ -5223,13 +5217,36 @@ double yn(int, double);
     Point MotionController_getCurrentCoord(MotionController * motionController);
 
     Point MotionController_getDestinationCoord(MotionController * motionController);
-# 21 "application/../motioncontroller/../engine/../application/Application.h" 2
+# 21 "application/Application.h" 2
 
+# 1 "application/../led/LedConfigurator.h" 1
+# 20 "application/../led/LedConfigurator.h"
+    void redLedInit();
+    void yellowLedInit();
+    void blueLedInit();
+    void redLedSet(DigitalOutput * button, int value);
+    void yellowLedSet(DigitalOutput * button, int value);
+    void blueLedSet(DigitalOutput * button, int value);
+    DigitalOutput redLedOutput;
+    DigitalOutput yellowLedOutput;
+    DigitalOutput blueLedOutput;
 
+    void LedConfigurator_config();
+# 22 "application/Application.h" 2
 
-
+# 1 "application/../button/ButtonConfigurator.h" 1
+# 18 "application/../button/ButtonConfigurator.h"
     DigitalInput button1Input;
 
+
+    void button1Init();
+    int button1Read(DigitalInput *in);
+
+    void ButtonConfigurator_config();
+# 23 "application/Application.h" 2
+
+# 1 "application/../ApplicationVariables.h" 1
+# 24 "application/../ApplicationVariables.h"
     DigitalOutput xEngineMotionOutput;
     DigitalOutput yEngineMotionOutput;
     DigitalOutput zEngineMotionOutput;
@@ -5240,6 +5257,15 @@ double yn(int, double);
     DigitalOutput zEngineDirOutput;
 
     Usart usart;
+    MotionController motionController;
+
+
+    Led yellowLed;
+    Led blueLed;
+    Led redLed;
+
+    Button button;
+# 24 "application/Application.h" 2
 
 
 
@@ -5260,51 +5286,6 @@ double yn(int, double);
 # 3 "application/Application.c" 2
 
 
-# 1 "application/../led/LedConfigurator.h" 1
-# 20 "application/../led/LedConfigurator.h"
-    void redLedInit() {
-        TRISD1 = 0;
-
-    }
-
-    void yellowLedInit() {
-        TRISD0 = 0;
-    }
-
-    void blueLedInit() {
-        TRISC3 = 0;
-    }
-
-    void redLedSet(Led * button, int value) {
-        LATDbits.LATD1 = value;
-
-
-    }
-
-    void yellowLedSet(Led * button, int value) {
-        LATDbits.LATD0 = value;
-
-    }
-
-    void blueLedSet(Led * button, int value) {
-        LATCbits.LATC3 = value;
-    }
-
-DigitalOutput redLedOutput;
-DigitalOutput yellowLedOutput;
-DigitalOutput blueLedOutput;
-
-void LedConfigurator_config(){
-    redLedOutput = DigitalOutput_init(redLedInit,redLedSet);
-    yellowLedOutput = DigitalOutput_init(yellowLedInit,yellowLedSet);
-    blueLedOutput = DigitalOutput_init(blueLedInit,blueLedSet);
-}
-# 5 "application/Application.c" 2
-
-# 1 "application/../button/ButtonConfigurator.h" 1
-# 25 "application/../button/ButtonConfigurator.h"
-    void ButtonConfigurator_config();
-# 6 "application/Application.c" 2
 
 
 # 1 "E:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
@@ -5445,52 +5426,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "application/Application.c" 2
-
-
-
-
-
-# 1 "application/../softuart/softusart.h" 1
-# 33 "application/../softuart/softusart.h"
-void softusart_baslat(void);
-char softusart_oku(void);
-int softUsartReadString(char *buf, int max_length);
-void softUSARTWriteString(const char *str);
-void softusart_yaz(char veri);
-void putch(unsigned char byte);
-# 13 "application/Application.c" 2
-
-
-
-
-void delaySaniye(int saniye) {
-    while (saniye) {
-        _delay((unsigned long)((1000)*(8000000/4000.0)));
-        saniye--;
-    }
-}
-
-void wait(int time) {
-    int icTimer = time;
-    int tmp = time;
-    while (time != 0) {
-        while (icTimer != 0) {
-            icTimer--;
-        }
-        time--;
-        icTimer = tmp;
-    }
-}
-
-Led yellowLed;
-Led blueLed;
-Led redLed;
-
-Button button;
-
-
-
+# 7 "application/Application.c" 2
+# 21 "application/Application.c"
 Application Application_init() {
     Application app;
     app.id = 0;
@@ -5501,7 +5438,15 @@ Application Application_init() {
     LATD = 0;
     LATE = 0;
     USARTInit(&usart, 9600);
-# 74 "application/Application.c"
+    motionController = MotionController_init();
+    motionController.x.destinationCoord = 20;
+    motionController.y.destinationCoord = 60;
+    motionController.z.destinationCoord = 150;
+
+
+
+    MotionController_control(&motionController);
+# 51 "application/Application.c"
     LedConfigurator_config();
 
     yellowLed = Led_init(&yellowLedOutput);
@@ -5513,28 +5458,28 @@ Application Application_init() {
     ButtonConfigurator_config();
 
     button = Button_init(&button1Input, 0);
-# 98 "application/Application.c"
+# 75 "application/Application.c"
     return app;
 
 }
 
 void Application_loop(Application *app) {
-# 112 "application/Application.c"
+# 89 "application/Application.c"
     Led_open(&redLed);
 
 
-    if (DigitalInput_getValue(&button1Input)) {
+    if (Button_isPressed(&button)) {
 
         usart.writeLine("basıldı");
         Led_open(&blueLed);
         Led_close(&yellowLed);
 
     } else {
-        usart.writeLine("basılmadı");
+
 
         Led_close(&blueLed);
     }
-# 135 "application/Application.c"
+# 112 "application/Application.c"
 }
 
 __attribute__((picinterrupt(("")))) void ISR(void)
@@ -5545,7 +5490,7 @@ __attribute__((picinterrupt(("")))) void ISR(void)
         char tmp[20] = "";
         usart.readString(tmp, 20);
         usart.writeLine(tmp);
-        softUSARTWriteString(tmp);
+
 
         Led_open(&yellowLed);
 

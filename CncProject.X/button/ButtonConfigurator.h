@@ -14,17 +14,14 @@ extern "C" {
 
 
 #include <xc.h>
-#include "Button.h"
 #include "../io/digitalinput/DigitalInput.h"
-#include "../application/Application.h"
-    
-    
-    
+    DigitalInput button1Input;
 
-    
+
+    void button1Init();
+    int button1Read(DigitalInput *in);
+
     void ButtonConfigurator_config();
-
-
 
 
 

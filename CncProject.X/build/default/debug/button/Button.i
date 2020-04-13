@@ -12,10 +12,10 @@
 # 1 "button/../io/digitalinput/DigitalInput.h" 1
 # 15 "button/../io/digitalinput/DigitalInput.h"
     typedef struct DigitalInput {
-        int (*read)(struct DigitalInput * input);
+        int (*read)(struct DigitalInput *input);
     } DigitalInput;
 
-    DigitalInput DigitalInput_init(void (*init)(void), int (*read)());
+    DigitalInput DigitalInput_init(void (*init)(void), int (*read)(void));
 
 
     int DigitalInput_getValue(DigitalInput *input);
@@ -26,7 +26,7 @@ typedef struct Button {
     void (*onPressed)(void);
 } Button;
 
-Button Button_init(DigitalInput * input, void (*onPressed)(void) );
+Button Button_init(DigitalInput *input, void (*onPressed)(void) );
 
 
 int Button_getValue(Button *button);
@@ -41,7 +41,7 @@ int Button_isPressed(Button *button);
 
 
 
-Button Button_init(DigitalInput * input, void (*onPressed)(void) ){
+Button Button_init(DigitalInput *input, void (*onPressed)(void) ){
     Button buton;
     buton.input = input;
     buton.onPressed = onPressed;

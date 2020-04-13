@@ -27,15 +27,15 @@
       <logicalFolder name="engine" displayName="engine" projectFiles="true">
         <itemPath>engine/Engine.c</itemPath>
         <itemPath>engine/Engine.h</itemPath>
-        <itemPath>engine/EngineConfigurator.c</itemPath>
         <itemPath>engine/EngineConfigurator.h</itemPath>
+        <itemPath>engine/EngineConfigurator.c</itemPath>
       </logicalFolder>
       <logicalFolder name="io" displayName="io" projectFiles="true">
         <logicalFolder name="digitalinput"
                        displayName="digitalinput"
                        projectFiles="true">
-          <itemPath>io/digitalinput/DigitalInput.h</itemPath>
           <itemPath>io/digitalinput/DigitalInput.c</itemPath>
+          <itemPath>io/digitalinput/DigitalInput.h</itemPath>
         </logicalFolder>
         <logicalFolder name="digitalOutput"
                        displayName="digitaloutput"
@@ -48,6 +48,7 @@
         <itemPath>led/Led.c</itemPath>
         <itemPath>led/Led.h</itemPath>
         <itemPath>led/LedConfigurator.h</itemPath>
+        <itemPath>led/LedConfigurator.c</itemPath>
       </logicalFolder>
       <logicalFolder name="motioncontroller"
                      displayName="motioncontroller"
@@ -72,6 +73,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>Point.c</itemPath>
       <itemPath>Point.h</itemPath>
+      <itemPath>ApplicationVariables.h</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"

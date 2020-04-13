@@ -13,10 +13,10 @@ extern "C" {
 #endif
 
     typedef struct DigitalInput {
-        int (*read)(struct DigitalInput * input);
+        int (*read)(struct DigitalInput *input);
     } DigitalInput;
 
-    DigitalInput DigitalInput_init(void (*init)(void), int (*read)());
+    DigitalInput DigitalInput_init(void (*init)(void), int (*read)(void));
 
 
     int DigitalInput_getValue(DigitalInput *input);

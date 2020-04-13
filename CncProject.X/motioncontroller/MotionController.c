@@ -1,6 +1,16 @@
 #include "MotionController.h"
 #include <math.h>
-#include "../application/Application.h"
+#include "../ApplicationVariables.h"
+
+
+void EngineConfigurator_configEngines() {
+    xEngineMotionOutput = DigitalOutput_init(xEngineMotionInit, xEngineMotionSet);
+    yEngineMotionOutput = DigitalOutput_init(yEngineMotionInit, xEngineMotionSet);
+    zEngineMotionOutput = DigitalOutput_init(zEngineMotionInit, xEngineMotionSet);
+    xEngineDirOutput = DigitalOutput_init(xEngineDirInit, xEngineDirSet);
+    yEngineDirOutput = DigitalOutput_init(yEngineDirInit, xEngineDirSet);
+    zEngineDirOutput = DigitalOutput_init(zEngineDirInit, xEngineDirSet);
+}
 
 MotionController MotionController_init() {
     MotionController motionController;

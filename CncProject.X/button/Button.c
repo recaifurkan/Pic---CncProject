@@ -6,7 +6,7 @@
  * buton olu?tururken ba?l? oldu?u portu ve hangi pine ba?l? oldu?jnuu giriyoun
  
  */
-Button Button_init(DigitalInput * input, void (*onPressed)(void) ){
+Button Button_init(DigitalInput *input, void (*onPressed)(void) ){
     Button buton;
     buton.input = input;
     buton.onPressed = onPressed;

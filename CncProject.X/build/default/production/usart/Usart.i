@@ -4640,10 +4640,87 @@ void USARTWriteFloat(long val, unsigned char field_length) {
 }
 # 3 "usart/Usart.c" 2
 
-# 1 "usart/../application/Application.h" 1
-# 17 "usart/../application/Application.h"
-# 1 "usart/../application/../Configuration.h" 1
-# 23 "usart/../application/../Configuration.h"
+# 1 "usart/../ApplicationVariables.h" 1
+# 15 "usart/../ApplicationVariables.h"
+# 1 "./io/digitalOutput/DigitalOutput.h" 1
+# 15 "./io/digitalOutput/DigitalOutput.h"
+    typedef struct DigitalOutput {
+        void (*set)(struct DigitalOutput * outputable, int value);
+        int isHigh;
+    } DigitalOutput;
+
+    DigitalOutput DigitalOutput_init(void (*init)(void), void (*set)(void));
+
+    void DigitalOutput_open(DigitalOutput *outputable);
+
+    void DigitalOutput_set(DigitalOutput *outputable, int value);
+
+    void DigitalOutput_close(DigitalOutput *outputable);
+# 15 "usart/../ApplicationVariables.h" 2
+
+# 1 "./io/digitalinput/DigitalInput.h" 1
+# 15 "./io/digitalinput/DigitalInput.h"
+    typedef struct DigitalInput {
+        int (*read)(struct DigitalInput *input);
+    } DigitalInput;
+
+    DigitalInput DigitalInput_init(void (*init)(void), int (*read)(void));
+
+
+    int DigitalInput_getValue(DigitalInput *input);
+# 16 "usart/../ApplicationVariables.h" 2
+
+
+# 1 "./motioncontroller/MotionController.h" 1
+# 14 "./motioncontroller/MotionController.h"
+# 1 "./motioncontroller/../engine/Engine.h" 1
+# 21 "./motioncontroller/../engine/Engine.h"
+    typedef struct Engine {
+        float currentCoord;
+        float destinationCoord;
+        int isMotion;
+        DigitalOutput *motionOutput;
+        DigitalOutput *dirOutput;
+        float stepPerMetrice;
+
+
+    } Engine;
+
+    Engine Engine_init(DigitalOutput *motionOutput, DigitalOutput *dirOutput);
+    float Engine_getStepPerMetrice(Engine *engine);
+
+
+    void Engine_setStepPerMetrice(Engine *engine, float stepPerMm) ;
+
+    float Engine_getCurrentCoord(Engine * engine);
+    float Engine_getDestinationCoord(Engine * engine);
+
+     void Engine_step(Engine * engine , int dir);
+
+     void Engine_addCurrentCoord(Engine * engine , float addValue);
+# 14 "./motioncontroller/MotionController.h" 2
+
+# 1 "./motioncontroller/../engine/EngineConfigurator.h" 1
+# 21 "./motioncontroller/../engine/EngineConfigurator.h"
+    void xEngineMotionInit();
+    void yEngineMotionInit();
+    void zEngineMotionInit();
+    void xEngineMotionSet(DigitalOutput * engine, int value);
+    void yEngineMotionSet(DigitalOutput * engine, int value);
+    void zEngineMotionSet(DigitalOutput * engine, int value);
+
+    void xEngineDirInit();
+    void yEngineDirInit();
+    void zEngineDirInit();
+    void xEngineDirSet(DigitalOutput * engine, int value);
+    void yEngineDirSet(DigitalOutput * engine, int value);
+    void zEngineDirSet(DigitalOutput * engine, int value);
+# 15 "./motioncontroller/MotionController.h" 2
+
+# 1 "./motioncontroller/../utils/Utils.h" 1
+# 14 "./motioncontroller/../utils/Utils.h"
+# 1 "./motioncontroller/../utils/../Configuration.h" 1
+# 23 "./motioncontroller/../utils/../Configuration.h"
 #pragma config OSC = INTIO67
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
@@ -4697,133 +4774,17 @@ void USARTWriteFloat(long val, unsigned char field_length) {
 
 
 #pragma config EBTRB = OFF
-# 17 "usart/../application/Application.h" 2
-
-# 1 "usart/../application/../led/Led.h" 1
-# 15 "usart/../application/../led/Led.h"
-# 1 "usart/../application/../led/../io/digitalOutput/DigitalOutput.h" 1
-# 15 "usart/../application/../led/../io/digitalOutput/DigitalOutput.h"
-    typedef struct DigitalOutput {
-        void (*set)(struct DigitalOutput * outputable, int value);
-        int isHigh;
-    } DigitalOutput;
-
-    DigitalOutput DigitalOutput_init(void (*init)(void), void (*set)(void));
-
-    void DigitalOutput_open(DigitalOutput *outputable);
-
-    void DigitalOutput_set(DigitalOutput *outputable, int value);
-
-    void DigitalOutput_close(DigitalOutput *outputable);
-# 15 "usart/../application/../led/Led.h" 2
+# 14 "./motioncontroller/../utils/Utils.h" 2
 
 
 
-
-typedef struct Led{
-    DigitalOutput *output;
-    int isOpen;
-}Led;
-
-Led Led_init(DigitalOutput * output);
-
-
-void Led_open(Led *led);
-
-void Led_close(Led *led);
-
-void Led_blink(Led *led , int time);
-# 18 "usart/../application/Application.h" 2
-
-# 1 "usart/../application/../button/Button.h" 1
-# 18 "usart/../application/../button/Button.h"
-# 1 "usart/../application/../button/../io/digitalinput/DigitalInput.h" 1
-# 15 "usart/../application/../button/../io/digitalinput/DigitalInput.h"
-    typedef struct DigitalInput {
-        int (*read)(struct DigitalInput * input);
-    } DigitalInput;
-
-    DigitalInput DigitalInput_init(void (*init)(void), int (*read)(void));
-
-
-    int DigitalInput_getValue(DigitalInput *input);
-# 18 "usart/../application/../button/Button.h" 2
-
-typedef struct Button {
-    DigitalInput * input;
-    void (*onPressed)(void);
-} Button;
-
-Button Button_init(DigitalInput * input, void (*onPressed)(void) );
-
-
-int Button_getValue(Button *button);
-
-int Button_isPressed(Button *button);
-# 19 "usart/../application/Application.h" 2
-
-
-# 1 "usart/../application/../motioncontroller/MotionController.h" 1
-# 14 "usart/../application/../motioncontroller/MotionController.h"
-# 1 "usart/../application/../motioncontroller/../engine/Engine.h" 1
-# 21 "usart/../application/../motioncontroller/../engine/Engine.h"
-    typedef struct Engine {
-        float currentCoord;
-        float destinationCoord;
-        int isMotion;
-        DigitalOutput *motionOutput;
-        DigitalOutput *dirOutput;
-        float stepPerMetrice;
-
-
-    } Engine;
-
-    Engine Engine_init(DigitalOutput *motionOutput, DigitalOutput *dirOutput);
-    float Engine_getStepPerMetrice(Engine *engine);
-
-
-    void Engine_setStepPerMetrice(Engine *engine, float stepPerMm) ;
-
-    float Engine_getCurrentCoord(Engine * engine);
-    float Engine_getDestinationCoord(Engine * engine);
-
-     void Engine_step(Engine * engine , int dir);
-
-     void Engine_addCurrentCoord(Engine * engine , float addValue);
-# 14 "usart/../application/../motioncontroller/MotionController.h" 2
-
-# 1 "usart/../application/../motioncontroller/../engine/EngineConfigurator.h" 1
-# 17 "usart/../application/../motioncontroller/../engine/EngineConfigurator.h"
-# 1 "usart/../application/../motioncontroller/../engine/../application/Application.h" 1
-# 17 "usart/../application/../motioncontroller/../engine/EngineConfigurator.h" 2
-
-
-    void xEngineMotionInit();
-    void yEngineMotionInit();
-    void zEngineMotionInit();
-    void xEngineMotionSet(Engine * engine, int value);
-    void yEngineMotionSet(Engine * engine, int value);
-    void zEngineMotionSet(Engine * engine, int value);
-
-    void xEngineDirInit();
-    void yEngineDirInit();
-    void zEngineDirInit();
-    void xEngineDirSet(Engine * engine, int value);
-    void yEngineDirSet(Engine * engine, int value);
-    void zEngineDirSet(Engine * engine, int value);
-
-
-
-    void EngineConfigurator_configEngines();
-# 15 "usart/../application/../motioncontroller/MotionController.h" 2
-
-# 1 "usart/../application/../motioncontroller/../utils/Utils.h" 1
-# 16 "usart/../application/../motioncontroller/../utils/Utils.h"
     void Library_delayMs(float time);
-# 16 "usart/../application/../motioncontroller/MotionController.h" 2
 
-# 1 "usart/../application/../motioncontroller/../Point.h" 1
-# 15 "usart/../application/../motioncontroller/../Point.h"
+    void printDebug(char * text);
+# 16 "./motioncontroller/MotionController.h" 2
+
+# 1 "./motioncontroller/../Point.h" 1
+# 15 "./motioncontroller/../Point.h"
 # 1 "E:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 1 3
 # 10 "E:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 3
 # 1 "E:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
@@ -5285,7 +5246,7 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 15 "usart/../application/../motioncontroller/../Point.h" 2
+# 15 "./motioncontroller/../Point.h" 2
 
 
 
@@ -5299,7 +5260,7 @@ double yn(int, double);
     int Point_equals(Point * firstPoint , Point * secondPoint);
     float Point_distance(Point * firstPoint , Point * secondPoint);
     char* Point_toString(Point * point);
-# 17 "usart/../application/../motioncontroller/MotionController.h" 2
+# 17 "./motioncontroller/MotionController.h" 2
 
 
     typedef struct MotionController {
@@ -5317,12 +5278,42 @@ double yn(int, double);
     Point MotionController_getCurrentCoord(MotionController * motionController);
 
     Point MotionController_getDestinationCoord(MotionController * motionController);
-# 21 "usart/../application/../motioncontroller/../engine/../application/Application.h" 2
+# 18 "usart/../ApplicationVariables.h" 2
+
+# 1 "./button/Button.h" 1
+# 19 "./button/Button.h"
+typedef struct Button {
+    DigitalInput * input;
+    void (*onPressed)(void);
+} Button;
+
+Button Button_init(DigitalInput *input, void (*onPressed)(void) );
+
+
+int Button_getValue(Button *button);
+
+int Button_isPressed(Button *button);
+# 19 "usart/../ApplicationVariables.h" 2
+
+# 1 "./led/Led.h" 1
+# 19 "./led/Led.h"
+typedef struct Led{
+    DigitalOutput* output;
+    int isOpen;
+}Led;
+
+Led Led_init(DigitalOutput * output);
+
+
+void Led_open(Led *led);
+
+void Led_close(Led *led);
+
+void Led_blink(Led *led , int time);
+# 20 "usart/../ApplicationVariables.h" 2
 
 
 
-
-    DigitalInput button1Input;
 
     DigitalOutput xEngineMotionOutput;
     DigitalOutput yEngineMotionOutput;
@@ -5334,23 +5325,14 @@ double yn(int, double);
     DigitalOutput zEngineDirOutput;
 
     Usart usart;
+    MotionController motionController;
 
 
+    Led yellowLed;
+    Led blueLed;
+    Led redLed;
 
-    __attribute__((picinterrupt(("")))) void ISR(void);
-
-    typedef struct {
-        int id;
-
-    } Application;
-
-
-
-    Application Application_init();
-
-    void Application_loop(Application *app);
-
-    void wait(int time);
+    Button button;
 # 4 "usart/Usart.c" 2
 
 

@@ -1,4 +1,43 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F2532 `(v ~T0 @X0 0 tf2`*S281`i ]
+"15 ./led/../io/digitalOutput/DigitalOutput.h
+[s S281 `*F2532 1 `i 1 ]
+[n S281 DigitalOutput set isHigh ]
+[v F2567 `(i ~T0 @X0 0 tf ]
+[v F2569 `(uc ~T0 @X0 0 tf ]
+[v F2571 `(i ~T0 @X0 0 tf2`*uc`i ]
+[v F2575 `(v ~T0 @X0 0 tf1`uc ]
+[v F2578 `(v ~T0 @X0 0 tf1`*Cuc ]
+[v F2581 `(v ~T0 @X0 0 tf1`*Cuc ]
+[v F2584 `(v ~T0 @X0 0 tf2`i`uc ]
+[v F2588 `(v ~T0 @X0 0 tf2`l`uc ]
+[v F2592 `(v ~T0 @X0 0 tf2`l`uc ]
+[v F2596 `(uc ~T0 @X0 0 tf ]
+"14 ./usart/Usart.h
+[; ;./usart/Usart.h: 14: typedef struct {
+[s S283 `*F2567 1 `*F2569 1 `*F2571 1 `*F2575 1 `*F2578 1 `*F2581 1 `*F2584 1 `*F2588 1 `*F2592 1 `*F2596 1 ]
+[n S283 . isDataReady readChar readString writeByte writeString writeLine writeInt writeLong writeFloat readByte ]
+"21 ./motioncontroller/../engine/Engine.h
+[; ;./motioncontroller/../engine/Engine.h: 21:     typedef struct Engine {
+[s S284 `f 1 `f 1 `i 1 `*S281 1 `*S281 1 `f 1 ]
+[n S284 Engine currentCoord destinationCoord isMotion motionOutput dirOutput stepPerMetrice ]
+"19 ./motioncontroller/MotionController.h
+[; ;./motioncontroller/MotionController.h: 19:     typedef struct MotionController {
+[s S286 `S284 1 `S284 1 `S284 1 ]
+[n S286 MotionController x y z ]
+"19 ./led/Led.h
+[; ;./led/Led.h: 19: typedef struct Led{
+[s S288 `*S281 1 `i 1 ]
+[n S288 Led output isOpen ]
+[v F2553 `(i ~T0 @X0 0 tf1`*S282 ]
+"15 ./button/../io/digitalinput/DigitalInput.h
+[s S282 `*F2553 1 ]
+[n S282 DigitalInput read ]
+[v F3140 `(v ~T0 @X0 0 tf ]
+"19 ./button/Button.h
+[; ;./button/Button.h: 19: typedef struct Button {
+[s S287 `*S282 1 `*F3140 1 ]
+[n S287 Button input onPressed ]
 [v F2518 `(v ~T0 @X0 1 tf1`ul ]
 "187 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
 [v __delay `JF2518 ~T0 @X0 0 e ]
@@ -483,6 +522,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "75
 [p x EBTRB = OFF ]
+"24 utils/../ApplicationVariables.h
+[; ;utils/../ApplicationVariables.h: 24:     DigitalOutput xEngineMotionOutput;
+[v _xEngineMotionOutput `S281 ~T0 @X0 1 e ]
+"25
+[; ;utils/../ApplicationVariables.h: 25:     DigitalOutput yEngineMotionOutput;
+[v _yEngineMotionOutput `S281 ~T0 @X0 1 e ]
+"26
+[; ;utils/../ApplicationVariables.h: 26:     DigitalOutput zEngineMotionOutput;
+[v _zEngineMotionOutput `S281 ~T0 @X0 1 e ]
+"29
+[; ;utils/../ApplicationVariables.h: 29:     DigitalOutput xEngineDirOutput;
+[v _xEngineDirOutput `S281 ~T0 @X0 1 e ]
+"30
+[; ;utils/../ApplicationVariables.h: 30:     DigitalOutput yEngineDirOutput;
+[v _yEngineDirOutput `S281 ~T0 @X0 1 e ]
+"31
+[; ;utils/../ApplicationVariables.h: 31:     DigitalOutput zEngineDirOutput;
+[v _zEngineDirOutput `S281 ~T0 @X0 1 e ]
+"33
+[; ;utils/../ApplicationVariables.h: 33:     Usart usart;
+[v _usart `S283 ~T0 @X0 1 e ]
+"34
+[; ;utils/../ApplicationVariables.h: 34:     MotionController motionController;
+[v _motionController `S286 ~T0 @X0 1 e ]
+"37
+[; ;utils/../ApplicationVariables.h: 37:     Led yellowLed;
+[v _yellowLed `S288 ~T0 @X0 1 e ]
+"38
+[; ;utils/../ApplicationVariables.h: 38:     Led blueLed;
+[v _blueLed `S288 ~T0 @X0 1 e ]
+"39
+[; ;utils/../ApplicationVariables.h: 39:     Led redLed;
+[v _redLed `S288 ~T0 @X0 1 e ]
+"41
+[; ;utils/../ApplicationVariables.h: 41:     Button button;
+[v _button `S287 ~T0 @X0 1 e ]
 "4 utils/Utils.c
 [; ;utils/Utils.c: 4: void recursiveDelay(float time){
 [v _recursiveDelay `(v ~T0 @X0 1 ef1`f ]
@@ -492,8 +567,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "5
 [; ;utils/Utils.c: 5:     while(time){
-[e $U 282  ]
-[e :U 283 ]
+[e $U 290  ]
+[e :U 291 ]
 {
 "6
 [; ;utils/Utils.c: 6:          _delay((unsigned long)((1)*(8000000/4000.0)));
@@ -501,14 +576,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7
 [; ;utils/Utils.c: 7:     }
 }
-[e :U 282 ]
+[e :U 290 ]
 "5
 [; ;utils/Utils.c: 5:     while(time){
-[e $ != _time -> -> 0 `i `f 283  ]
-[e :U 284 ]
+[e $ != _time -> -> 0 `i `f 291  ]
+[e :U 292 ]
 "8
 [; ;utils/Utils.c: 8: }
-[e :UE 281 ]
+[e :UE 289 ]
 }
 "10
 [; ;utils/Utils.c: 10: void Library_delayMs(float time){
@@ -522,5 +597,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _recursiveDelay (1 _time ]
 "12
 [; ;utils/Utils.c: 12:     }
-[e :UE 285 ]
+[e :UE 293 ]
+}
+"15
+[; ;utils/Utils.c: 15: void printDebug(char * text){
+[v _printDebug `(v ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _printDebug ]
+[v _text `*uc ~T0 @X0 1 r1 ]
+[f ]
+"16
+[; ;utils/Utils.c: 16:     usart.writeLine(text);
+[e ( *U . _usart 5 (1 -> _text `*Cuc ]
+"17
+[; ;utils/Utils.c: 17:     }
+[e :UE 294 ]
 }

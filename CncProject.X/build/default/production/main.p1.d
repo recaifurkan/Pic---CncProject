@@ -10,6 +10,8 @@ application/../usart/Usart.h  \
 application/../motioncontroller/MotionController.h  \
 application/../motioncontroller/../engine/Engine.h  \
 application/../motioncontroller/../engine/EngineConfigurator.h  \
-application/../motioncontroller/../engine/../application/Application.h  \
 application/../motioncontroller/../utils/Utils.h  \
-application/../motioncontroller/../Point.h 
+application/../motioncontroller/../Point.h  \
+application/../led/LedConfigurator.h  \
+application/../button/ButtonConfigurator.h  \
+application/../ApplicationVariables.h 

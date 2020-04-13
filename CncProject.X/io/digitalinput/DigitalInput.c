@@ -1,16 +1,20 @@
 #include "DigitalInput.h"
+//#include "../../utils/Utils.h"
 
-DigitalInput DigitalInput_init(void (*init)(void) , int (*read)()){
+DigitalInput DigitalInput_init(void (*init)(void) , int (*read)(void)){
     DigitalInput input;
-    input.read = read;
     (*init)();
-    int val = (*read)(&input);
-    val = input.read(&input);
+    input.read = read;
+    
     return input;
 }
 
 
 int DigitalInput_getValue(DigitalInput *input){
-    int value = input->read(input);
-    return value;
+    int val = input->read(input);
+    if(val){
+        return val;
+    }
+//    printDebug("Read function pointer");
+    return 0;
 }

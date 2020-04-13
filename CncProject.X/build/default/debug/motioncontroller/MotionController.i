@@ -4565,10 +4565,29 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-# 1 "motioncontroller/../engine/../application/Application.h" 1
-# 17 "motioncontroller/../engine/../application/Application.h"
-# 1 "motioncontroller/../engine/../application/../Configuration.h" 1
-# 23 "motioncontroller/../engine/../application/../Configuration.h"
+
+
+
+
+    void xEngineMotionInit();
+    void yEngineMotionInit();
+    void zEngineMotionInit();
+    void xEngineMotionSet(DigitalOutput * engine, int value);
+    void yEngineMotionSet(DigitalOutput * engine, int value);
+    void zEngineMotionSet(DigitalOutput * engine, int value);
+
+    void xEngineDirInit();
+    void yEngineDirInit();
+    void zEngineDirInit();
+    void xEngineDirSet(DigitalOutput * engine, int value);
+    void yEngineDirSet(DigitalOutput * engine, int value);
+    void zEngineDirSet(DigitalOutput * engine, int value);
+# 15 "motioncontroller/MotionController.h" 2
+
+# 1 "motioncontroller/../utils/Utils.h" 1
+# 14 "motioncontroller/../utils/Utils.h"
+# 1 "motioncontroller/../utils/../Configuration.h" 1
+# 23 "motioncontroller/../utils/../Configuration.h"
 #pragma config OSC = INTIO67
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
@@ -4622,138 +4641,14 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config EBTRB = OFF
-# 17 "motioncontroller/../engine/../application/Application.h" 2
-
-# 1 "motioncontroller/../engine/../application/../led/Led.h" 1
-# 19 "motioncontroller/../engine/../application/../led/Led.h"
-typedef struct Led{
-    DigitalOutput *output;
-    int isOpen;
-}Led;
-
-Led Led_init(DigitalOutput * output);
-
-
-void Led_open(Led *led);
-
-void Led_close(Led *led);
-
-void Led_blink(Led *led , int time);
-# 18 "motioncontroller/../engine/../application/Application.h" 2
-
-# 1 "motioncontroller/../engine/../application/../button/Button.h" 1
-# 18 "motioncontroller/../engine/../application/../button/Button.h"
-# 1 "motioncontroller/../engine/../application/../button/../io/digitalinput/DigitalInput.h" 1
-# 15 "motioncontroller/../engine/../application/../button/../io/digitalinput/DigitalInput.h"
-    typedef struct DigitalInput {
-        int (*read)(struct DigitalInput * input);
-    } DigitalInput;
-
-    DigitalInput DigitalInput_init(void (*init)(void), int (*read)());
-
-
-    int DigitalInput_getValue(DigitalInput *input);
-# 18 "motioncontroller/../engine/../application/../button/Button.h" 2
-
-typedef struct Button {
-    DigitalInput * input;
-    void (*onPressed)(void);
-} Button;
-
-Button Button_init(DigitalInput * input, void (*onPressed)(void) );
-
-
-int Button_getValue(Button *button);
-
-int Button_isPressed(Button *button);
-# 19 "motioncontroller/../engine/../application/Application.h" 2
-
-# 1 "motioncontroller/../engine/../application/../usart/Usart.h" 1
-# 14 "motioncontroller/../engine/../application/../usart/Usart.h"
-typedef struct {
-    int(*isDataReady)(void);
-
-
-    char (*readChar)(void);
-    int(*readString)(char *buf, int max_length);
-    void (*writeByte)(char ch);
-    void (*writeString)(const char *str);
-    void (*writeLine)(const char *ln);
-    void (*writeInt)(int val, unsigned char field_length);
-    void (*writeLong)(long val, unsigned char field_length);
-    void (*writeFloat)(long val, unsigned char field_length);
-    unsigned char (*readByte)(void);
-} Usart;
+# 14 "motioncontroller/../utils/Utils.h" 2
 
 
 
-
-
-
-void USARTInit(Usart *usart,long baudRate) ;
-# 20 "motioncontroller/../engine/../application/Application.h" 2
-
-# 1 "motioncontroller/../engine/../application/../motioncontroller/MotionController.h" 1
-# 21 "motioncontroller/../engine/../application/Application.h" 2
-
-
-
-
-    DigitalInput button1Input;
-
-    DigitalOutput xEngineMotionOutput;
-    DigitalOutput yEngineMotionOutput;
-    DigitalOutput zEngineMotionOutput;
-
-
-    DigitalOutput xEngineDirOutput;
-    DigitalOutput yEngineDirOutput;
-    DigitalOutput zEngineDirOutput;
-
-    Usart usart;
-
-
-
-    __attribute__((picinterrupt(("")))) void ISR(void);
-
-    typedef struct {
-        int id;
-
-    } Application;
-
-
-
-    Application Application_init();
-
-    void Application_loop(Application *app);
-
-    void wait(int time);
-# 17 "motioncontroller/../engine/EngineConfigurator.h" 2
-
-
-    void xEngineMotionInit();
-    void yEngineMotionInit();
-    void zEngineMotionInit();
-    void xEngineMotionSet(Engine * engine, int value);
-    void yEngineMotionSet(Engine * engine, int value);
-    void zEngineMotionSet(Engine * engine, int value);
-
-    void xEngineDirInit();
-    void yEngineDirInit();
-    void zEngineDirInit();
-    void xEngineDirSet(Engine * engine, int value);
-    void yEngineDirSet(Engine * engine, int value);
-    void zEngineDirSet(Engine * engine, int value);
-
-
-
-    void EngineConfigurator_configEngines();
-# 15 "motioncontroller/../engine/../application/../motioncontroller/MotionController.h" 2
-
-# 1 "motioncontroller/../utils/Utils.h" 1
-# 16 "motioncontroller/../utils/Utils.h"
     void Library_delayMs(float time);
-# 16 "motioncontroller/../engine/../application/../motioncontroller/MotionController.h" 2
+
+    void printDebug(char * text);
+# 16 "motioncontroller/MotionController.h" 2
 
 # 1 "motioncontroller/../Point.h" 1
 # 15 "motioncontroller/../Point.h"
@@ -5232,7 +5127,7 @@ double yn(int, double);
     int Point_equals(Point * firstPoint , Point * secondPoint);
     float Point_distance(Point * firstPoint , Point * secondPoint);
     char* Point_toString(Point * point);
-# 17 "motioncontroller/../engine/../application/../motioncontroller/MotionController.h" 2
+# 17 "motioncontroller/MotionController.h" 2
 
 
     typedef struct MotionController {
@@ -5253,7 +5148,111 @@ double yn(int, double);
 # 1 "motioncontroller/MotionController.c" 2
 
 
+# 1 "motioncontroller/../ApplicationVariables.h" 1
+# 16 "motioncontroller/../ApplicationVariables.h"
+# 1 "./io/digitalinput/DigitalInput.h" 1
+# 15 "./io/digitalinput/DigitalInput.h"
+    typedef struct DigitalInput {
+        int (*read)(struct DigitalInput *input);
+    } DigitalInput;
 
+    DigitalInput DigitalInput_init(void (*init)(void), int (*read)(void));
+
+
+    int DigitalInput_getValue(DigitalInput *input);
+# 16 "motioncontroller/../ApplicationVariables.h" 2
+
+# 1 "./usart/Usart.h" 1
+# 14 "./usart/Usart.h"
+typedef struct {
+    int(*isDataReady)(void);
+
+
+    char (*readChar)(void);
+    int(*readString)(char *buf, int max_length);
+    void (*writeByte)(char ch);
+    void (*writeString)(const char *str);
+    void (*writeLine)(const char *ln);
+    void (*writeInt)(int val, unsigned char field_length);
+    void (*writeLong)(long val, unsigned char field_length);
+    void (*writeFloat)(long val, unsigned char field_length);
+    unsigned char (*readByte)(void);
+} Usart;
+
+
+
+
+
+
+void USARTInit(Usart *usart,long baudRate) ;
+# 17 "motioncontroller/../ApplicationVariables.h" 2
+
+
+# 1 "./button/Button.h" 1
+# 19 "./button/Button.h"
+typedef struct Button {
+    DigitalInput * input;
+    void (*onPressed)(void);
+} Button;
+
+Button Button_init(DigitalInput *input, void (*onPressed)(void) );
+
+
+int Button_getValue(Button *button);
+
+int Button_isPressed(Button *button);
+# 19 "motioncontroller/../ApplicationVariables.h" 2
+
+# 1 "./led/Led.h" 1
+# 19 "./led/Led.h"
+typedef struct Led{
+    DigitalOutput* output;
+    int isOpen;
+}Led;
+
+Led Led_init(DigitalOutput * output);
+
+
+void Led_open(Led *led);
+
+void Led_close(Led *led);
+
+void Led_blink(Led *led , int time);
+# 20 "motioncontroller/../ApplicationVariables.h" 2
+
+
+
+
+    DigitalOutput xEngineMotionOutput;
+    DigitalOutput yEngineMotionOutput;
+    DigitalOutput zEngineMotionOutput;
+
+
+    DigitalOutput xEngineDirOutput;
+    DigitalOutput yEngineDirOutput;
+    DigitalOutput zEngineDirOutput;
+
+    Usart usart;
+    MotionController motionController;
+
+
+    Led yellowLed;
+    Led blueLed;
+    Led redLed;
+
+    Button button;
+# 3 "motioncontroller/MotionController.c" 2
+
+
+
+void EngineConfigurator_configEngines() {
+    xEngineMotionOutput = DigitalOutput_init(xEngineMotionInit, xEngineMotionSet);
+    yEngineMotionOutput = DigitalOutput_init(yEngineMotionInit, xEngineMotionSet);
+    zEngineMotionOutput = DigitalOutput_init(zEngineMotionInit, xEngineMotionSet);
+    xEngineDirOutput = DigitalOutput_init(xEngineDirInit, xEngineDirSet);
+    yEngineDirOutput = DigitalOutput_init(yEngineDirInit, xEngineDirSet);
+    zEngineDirOutput = DigitalOutput_init(zEngineDirInit, xEngineDirSet);
+}
 
 MotionController MotionController_init() {
     MotionController motionController;
@@ -5391,7 +5390,7 @@ void MotionController_control(MotionController *motionController) {
 
 
 }
-# 213 "motioncontroller/MotionController.c"
+# 223 "motioncontroller/MotionController.c"
 Point MotionController_getCurrentCoord(MotionController * motionController) {
     return Point_init3D(
             Engine_getCurrentCoord(&motionController->x),

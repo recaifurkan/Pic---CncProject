@@ -34,14 +34,16 @@ DigitalOutput DigitalOutput_init(void (*init)(void) , void (*set)(void)) {
 
 void DigitalOutput_open(DigitalOutput *output) {
     output->isHigh = 1;
-    (*output->set)(output,1);
+    DigitalOutput_set(output,1);
+
 }
 
 void DigitalOutput_close(DigitalOutput *output) {
     output->isHigh = 0;
-    output->set(output,0);
+    DigitalOutput_set(output,0);
+
 }
 
 void DigitalOutput_set(DigitalOutput *outputable, int value){
-    outputable->set(outputable,value);
+    outputable->set(&outputable,value);
 }

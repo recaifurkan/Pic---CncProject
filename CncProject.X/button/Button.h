@@ -21,7 +21,7 @@ typedef struct Button {
     void (*onPressed)(void);
 } Button;
 
-Button Button_init(DigitalInput * input, void (*onPressed)(void) );
+Button Button_init(DigitalInput *input, void (*onPressed)(void) );
 
 
 int Button_getValue(Button *button);

@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2562 `(i ~T0 @X0 0 tf1`*S283 ]
-"15 application/../io/digitalinput/DigitalInput.h
-[s S283 `*F2562 1 ]
-[n S283 DigitalInput read ]
 [v F2528 `(v ~T0 @X0 0 tf2`*S281`i ]
 "15 application/../io/digitalOutput/DigitalOutput.h
 [s S281 `*F2528 1 `i 1 ]
 [n S281 DigitalOutput set isHigh ]
+[v F2562 `(i ~T0 @X0 0 tf1`*S283 ]
+"15 application/../io/digitalinput/DigitalInput.h
+[s S283 `*F2562 1 ]
+[n S283 DigitalInput read ]
 [v F2590 `(i ~T0 @X0 0 tf ]
 [v F2592 `(uc ~T0 @X0 0 tf ]
 [v F2594 `(i ~T0 @X0 0 tf2`*uc`i ]
@@ -17,73 +17,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F2611 `(v ~T0 @X0 0 tf2`l`uc ]
 [v F2615 `(v ~T0 @X0 0 tf2`l`uc ]
 [v F2619 `(uc ~T0 @X0 0 tf ]
-"14 application/../usart/Usart.h
-[; ;application/../usart/Usart.h: 14: typedef struct {
+"14 ./usart/Usart.h
 [s S285 `*F2590 1 `*F2592 1 `*F2594 1 `*F2598 1 `*F2601 1 `*F2604 1 `*F2607 1 `*F2611 1 `*F2615 1 `*F2619 1 ]
 [n S285 . isDataReady readChar readString writeByte writeString writeLine writeInt writeLong writeFloat readByte ]
-"8638 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8638: extern volatile __bit TRISD1 __attribute__((address(0x7CA9)));
-[v _TRISD1 `Vb ~T0 @X0 0 e@31913 ]
-"8635
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8635: extern volatile __bit TRISD0 __attribute__((address(0x7CA8)));
-[v _TRISD0 `Vb ~T0 @X0 0 e@31912 ]
-"8620
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8620: extern volatile __bit TRISC3 __attribute__((address(0x7CA3)));
-[v _TRISC3 `Vb ~T0 @X0 0 e@31907 ]
-"19 application/../led/Led.h
-[; ;application/../led/Led.h: 19: typedef struct Led{
+"21 application/../motioncontroller/../engine/Engine.h
+[; ;application/../motioncontroller/../engine/Engine.h: 21:     typedef struct Engine {
+[s S286 `f 1 `f 1 `i 1 `*S281 1 `*S281 1 `f 1 ]
+[n S286 Engine currentCoord destinationCoord isMotion motionOutput dirOutput stepPerMetrice ]
+"19 ./motioncontroller/MotionController.h
+[s S288 `S286 1 `S286 1 `S286 1 ]
+[n S288 MotionController x y z ]
+"19 ./led/Led.h
 [s S282 `*S281 1 `i 1 ]
 [n S282 Led output isOpen ]
-"1319 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1319:     struct {
-[s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S54 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"1329
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1329:     struct {
-[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S55 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"1318
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1318: typedef union {
-[u S53 `S54 1 `S55 1 ]
-[n S53 . . . ]
-"1340
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1340: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
-[v _LATDbits `VS53 ~T0 @X0 0 e@3980 ]
-"1207
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1207:     struct {
-[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S51 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"1217
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1217:     struct {
-[s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S52 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
-"1206
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1206: typedef union {
-[u S50 `S51 1 `S52 1 ]
-[n S50 . . . ]
-"1228
-[; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1228: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
-[v _LATCbits `VS50 ~T0 @X0 0 e@3979 ]
-[v F2534 `(v ~T0 @X0 0 tf ]
-[v F2535 `(v ~T0 @X0 0 tf ]
-"20 application/../io/digitalOutput/DigitalOutput.h
-[v _DigitalOutput_init `(S281 ~T0 @X0 0 ef2`*F2534`*F2535 ]
-[v F3196 `(v ~T0 @X0 0 tf ]
-[v F3198 `(v ~T0 @X0 0 tf ]
-[v F3202 `(v ~T0 @X0 0 tf ]
-[v F3204 `(v ~T0 @X0 0 tf ]
-[v F3208 `(v ~T0 @X0 0 tf ]
-[v F3210 `(v ~T0 @X0 0 tf ]
-[v F2518 `(v ~T0 @X0 1 tf1`ul ]
-"187 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF2518 ~T0 @X0 0 e ]
-[p i __delay ]
 [v F2577 `(v ~T0 @X0 0 tf ]
-"19 application/../button/Button.h
-[; ;application/../button/Button.h: 19: typedef struct Button {
+"19 ./button/Button.h
 [s S284 `*S283 1 `*F2577 1 ]
 [n S284 Button input onPressed ]
-"42 application/../button/../application/Application.h
+"29 application/Application.h
+[; ;application/Application.h: 29:     typedef struct {
 [s S289 `i 1 ]
 [n S289 . id ]
 "977 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
@@ -101,34 +53,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1425
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1425: extern volatile unsigned char LATE __attribute__((address(0xF8D)));
 [v _LATE `Vuc ~T0 @X0 0 e@3981 ]
-"34 application/../usart/Usart.h
-[; ;application/../usart/Usart.h: 34: void USARTInit(Usart *usart,long baudRate) ;
+"34 ./usart/Usart.h
 [v _USARTInit `(v ~T0 @X0 0 ef2`*S285`l ]
-"24 application/../led/Led.h
-[; ;application/../led/Led.h: 24: Led Led_init(DigitalOutput * output);
+"27 ./motioncontroller/MotionController.h
+[v _MotionController_init `(S288 ~T0 @X0 0 e? ]
+"29
+[v _MotionController_control `(v ~T0 @X0 0 ef1`*S288 ]
+"30 application/../led/LedConfigurator.h
+[; ;application/../led/LedConfigurator.h: 30:     void LedConfigurator_config();
+[v _LedConfigurator_config `(v ~T0 @X0 0 e? ]
+"24 ./led/Led.h
 [v _Led_init `(S282 ~T0 @X0 0 ef1`*S281 ]
-"25 application/../button/ButtonConfigurator.h
-[; ;application/../button/ButtonConfigurator.h: 25:     void ButtonConfigurator_config();
+"24 application/../button/ButtonConfigurator.h
+[; ;application/../button/ButtonConfigurator.h: 24:     void ButtonConfigurator_config();
 [v _ButtonConfigurator_config `(v ~T0 @X0 0 e? ]
 [v F2580 `(v ~T0 @X0 0 tf ]
-"24 application/../button/Button.h
-[; ;application/../button/Button.h: 24: Button Button_init(DigitalInput * input, void (*onPressed)(void) );
+"24 ./button/Button.h
 [v _Button_init `(S284 ~T0 @X0 0 ef2`*S283`*F2580 ]
-[v F3556 `(v ~T0 @X0 0 tf ]
-"27 application/../led/Led.h
-[; ;application/../led/Led.h: 27: void Led_open(Led *led);
+[v F3526 `(v ~T0 @X0 0 tf ]
+"27 ./led/Led.h
 [v _Led_open `(v ~T0 @X0 0 ef1`*S282 ]
-"22 application/../io/digitalinput/DigitalInput.h
-[v _DigitalInput_getValue `(i ~T0 @X0 0 ef1`*S283 ]
-"29 application/../led/Led.h
-[; ;application/../led/Led.h: 29: void Led_close(Led *led);
+"29 ./button/Button.h
+[v _Button_isPressed `(i ~T0 @X0 0 ef1`*S284 ]
+"29 ./led/Led.h
 [v _Led_close `(v ~T0 @X0 0 ef1`*S282 ]
 [t ~ __interrupt . k ]
 [t T42 __interrupt ]
-[v F3566 `(i ~T0 @X0 0 tf ]
-"36 application/../softuart/softusart.h
-[; ;application/../softuart/softusart.h: 36: void softUSARTWriteString(const char *str);
-[v _softUSARTWriteString `(v ~T0 @X0 0 ef1`*Cuc ]
+[v F3534 `(i ~T0 @X0 0 tf ]
 "54 E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -609,373 +560,205 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "75
 [p x EBTRB = OFF ]
-"25 application/../button/../application/Application.h
-[v _button1Input `S283 ~T0 @X0 1 e ]
-"27
-[v _xEngineMotionOutput `S281 ~T0 @X0 1 e ]
-"28
-[v _yEngineMotionOutput `S281 ~T0 @X0 1 e ]
-"29
-[v _zEngineMotionOutput `S281 ~T0 @X0 1 e ]
-"32
-[v _xEngineDirOutput `S281 ~T0 @X0 1 e ]
-"33
-[v _yEngineDirOutput `S281 ~T0 @X0 1 e ]
-"34
-[v _zEngineDirOutput `S281 ~T0 @X0 1 e ]
-"36
-[v _usart `S285 ~T0 @X0 1 e ]
-"20 application/../led/LedConfigurator.h
-[; ;application/../led/LedConfigurator.h: 20:     void redLedInit() {
-[v _redLedInit `(v ~T0 @X0 1 ef ]
-{
-[e :U _redLedInit ]
-[f ]
-"21
-[; ;application/../led/LedConfigurator.h: 21:         TRISD1 = 0;
-[e = _TRISD1 -> -> 0 `i `b ]
-"23
-[; ;application/../led/LedConfigurator.h: 23:     }
-[e :UE 290 ]
-}
-"25
-[; ;application/../led/LedConfigurator.h: 25:     void yellowLedInit() {
-[v _yellowLedInit `(v ~T0 @X0 1 ef ]
-{
-[e :U _yellowLedInit ]
-[f ]
-"26
-[; ;application/../led/LedConfigurator.h: 26:         TRISD0 = 0;
-[e = _TRISD0 -> -> 0 `i `b ]
-"27
-[; ;application/../led/LedConfigurator.h: 27:     }
-[e :UE 291 ]
-}
-"29
-[; ;application/../led/LedConfigurator.h: 29:     void blueLedInit() {
-[v _blueLedInit `(v ~T0 @X0 1 ef ]
-{
-[e :U _blueLedInit ]
-[f ]
-"30
-[; ;application/../led/LedConfigurator.h: 30:         TRISC3 = 0;
-[e = _TRISC3 -> -> 0 `i `b ]
-"31
-[; ;application/../led/LedConfigurator.h: 31:     }
-[e :UE 292 ]
-}
-"33
-[; ;application/../led/LedConfigurator.h: 33:     void redLedSet(Led * button, int value) {
-[v _redLedSet `(v ~T0 @X0 1 ef2`*S282`i ]
-{
-[e :U _redLedSet ]
-[v _button `*S282 ~T0 @X0 1 r1 ]
-[v _value `i ~T0 @X0 1 r2 ]
-[f ]
-"34
-[; ;application/../led/LedConfigurator.h: 34:         LATDbits.LATD1 = value;
-[e = . . _LATDbits 0 1 -> _value `uc ]
-"37
-[; ;application/../led/LedConfigurator.h: 37:     }
-[e :UE 293 ]
-}
-"39
-[; ;application/../led/LedConfigurator.h: 39:     void yellowLedSet(Led * button, int value) {
-[v _yellowLedSet `(v ~T0 @X0 1 ef2`*S282`i ]
-{
-[e :U _yellowLedSet ]
-[v _button `*S282 ~T0 @X0 1 r1 ]
-[v _value `i ~T0 @X0 1 r2 ]
-[f ]
-"40
-[; ;application/../led/LedConfigurator.h: 40:         LATDbits.LATD0 = value;
-[e = . . _LATDbits 0 0 -> _value `uc ]
-"42
-[; ;application/../led/LedConfigurator.h: 42:     }
-[e :UE 294 ]
-}
-"44
-[; ;application/../led/LedConfigurator.h: 44:     void blueLedSet(Led * button, int value) {
-[v _blueLedSet `(v ~T0 @X0 1 ef2`*S282`i ]
-{
-[e :U _blueLedSet ]
-[v _button `*S282 ~T0 @X0 1 r1 ]
-[v _value `i ~T0 @X0 1 r2 ]
-[f ]
-"45
-[; ;application/../led/LedConfigurator.h: 45:         LATCbits.LATC3 = value;
-[e = . . _LATCbits 0 3 -> _value `uc ]
-"46
-[; ;application/../led/LedConfigurator.h: 46:     }
-[e :UE 295 ]
-}
-"48
-[; ;application/../led/LedConfigurator.h: 48: DigitalOutput redLedOutput;
+"26 application/../led/LedConfigurator.h
+[; ;application/../led/LedConfigurator.h: 26:     DigitalOutput redLedOutput;
 [v _redLedOutput `S281 ~T0 @X0 1 e ]
-"49
-[; ;application/../led/LedConfigurator.h: 49: DigitalOutput yellowLedOutput;
+"27
+[; ;application/../led/LedConfigurator.h: 27:     DigitalOutput yellowLedOutput;
 [v _yellowLedOutput `S281 ~T0 @X0 1 e ]
-"50
-[; ;application/../led/LedConfigurator.h: 50: DigitalOutput blueLedOutput;
+"28
+[; ;application/../led/LedConfigurator.h: 28:     DigitalOutput blueLedOutput;
 [v _blueLedOutput `S281 ~T0 @X0 1 e ]
-"52
-[; ;application/../led/LedConfigurator.h: 52: void LedConfigurator_config(){
-[v _LedConfigurator_config `(v ~T0 @X0 1 ef ]
-{
-[e :U _LedConfigurator_config ]
-[f ]
-"53
-[; ;application/../led/LedConfigurator.h: 53:     redLedOutput = DigitalOutput_init(redLedInit,redLedSet);
-[e = _redLedOutput ( _DigitalOutput_init (2 , -> &U _redLedInit `*F3196 -> &U _redLedSet `*F3198 ]
-"54
-[; ;application/../led/LedConfigurator.h: 54:     yellowLedOutput = DigitalOutput_init(yellowLedInit,yellowLedSet);
-[e = _yellowLedOutput ( _DigitalOutput_init (2 , -> &U _yellowLedInit `*F3202 -> &U _yellowLedSet `*F3204 ]
-"55
-[; ;application/../led/LedConfigurator.h: 55:     blueLedOutput = DigitalOutput_init(blueLedInit,blueLedSet);
-[e = _blueLedOutput ( _DigitalOutput_init (2 , -> &U _blueLedInit `*F3208 -> &U _blueLedSet `*F3210 ]
-"56
-[; ;application/../led/LedConfigurator.h: 56: }
-[e :UE 296 ]
-}
-"17 application/Application.c
-[; ;application/Application.c: 17: void delaySaniye(int saniye) {
-[v _delaySaniye `(v ~T0 @X0 1 ef1`i ]
-{
-[e :U _delaySaniye ]
-[v _saniye `i ~T0 @X0 1 r1 ]
-[f ]
-"18
-[; ;application/Application.c: 18:     while (saniye) {
-[e $U 300  ]
-[e :U 301 ]
-{
-"19
-[; ;application/Application.c: 19:         _delay((unsigned long)((1000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"20
-[; ;application/Application.c: 20:         saniye--;
-[e -- _saniye -> 1 `i ]
-"21
-[; ;application/Application.c: 21:     }
-}
-[e :U 300 ]
-"18
-[; ;application/Application.c: 18:     while (saniye) {
-[e $ != _saniye -> 0 `i 301  ]
-[e :U 302 ]
-"22
-[; ;application/Application.c: 22: }
-[e :UE 299 ]
-}
-"24
-[; ;application/Application.c: 24: void wait(int time) {
-[v _wait `(v ~T0 @X0 1 ef1`i ]
-{
-[e :U _wait ]
-[v _time `i ~T0 @X0 1 r1 ]
-[f ]
+"18 application/../button/ButtonConfigurator.h
+[; ;application/../button/ButtonConfigurator.h: 18:     DigitalInput button1Input;
+[v _button1Input `S283 ~T0 @X0 1 e ]
+"24 application/../ApplicationVariables.h
+[; ;application/../ApplicationVariables.h: 24:     DigitalOutput xEngineMotionOutput;
+[v _xEngineMotionOutput `S281 ~T0 @X0 1 e ]
 "25
-[; ;application/Application.c: 25:     int icTimer = time;
-[v _icTimer `i ~T0 @X0 1 a ]
-[e = _icTimer _time ]
+[; ;application/../ApplicationVariables.h: 25:     DigitalOutput yEngineMotionOutput;
+[v _yEngineMotionOutput `S281 ~T0 @X0 1 e ]
 "26
-[; ;application/Application.c: 26:     int tmp = time;
-[v _tmp `i ~T0 @X0 1 a ]
-[e = _tmp _time ]
-"27
-[; ;application/Application.c: 27:     while (time != 0) {
-[e $U 304  ]
-[e :U 305 ]
-{
-"28
-[; ;application/Application.c: 28:         while (icTimer != 0) {
-[e $U 307  ]
-[e :U 308 ]
-{
+[; ;application/../ApplicationVariables.h: 26:     DigitalOutput zEngineMotionOutput;
+[v _zEngineMotionOutput `S281 ~T0 @X0 1 e ]
 "29
-[; ;application/Application.c: 29:             icTimer--;
-[e -- _icTimer -> 1 `i ]
+[; ;application/../ApplicationVariables.h: 29:     DigitalOutput xEngineDirOutput;
+[v _xEngineDirOutput `S281 ~T0 @X0 1 e ]
 "30
-[; ;application/Application.c: 30:         }
-}
-[e :U 307 ]
-"28
-[; ;application/Application.c: 28:         while (icTimer != 0) {
-[e $ != _icTimer -> 0 `i 308  ]
-[e :U 309 ]
+[; ;application/../ApplicationVariables.h: 30:     DigitalOutput yEngineDirOutput;
+[v _yEngineDirOutput `S281 ~T0 @X0 1 e ]
 "31
-[; ;application/Application.c: 31:         time--;
-[e -- _time -> 1 `i ]
-"32
-[; ;application/Application.c: 32:         icTimer = tmp;
-[e = _icTimer _tmp ]
+[; ;application/../ApplicationVariables.h: 31:     DigitalOutput zEngineDirOutput;
+[v _zEngineDirOutput `S281 ~T0 @X0 1 e ]
 "33
-[; ;application/Application.c: 33:     }
-}
-[e :U 304 ]
-"27
-[; ;application/Application.c: 27:     while (time != 0) {
-[e $ != _time -> 0 `i 305  ]
-[e :U 306 ]
+[; ;application/../ApplicationVariables.h: 33:     Usart usart;
+[v _usart `S285 ~T0 @X0 1 e ]
 "34
-[; ;application/Application.c: 34: }
-[e :UE 303 ]
-}
-"36
-[; ;application/Application.c: 36: Led yellowLed;
-[v _yellowLed `S282 ~T0 @X0 1 e ]
+[; ;application/../ApplicationVariables.h: 34:     MotionController motionController;
+[v _motionController `S288 ~T0 @X0 1 e ]
 "37
-[; ;application/Application.c: 37: Led blueLed;
-[v _blueLed `S282 ~T0 @X0 1 e ]
+[; ;application/../ApplicationVariables.h: 37:     Led yellowLed;
+[v _yellowLed `S282 ~T0 @X0 1 e ]
 "38
-[; ;application/Application.c: 38: Led redLed;
+[; ;application/../ApplicationVariables.h: 38:     Led blueLed;
+[v _blueLed `S282 ~T0 @X0 1 e ]
+"39
+[; ;application/../ApplicationVariables.h: 39:     Led redLed;
 [v _redLed `S282 ~T0 @X0 1 e ]
-"40
-[; ;application/Application.c: 40: Button button;
+"41
+[; ;application/../ApplicationVariables.h: 41:     Button button;
 [v _button `S284 ~T0 @X0 1 e ]
-"44
-[; ;application/Application.c: 44: Application Application_init() {
+"21 application/Application.c
+[; ;application/Application.c: 21: Application Application_init() {
 [v _Application_init `(S289 ~T0 @X0 1 ef ]
 {
 [e :U _Application_init ]
 [f ]
-"45
-[; ;application/Application.c: 45:     Application app;
+"22
+[; ;application/Application.c: 22:     Application app;
 [v _app `S289 ~T0 @X0 1 a ]
-"46
-[; ;application/Application.c: 46:     app.id = 0;
+"23
+[; ;application/Application.c: 23:     app.id = 0;
 [e = . _app 0 -> 0 `i ]
-"48
-[; ;application/Application.c: 48:     LATA = 0;
+"25
+[; ;application/Application.c: 25:     LATA = 0;
 [e = _LATA -> -> 0 `i `uc ]
-"49
-[; ;application/Application.c: 49:     LATB = 0;
+"26
+[; ;application/Application.c: 26:     LATB = 0;
 [e = _LATB -> -> 0 `i `uc ]
-"50
-[; ;application/Application.c: 50:     LATC = 0;
+"27
+[; ;application/Application.c: 27:     LATC = 0;
 [e = _LATC -> -> 0 `i `uc ]
-"51
-[; ;application/Application.c: 51:     LATD = 0;
+"28
+[; ;application/Application.c: 28:     LATD = 0;
 [e = _LATD -> -> 0 `i `uc ]
-"52
-[; ;application/Application.c: 52:     LATE = 0;
+"29
+[; ;application/Application.c: 29:     LATE = 0;
 [e = _LATE -> -> 0 `i `uc ]
-"53
-[; ;application/Application.c: 53:     USARTInit(&usart, 9600);
+"30
+[; ;application/Application.c: 30:     USARTInit(&usart, 9600);
 [e ( _USARTInit (2 , &U _usart -> -> 9600 `i `l ]
-"74
-[; ;application/Application.c: 74:     LedConfigurator_config();
+"31
+[; ;application/Application.c: 31:     motionController = MotionController_init();
+[e = _motionController ( _MotionController_init ..  ]
+"32
+[; ;application/Application.c: 32:     motionController.x.destinationCoord = 20;
+[e = . . _motionController 0 1 -> -> 20 `i `f ]
+"33
+[; ;application/Application.c: 33:     motionController.y.destinationCoord = 60;
+[e = . . _motionController 1 1 -> -> 60 `i `f ]
+"34
+[; ;application/Application.c: 34:     motionController.z.destinationCoord = 150;
+[e = . . _motionController 2 1 -> -> 150 `i `f ]
+"38
+[; ;application/Application.c: 38:     MotionController_control(&motionController);
+[e ( _MotionController_control (1 &U _motionController ]
+"51
+[; ;application/Application.c: 51:     LedConfigurator_config();
 [e ( _LedConfigurator_config ..  ]
-"76
-[; ;application/Application.c: 76:     yellowLed = Led_init(&yellowLedOutput);
+"53
+[; ;application/Application.c: 53:     yellowLed = Led_init(&yellowLedOutput);
 [e = _yellowLed ( _Led_init (1 &U _yellowLedOutput ]
-"78
-[; ;application/Application.c: 78:     redLed = Led_init(&redLedOutput);
+"55
+[; ;application/Application.c: 55:     redLed = Led_init(&redLedOutput);
 [e = _redLed ( _Led_init (1 &U _redLedOutput ]
-"80
-[; ;application/Application.c: 80:     blueLed = Led_init(&blueLedOutput);
+"57
+[; ;application/Application.c: 57:     blueLed = Led_init(&blueLedOutput);
 [e = _blueLed ( _Led_init (1 &U _blueLedOutput ]
-"82
-[; ;application/Application.c: 82:     ButtonConfigurator_config();
+"59
+[; ;application/Application.c: 59:     ButtonConfigurator_config();
 [e ( _ButtonConfigurator_config ..  ]
-"84
-[; ;application/Application.c: 84:     button = Button_init(&button1Input, 0);
-[e = _button ( _Button_init (2 , &U _button1Input -> -> 0 `i `*F3556 ]
-"98
-[; ;application/Application.c: 98:     return app;
+"61
+[; ;application/Application.c: 61:     button = Button_init(&button1Input, 0);
+[e = _button ( _Button_init (2 , &U _button1Input -> -> 0 `i `*F3526 ]
+"75
+[; ;application/Application.c: 75:     return app;
 [e ) _app ]
-[e $UE 310  ]
-"100
-[; ;application/Application.c: 100: }
-[e :UE 310 ]
+[e $UE 292  ]
+"77
+[; ;application/Application.c: 77: }
+[e :UE 292 ]
 }
-"102
-[; ;application/Application.c: 102: void Application_loop(Application *app) {
+"79
+[; ;application/Application.c: 79: void Application_loop(Application *app) {
 [v _Application_loop `(v ~T0 @X0 1 ef1`*S289 ]
 {
 [e :U _Application_loop ]
 [v _app `*S289 ~T0 @X0 1 r1 ]
 [f ]
-"112
-[; ;application/Application.c: 112:     Led_open(&redLed);
+"89
+[; ;application/Application.c: 89:     Led_open(&redLed);
 [e ( _Led_open (1 &U _redLed ]
-"115
-[; ;application/Application.c: 115:     if (DigitalInput_getValue(&button1Input)) {
-[e $ ! != ( _DigitalInput_getValue (1 &U _button1Input -> 0 `i 312  ]
+"92
+[; ;application/Application.c: 92:     if (Button_isPressed(&button)) {
+[e $ ! != ( _Button_isPressed (1 &U _button -> 0 `i 294  ]
 {
-"117
-[; ;application/Application.c: 117:         usart.writeLine("basıldı");
+"94
+[; ;application/Application.c: 94:         usart.writeLine("basıldı");
 [e ( *U . _usart 5 (1 :s 1C ]
-"118
-[; ;application/Application.c: 118:         Led_open(&blueLed);
+"95
+[; ;application/Application.c: 95:         Led_open(&blueLed);
 [e ( _Led_open (1 &U _blueLed ]
-"119
-[; ;application/Application.c: 119:         Led_close(&yellowLed);
+"96
+[; ;application/Application.c: 96:         Led_close(&yellowLed);
 [e ( _Led_close (1 &U _yellowLed ]
-"121
-[; ;application/Application.c: 121:     } else {
+"98
+[; ;application/Application.c: 98:     } else {
 }
-[e $U 313  ]
-[e :U 312 ]
+[e $U 295  ]
+[e :U 294 ]
 {
-"122
-[; ;application/Application.c: 122:         usart.writeLine("basılmadı");
-[e ( *U . _usart 5 (1 :s 2C ]
-"124
-[; ;application/Application.c: 124:         Led_close(&blueLed);
+"101
+[; ;application/Application.c: 101:         Led_close(&blueLed);
 [e ( _Led_close (1 &U _blueLed ]
-"125
-[; ;application/Application.c: 125:     }
+"102
+[; ;application/Application.c: 102:     }
 }
-[e :U 313 ]
-"135
-[; ;application/Application.c: 135: }
-[e :UE 311 ]
+[e :U 295 ]
+"112
+[; ;application/Application.c: 112: }
+[e :UE 293 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"137
-[; ;application/Application.c: 137: __attribute__((picinterrupt(("")))) void ISR(void)
+"114
+[; ;application/Application.c: 114: __attribute__((picinterrupt(("")))) void ISR(void)
 [v _ISR `(v ~T42 @X0 1 ef ]
-"138
-[; ;application/Application.c: 138: {
+"115
+[; ;application/Application.c: 115: {
 {
 [e :U _ISR ]
 [f ]
-"139
-[; ;application/Application.c: 139:     if (usart.isDataReady)
-[e $ ! != . _usart 0 -> -> 0 `i `*F3566 315  ]
-"140
-[; ;application/Application.c: 140:     {
+"116
+[; ;application/Application.c: 116:     if (usart.isDataReady)
+[e $ ! != . _usart 0 -> -> 0 `i `*F3534 297  ]
+"117
+[; ;application/Application.c: 117:     {
 {
-[v F3567 `uc ~T0 @X0 -> 20 `i s ]
-[i F3567
+[v F3535 `uc ~T0 @X0 -> 20 `i s ]
+[i F3535
 :U ..
-"142
-[; ;application/Application.c: 142:         char tmp[20] = "";
+"119
+[; ;application/Application.c: 119:         char tmp[20] = "";
 -> 0 `c
 ..
 ]
 [v _tmp `uc ~T0 @X0 -> 20 `i a ]
-[e = _tmp F3567 ]
-"143
-[; ;application/Application.c: 143:         usart.readString(tmp, 20);
+[e = _tmp F3535 ]
+"120
+[; ;application/Application.c: 120:         usart.readString(tmp, 20);
 [e ( *U . _usart 2 (2 , &U _tmp -> 20 `i ]
-"144
-[; ;application/Application.c: 144:         usart.writeLine(tmp);
+"121
+[; ;application/Application.c: 121:         usart.writeLine(tmp);
 [e ( *U . _usart 5 (1 -> &U _tmp `*Cuc ]
-"145
-[; ;application/Application.c: 145:         softUSARTWriteString(tmp);
-[e ( _softUSARTWriteString (1 -> &U _tmp `*Cuc ]
-"147
-[; ;application/Application.c: 147:         Led_open(&yellowLed);
+"124
+[; ;application/Application.c: 124:         Led_open(&yellowLed);
 [e ( _Led_open (1 &U _yellowLed ]
-"153
-[; ;application/Application.c: 153:     }
+"130
+[; ;application/Application.c: 130:     }
 }
-[e :U 315 ]
-"154
-[; ;application/Application.c: 154: }
-[e :UE 314 ]
+[e :U 297 ]
+"131
+[; ;application/Application.c: 131: }
+[e :UE 296 ]
 }
 [a 1C 98 97 115 18446744073709551556 18446744073709551537 108 100 18446744073709551556 18446744073709551537 0 ]
-[a 2C 98 97 115 18446744073709551556 18446744073709551537 108 109 97 100 18446744073709551556 18446744073709551537 0 ]
